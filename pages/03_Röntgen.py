@@ -3,8 +3,7 @@ import streamlit as st
 st.subheader("Röntgen")
 
 options = st.multiselect(
-    'What are your favorite colors',
-    ['Green', 'Yellow', 'Red', 'Blue'],
-    ['Yellow', 'Red'])
+    'Röntgensvar',
+    ['Alternativ 1', 'Alternativ 2', 'Alternativ 3'])
 
 st.write('You selected:', options)
