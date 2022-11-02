@@ -33,10 +33,24 @@ f.pe_display(st.session_state["total_score_pe"])
 ################################## PE KLAR ####################################
 
 ################################ Nästa steg ###################################
+if st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) == 0:
+    knapp_låg = st.button("Gå till PERC")
+    if knapp_låg:
+        switch_page("PERC")
+elif st.session_state["total_score_pe"] < and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
+    knapp_låg_perc_bruten = st.button("Gå till D-dimer")
+    if knapp_låg_perc_bruten:
+        switch_page("Ddimer")
+elif st.session_state["total_score_pe"] < 6.5:
+    knapp_låg_perc_bruten = st.button("Gå till D-dimer")
+    if knapp_måttlig:
+        switch_page("Ddimer")
+else:
+    knapp_hög = st.button("Gå till röntgen")
+    if knapp_låg_perc_bruten:
+        switch_page("Röntgen")
 
-test = st.button("Gå till PERC")
-if test:
-    switch_page("PERC")
+
 
 html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
 st.markdown(html_låg, unsafe_allow_html=True)
