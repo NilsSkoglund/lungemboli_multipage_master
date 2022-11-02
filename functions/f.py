@@ -369,7 +369,7 @@ def change_perc_in_to_out():
     and disable checkboxes with questions (inside of questionnarie)
     '''
     st.session_state["perc_done"] = st.session_state["perc_mark_inside"]
-    for i, j in enumerate(perc_dct):
+    for i, j in enumerate(st.session_state["perc_dct"]):
         st.session_state[f"disabled_perc{i}"] = st.session_state["perc_done"]
 
 ########################### Functions PERC - THE END ##########################

@@ -1,10 +1,9 @@
 import streamlit as st
-
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
 
-
+st.write("hej")
 ############################### Variables #####################################
 
 # Initialize variables for Wells' Criteria for PE
@@ -26,7 +25,8 @@ wells_pe_name = "wells_pe"
 	# dct with question:score
 	# name for key
 
-perc_dct={
+if "perc_dct" not in st.session_state: 
+    st.session_state["perc_dct"] = {
 	"Ålder ≥50": 1,
 	"Hjärtfrekvens >100/min": 1,
 	"Saturation >94% utan syrgas": 1,
@@ -37,7 +37,8 @@ perc_dct={
 	"Kliniska tecken på DVT": 1
 }
 
-perc_name = "perc"
+if "perc_name" not in st.session_state: 
+    st.session_state["perc_name"] = "perc"
 
 ######################### Initialize Common variables #########################
 # these are all the questions that are common among DVT, PE & PERC
@@ -72,13 +73,13 @@ if "disabled_pe0" not in st.session_state:
 
 ############################## Initialize PERC ################################
 
-f.initialize_keys(perc_dct, perc_name)
+f.initialize_keys(st.session_state["perc_dct"], st.session_state["perc_name"])
 
 if "perc_done" not in st.session_state:
     st.session_state["perc_done"] = False
     
 if "disabled_perc0" not in st.session_state:
-    for i, j in enumerate(perc_dct):
+    for i, j in enumerate(st.session_state["perc_dct"]):
         st.session_state[f"disabled_perc{i}"] = False
 
 ################################## Program ####################################
@@ -89,7 +90,7 @@ st.markdown("---")
 f.create_checkboxes_pe(wells_pe_dct, wells_pe_name)
 st.markdown("---")
 
-if f.calc_score(perc_dct, perc_name) > 0:
+if f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
         st.error("PERC bruten")
 
 st.session_state["total_score_pe"] =\
