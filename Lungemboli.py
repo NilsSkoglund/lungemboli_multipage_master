@@ -61,16 +61,15 @@ else:
 
 
 
-'''
-html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
-st.markdown(html_låg, unsafe_allow_html=True)
 
-html_låg_perc = 'Om Låg och PERC bruten --> <a href="/Ddimer" target="_self">D-dimer</a>'
-st.markdown(html_låg_perc, unsafe_allow_html=True)
+#html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
+#st.markdown(html_låg, unsafe_allow_html=True)
 
-html_måttlig = 'Om Måttlig --> <a href="/Ddimer" target="_self">D-dimer</a>'
-st.markdown(html_måttlig, unsafe_allow_html=True)
+#html_låg_perc = 'Om Låg och PERC bruten --> <a href="/Ddimer" target="_self">D-dimer</a>'
+#st.markdown(html_låg_perc, unsafe_allow_html=True)
 
-html_hög = 'Om Hög --> <a href="/Röntgen" target="_self">Röntgen</a>'
-st.markdown(html_hög, unsafe_allow_html=True)
-'''
+#html_måttlig = 'Om Måttlig --> <a href="/Ddimer" target="_self">D-dimer</a>'
+#st.markdown(html_måttlig, unsafe_allow_html=True)
+
+#html_hög = 'Om Hög --> <a href="/Röntgen" target="_self">Röntgen</a>'
+#st.markdown(html_hög, unsafe_allow_html=True)
