@@ -34,18 +34,27 @@ f.pe_display(st.session_state["total_score_pe"])
 
 ################################ Nästa steg ###################################
 if st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) == 0:
+    st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
+             lungemboli rekommenderas genomgång av PERC (Pulmonary Embolism Rule-out Criteria).")
     knapp_låg = st.button("Gå till PERC")
     if knapp_låg:
         switch_page("PERC")
 elif st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
+    
     knapp_låg_perc_bruten = st.button("Gå till D-dimer")
     if knapp_låg_perc_bruten:
         switch_page("Ddimer")
 elif st.session_state["total_score_pe"] < 6.5:
+    st.info("Patienten har en måttlig risk för lungemboli. \
+        För att undvika onödig strålning rekommenderas att man tar D-dimer för \
+            att avgöra om man kan avfärda lungemboli utan ytterligare bildundersökning.")
     knapp_måttlig = st.button("Gå till D-dimer")
     if knapp_måttlig:
         switch_page("Ddimer")
 else:
+    st.info("Patienten har en hög risk för lungemboli. Patienten skall omgående\
+         startas på antikoagulantia-behandling och göra en akut DTLA. D-dimer\
+             är ej förlitligt för att utesluta lungemboli.")
     knapp_hög = st.button("Gå till röntgen")
     if knapp_hög:
         switch_page("Röntgen")
