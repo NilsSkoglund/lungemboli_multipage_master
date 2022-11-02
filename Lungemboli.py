@@ -37,7 +37,7 @@ if st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["per
     knapp_låg = st.button("Gå till PERC")
     if knapp_låg:
         switch_page("PERC")
-elif st.session_state["total_score_pe"] < and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
+elif st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
     knapp_låg_perc_bruten = st.button("Gå till D-dimer")
     if knapp_låg_perc_bruten:
         switch_page("Ddimer")
