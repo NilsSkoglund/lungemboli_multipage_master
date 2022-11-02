@@ -36,7 +36,7 @@ def initialize_session_variables():
         st.session_state["pe_done"] = False
 
     if "disabled_pe0" not in st.session_state:
-        for i, j in enumerate(wells_pe_dct):
+        for i, j in enumerate(st.session_state["wells_pe_dct"]):
             st.session_state[f"disabled_pe{i}"] = False
 
 ################################### PERC ######################################
@@ -255,14 +255,6 @@ def create_checkboxes_pe(dct, name):
                 value=st.session_state["Hemoptys"],
                 disabled = st.session_state["disabled_pe5"]
             )
-        elif index==6:
-            st.checkbox(
-                label=f"{question[0]} ({question[1]}p)",
-                key=f"{name}{index}",
-                on_change=sync_from_pe6_to_dvt7,
-                value=st.session_state["malignitet eller palliation"],
-                disabled = st.session_state["disabled_pe6"]
-            )
         else:
             st.checkbox(
                 label=f"{question[0]} ({question[1]}p)",
@@ -270,13 +262,12 @@ def create_checkboxes_pe(dct, name):
                 disabled = st.session_state[f"disabled_pe{index}"]
             )
 
-# sync answers from PE questionnarie to DVT & PERC questionnaries
+# sync answers from PE questionnarie to PERC questionnaries
     # kliniska tecken DVT (only PERC)
     # hjärtfrekvens (only PERC)
     # immobiliserad eller opererad (PERC & DVT)
     # tidigare LE eller DVT diagnos (PERC & DVT)
     # Hemoptys (only PERC)
-    # malignitet eller palliation (only DVT)
 
 def sync_from_pe0_to_perc7():
     st.session_state["kliniska tecken DVT"] =\
@@ -298,9 +289,6 @@ def sync_from_pe5_to_perc5():
     st.session_state["Hemoptys"] =\
         st.session_state["wells_pe5"]
 
-def sync_from_pe6_to_dvt7():
-    st.session_state["malignitet eller palliation"] =\
-        st.session_state["wells_pe6"]
 
 def change_pe_in_to_out():
     '''
@@ -383,7 +371,7 @@ def create_checkboxes_perc(dct, name):
             st.checkbox(
                 label=f"{question[0]}",
                 key=f"{name}{index}",
-                on_change=sync_from_perc5_to_pe5,
+                #on_change=sync_from_perc5_to_pe5,
                 value=st.session_state["Hemoptys"],
                 disabled = st.session_state[f"disabled_perc{index}"]
             )
