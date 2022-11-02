@@ -42,7 +42,7 @@ elif st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["p
     if knapp_låg_perc_bruten:
         switch_page("Ddimer")
 elif st.session_state["total_score_pe"] < 6.5:
-    knapp_låg_perc_bruten = st.button("Gå till D-dimer")
+    knapp_måttlig = st.button("Gå till D-dimer")
     if knapp_måttlig:
         switch_page("Ddimer")
 else:
