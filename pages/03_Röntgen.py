@@ -7,3 +7,5 @@ options = st.multiselect(
     ['Alternativ 1', 'Alternativ 2', 'Alternativ 3'])
 
 st.write('You selected:', options)
+
+st.info("visa bilder här istället!")
