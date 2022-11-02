@@ -8,8 +8,75 @@ def test_func():
     st.write("Haj")
 ############################# General functions ###############################
     # used for multiple different questionnaries
+        # initialize session state variables
         # calc_score
         # intialize_keys
+
+def initialize_session_variables():
+
+#################################### PE #######################################
+    if "wells_pe_dct" not in st.session_state:
+        st.session_state["wells_pe_dct"]={
+            "Kliniska tecken på DVT": 3,
+            "LE mer sannolik än annan diagnos": 3,
+            "Hjärtfrekvens >100/min": 1.5,
+            "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1.5,
+            "Tidigare LE/DVT diagnos": 1.5,
+            "Hemoptys": 1,
+            "Malignitet behandlad inom 6 mån eller palliation": 1
+            }
+
+    if "wells_pe_name" not in st.session_state: 
+        st.session_state["wells_pe_name"] = "wells_pe"
+    
+    if "total_score_pe" not in st.session_state:
+	    st.session_state["total_score_pe"] = 0
+
+    if "pe_done" not in st.session_state:
+        st.session_state["pe_done"] = False
+
+    if "disabled_pe0" not in st.session_state:
+        for i, j in enumerate(wells_pe_dct):
+            st.session_state[f"disabled_pe{i}"] = False
+
+################################### PERC ######################################
+
+    if "perc_dct" not in st.session_state: 
+        st.session_state["perc_dct"] = {
+        "Ålder ≥50": 1,
+        "Hjärtfrekvens >100/min": 1,
+        "Saturation >94% utan syrgas": 1,
+        "Tidigare LE/DVT diagnos": 1,
+        "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1,
+        "Hemoptys": 1,
+        "Östrogenbehandling": 1,
+        "Kliniska tecken på DVT": 1
+        }
+
+    if "perc_name" not in st.session_state: 
+        st.session_state["perc_name"] = "perc"
+
+    if "immobiliserad eller opererad" not in st.session_state:
+        # gemensam för LE, DVT & PERC
+        st.session_state["immobiliserad eller opererad"] = False
+        # gemensam för LE, DVT & PERC
+        st.session_state["tidigare LE eller DVT diagnos"] = False
+        # gemensam för LE och DVT
+        st.session_state["malignitet eller palliation"] = False
+        # gemensam för LE och PERC
+        st.session_state["hjärtfrekvens"] = False
+        # gemensam för LE och PERC
+        st.session_state["Hemoptys"] = False
+        # gemensam för LE och PERC
+        st.session_state["kliniska tecken DVT"] = False
+    
+    if "perc_done" not in st.session_state:
+        st.session_state["perc_done"] = False
+    
+    if "disabled_perc0" not in st.session_state:
+        for i, j in enumerate(st.session_state["perc_dct"]):
+            st.session_state[f"disabled_perc{i}"] = False
+
 def calc_score(dct, name):
 	'''
     Takes a dictionary (dct) and a string (name) as inputs and ...
