@@ -33,13 +33,15 @@ st.session_state["total_score_pe"] =\
 
 f.pe_display(st.session_state["total_score_pe"])
 
+test = st.button("Gå till PERC")
+if test:
+    switch_page("PERC")
+st.info("Om låg... sen ha lite beskrivande text och en knapp")
+
 
 html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
 st.markdown(html_låg, unsafe_allow_html=True)
 
-test = st.button("Gå till PERC")
-if test:
-    switch_page("PERC")
 
 html_låg_perc = 'Om Låg och PERC bruten --> <a href="/Ddimer" target="_self">D-dimer</a>'
 st.markdown(html_låg_perc, unsafe_allow_html=True)
