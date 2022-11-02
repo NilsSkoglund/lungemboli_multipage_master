@@ -47,7 +47,7 @@ elif st.session_state["total_score_pe"] < 6.5:
         switch_page("Ddimer")
 else:
     knapp_hög = st.button("Gå till röntgen")
-    if knapp_låg_perc_bruten:
+    if knapp_hög:
         switch_page("Röntgen")
 
 
