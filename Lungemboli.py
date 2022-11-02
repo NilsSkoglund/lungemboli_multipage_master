@@ -2,9 +2,6 @@ import streamlit as st
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
-
-st.write("hej")
-
 f.initialize_session_variables()
 
 ############################### Initialize PE #################################
@@ -23,25 +20,26 @@ st.markdown("---")
 f.create_checkboxes_pe(st.session_state["wells_pe_dct"], st.session_state["wells_pe_name"])
 st.markdown("---")
 
+# Kolla om PERC är bruten
 if f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
         st.error("PERC bruten")
 
+# räkna ut och visa poäng för PE
 st.session_state["total_score_pe"] =\
         f.calc_score(st.session_state["wells_pe_dct"], st.session_state["wells_pe_name"])
-
-
-
 f.pe_display(st.session_state["total_score_pe"])
+
+
+################################## PE KLAR ####################################
+
+################################ Nästa steg ###################################
 
 test = st.button("Gå till PERC")
 if test:
     switch_page("PERC")
-st.info("Om låg... sen ha lite beskrivande text och en knapp")
-
 
 html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
 st.markdown(html_låg, unsafe_allow_html=True)
-
 
 html_låg_perc = 'Om Låg och PERC bruten --> <a href="/Ddimer" target="_self">D-dimer</a>'
 st.markdown(html_låg_perc, unsafe_allow_html=True)
