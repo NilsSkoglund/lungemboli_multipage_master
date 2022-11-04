@@ -23,4 +23,4 @@ for i, j in enumerate(dct_radiology_report.items()):
         , key=f"{name_rad}_{i}"
     )
 
-st.info("visa bilder här baserat på svar!")
+st.info("visa bilder här baserat på svar")
