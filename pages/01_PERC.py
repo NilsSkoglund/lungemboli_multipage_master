@@ -21,7 +21,7 @@ name_perc = "perc"
 
 ############################## Program and UI #################################
 
-st.header("PERC")
+st.header("Formulär: PERC")
 st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
  När dessa frågor besvaras i formuläret för Wells' kriterier\
     ges de samma svar i PERC-formuläret nedan")
@@ -42,4 +42,4 @@ if f.calc_score(dct_perc, name_perc) > 0:
     if knapp_perc_bruten:
         switch_page("Ddimer")
 else:
-    st.success("PERC-regeln ej bruten, lungemboli kan uteslutas")
+    st.success("PERC-regeln ej bruten, Lungemboli kan uteslutas")
