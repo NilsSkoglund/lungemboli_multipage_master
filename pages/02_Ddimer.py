@@ -10,7 +10,7 @@ if "beslutsgräns" not in st.session_state:
 
 ############################## Program and UI #################################
 
-st.subheader("D-dimer")
+st.header("D-dimer")
 st.write("Ange ålder och resultat från D-dimer testet")
 
 st.number_input("Ange ålder",
