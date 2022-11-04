@@ -5,7 +5,14 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 
-st.checkbox("press me!", key="test")
+if "test_01" not in st.session_state: 
+    st.session_state["test_01"] = False
+    st.session_state["test_02"] = False
+
+def test_01_to_02():
+    st.session_state["test_02"] = st.session_state["test_01"]
+
+st.checkbox("press me!", key="test", on_change=)
 
 
 
