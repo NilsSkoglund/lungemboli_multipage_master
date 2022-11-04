@@ -83,5 +83,4 @@ for i, j in enumerate(dct_lungemboli.items()):
         st.checkbox(
             j[0],\
             key=f"{name_lungemboli}_{i}",\
-            help=f"Poäng: hej {j[1]}",\ 
-            args=(i,))
+            help=f"Poäng: hej {j[1]}")
