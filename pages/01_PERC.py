@@ -3,7 +3,7 @@ from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
 
-st.checkbox("test me!", value=st.session_state["test_02"], key="test2")
+st.checkbox("test me!", value=st.session_state["test_01"], key="test_02")
 
 st.header("PERC")
 st.write("När du är färdig med formuläret, markera rutan 'PERC klar'")
