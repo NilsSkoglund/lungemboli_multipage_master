@@ -28,7 +28,7 @@ st.number_input("Ange ålder",
     )
 
 if st.session_state["Ddimer_age"]:
-    beslutsgräns = max([0.5, st.session_state["Ddimer_age"]*0.01])
+    beslutsgräns = max([0.50, st.session_state["Ddimer_age"]*0.01])
     st.write(f"Beslutsgräns: {beslutsgräns}")
 
 
