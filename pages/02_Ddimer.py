@@ -1,6 +1,8 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 
+st.session_state.update(st.session_state)
+
 ########################### Initialize Variables ##############################
 
 if "beslutsgräns" not in st.session_state:
@@ -26,10 +28,13 @@ st.number_input("Ange resultat D-dimer",
 if st.session_state["Ddimer_result"]:
     st.write(f"Resultat: {st.session_state['Ddimer_result']}")
 
-if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
-    st.error(f"Positivt D-dimer test")
-    kanpp_positiv_ddimer = st.button("Gå till Röntgen")
-    if kanpp_positiv_ddimer:
-        switch_page("Röntgen")
-else:
-    st.success(f"Negativt D-dimer test, Lungemboli kan uteslutas")
+
+# om man har fyllt i både ålder och resulat --> presentera slutsats
+if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
+    if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
+        st.error(f"Positivt D-dimer test")
+        kanpp_positiv_ddimer = st.button("Gå till Röntgen")
+        if kanpp_positiv_ddimer:
+            switch_page("Röntgen")
+    else:
+        st.success(f"Negativt D-dimer test, Lungemboli kan uteslutas")
