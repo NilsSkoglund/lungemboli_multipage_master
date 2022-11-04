@@ -39,7 +39,7 @@ def initialize_keys(dct, name):
 			st.session_state[key] = False
 	return None
 
-def pe_display(total_score):
+def lungemboli_display_viz(total_score):
 	'''
     Takes a float as input and ...
 	displays result image for PE. One of 24 different images based on score
@@ -101,7 +101,8 @@ for i, j in enumerate(dct_lungemboli.items()):
 
 st.session_state["total_score_pe"] = calc_score(dct_lungemboli, name_lungemboli)
 
-pe_display(st.session_state["total_score_pe"])
+lungemboli_display_viz(st.session_state["total_score_pe"])
+
 
 if st.session_state["total_score_pe"] < 2:
     st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
