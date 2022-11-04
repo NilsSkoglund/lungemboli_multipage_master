@@ -20,5 +20,4 @@ st.number_input("Ange resultat D-dimer",
     )
 
 
-if st.session_state["ddimer_done"] == True:
-    Ddimer_display()
+Ddimer_display()
