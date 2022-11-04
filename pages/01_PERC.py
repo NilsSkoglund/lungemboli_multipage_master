@@ -26,6 +26,15 @@ st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
  När dessa frågor besvaras i formuläret för Wells' kriterier\
     ges de samma svar i PERC-formuläret nedan")
 
+tooltip_style = """
+<style>
+div[data-baseweb="tooltip"] {
+  width: 100px;
+}
+</style>
+"""
+st.markdown(tooltip_style,unsafe_allow_html=True)
+
 for i, j in enumerate(dct_perc.items()):
     if i < 5:
         st.checkbox(
