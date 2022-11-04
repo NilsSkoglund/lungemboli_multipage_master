@@ -10,8 +10,8 @@ st.info("5 av 8 frågor i PERC ingår i Wells' PE formuläret.\
  Frågorna blir även låsta.")
 st.markdown("---")
 
-
 f.create_checkboxes_perc(st.session_state["perc_dct"], st.session_state["perc_name"])
+
 st.markdown("---")
 st.checkbox("PERC klar", 
     key="perc_mark_inside", 
