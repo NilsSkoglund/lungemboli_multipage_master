@@ -11,7 +11,7 @@ hide_streamlit_style = """
                 
                 }
             footer:after {
-                content:'goodbye'; 
+                content:'...'; 
                 visibility: visible;
                 display: block;
                 position: relative;
