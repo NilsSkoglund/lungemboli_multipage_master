@@ -12,7 +12,7 @@ if "test_01" not in st.session_state:
 def test_01_to_02():
     st.session_state["test_02"] = st.session_state["test_01"]
 
-st.checkbox("press me!", key="test", on_change=)
+st.checkbox("press me!", key="test", on_change=test_01_to_02)
 
 
 
