@@ -1,6 +1,8 @@
 import streamlit as st
 
-st.subheader("Röntgen")
+st.session_state.update(st.session_state)
+
+st.header("Röntgen")
 
 options = st.multiselect(
     'Röntgensvar',
