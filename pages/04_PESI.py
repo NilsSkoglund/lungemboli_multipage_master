@@ -24,6 +24,14 @@ name_pesi = "pesi"
 
 ############################## Program and UI #################################
 
+tooltip_style = """
+<style>
+div[data-baseweb="tooltip"] {
+  width: 100px;
+}
+</style>
+"""
+st.markdown(tooltip_style,unsafe_allow_html=True)
 for i, j in enumerate(dct_pesi.items()):
     st.checkbox(
         j[0]\
