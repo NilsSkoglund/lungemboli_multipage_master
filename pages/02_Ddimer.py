@@ -11,7 +11,6 @@ hide_streamlit_style = """
                 
                 }
             footer:after {
-                content:'...'; 
                 visibility: visible;
                 display: block;
                 position: relative;
