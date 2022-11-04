@@ -50,10 +50,10 @@ def lungemboli_display_viz(total_score):
 
 def lungemboli_display_txt(total_score):
     if st.session_state["total_score_pe"] < 2:
-    st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
+        st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
              lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
-    knapp_låg = st.button("Gå till PERC")
+        knapp_låg = st.button("Gå till PERC")
         if knapp_låg:
             switch_page("PERC")
     elif st.session_state["total_score_pe"] < 6.5:
