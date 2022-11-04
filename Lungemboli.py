@@ -3,6 +3,8 @@ from functions import f
 from PIL import Image
 from streamlit_extras.switch_page_button import switch_page
 
+st.session_state.update(st.session_state)
+
 def calc_score(dct, name):
 	'''
     Takes a dictionary (dct) and a string (name) as inputs and ...
