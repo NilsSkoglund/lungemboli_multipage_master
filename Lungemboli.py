@@ -1,96 +1,87 @@
 import streamlit as st
 from functions import f
-from streamlit_extras.switch_page_button import switch_page
 
+def calc_score(dct, name):
+	'''
+    Takes a dictionary (dct) and a string (name) as inputs and ...
+	calculates total score for:
+        DVT
+        PE
+        PERC
+        PESI
+	'''
+	total_score = 0
+	for index, question in enumerate(dct):
+		key = f"{name}{index}"
+		if st.session_state[key]: # if True means the checkbox is ticked
+			total_score += dct.get(question)
+	return total_score
 
-st.session_state.update(st.session_state)
-
-if "test_01" not in st.session_state: 
-    st.session_state["test_01"] = False
-    st.session_state["test_02"] = False
-
-def test_01_to_02():
-    st.session_state["test_02"] = st.session_state["test_01"]
-
-st.checkbox("press me!", key="test_01", on_change=test_01_to_02)
-
-
-
-
-
-
-
-
-
-
-f.initialize_session_variables()
-
-############################### Initialize PE #################################
-
-f.initialize_keys(st.session_state["wells_pe_dct"], st.session_state["wells_pe_name"])
-
-############################## Initialize PERC ################################
-
-f.initialize_keys(st.session_state["perc_dct"], st.session_state["perc_name"])
-
-################################## Program ####################################
-#################################### PE #######################################
-
-st.header("Well's Kriterier för Lungemboli")
-st.markdown("---")
-f.create_checkboxes_pe(st.session_state["wells_pe_dct"], st.session_state["wells_pe_name"])
-st.markdown("---")
-
-# Kolla om PERC är bruten
-if f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
-        st.error("PERC bruten")
-
-# räkna ut och visa poäng för PE
-st.session_state["total_score_pe"] =\
-        f.calc_score(st.session_state["wells_pe_dct"], st.session_state["wells_pe_name"])
-f.pe_display(st.session_state["total_score_pe"])
-
-
-################################## PE KLAR ####################################
-
-################################ Nästa steg ###################################
-if st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) == 0:
-    st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
-             lungemboli rekommenderas genomgång av PERC (Pulmonary Embolism Rule-out Criteria).")
-    knapp_låg = st.button("Gå till PERC")
-    if knapp_låg:
-        switch_page("PERC")
-elif st.session_state["total_score_pe"] < 2 and f.calc_score(st.session_state["perc_dct"], st.session_state["perc_name"]) > 0:
+def initialize_keys(dct, name):
+	'''
+    Takes a dictionary (dvt) and a string (name) as inputs and ...
+	initializes session state 'keys' for:
+        DVT
+        PE
+        PERC
+        PESI
     
-    knapp_låg_perc_bruten = st.button("Gå till D-dimer")
-    if knapp_låg_perc_bruten:
-        switch_page("Ddimer")
-elif st.session_state["total_score_pe"] < 6.5:
-    st.info("Patienten har en måttlig risk för lungemboli. \
-        För att undvika onödig strålning rekommenderas att man tar D-dimer för \
-            att avgöra om man kan avfärda lungemboli utan ytterligare bildundersökning.")
-    knapp_måttlig = st.button("Gå till D-dimer")
-    if knapp_måttlig:
-        switch_page("Ddimer")
-else:
-    st.info("Patienten har en hög risk för lungemboli. Patienten skall omgående\
-         startas på antikoagulantia-behandling och göra en akut DTLA. D-dimer\
-             är ej förlitligt för att utesluta lungemboli.")
-    knapp_hög = st.button("Gå till Röntgen")
-    if knapp_hög:
-        switch_page("Röntgen")
+    Note! More session state 'keys' are initialized ...
+    at other places for other purposes for DVT, PE, PERC & PESI
+	'''
+	for index, j in enumerate(dct):
+		key = f"{name}_{index}"
+		if key not in st.session_state:
+			st.session_state[key] = False
+	return None
+
+dct_perc = {
+    "Kliniska tecken på DVT": 1,
+    "Tidigare LE/DVT diagnos": 1,
+    "Hjärtfrekvens >100/min": 1,
+    "Hemoptys": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1,
+    "Ålder ≥50": 1,
+    "Saturation >94% utan syrgas": 1,
+    "Östrogenbehandling": 1,
+    }
+
+name_perc = "perc"
+
+dct_lungemboli = {
+    "Kliniska tecken på DVT": 3,
+    "Tidigare LE/DVT diagnos": 1.5,
+    "Hjärtfrekvens >100/min": 1.5,
+    "Hemoptys": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1.5,
+    "LE mer sannolik än annan diagnos": 3,
+    "Malignitet behandlad inom 6 mån eller palliation": 1
+    }
+
+name_lungemboli = "lungemboli"
+
+if "total_score_pe" not in st.session_state:
+	    st.session_state["total_score_pe"] = 0
 
 
+initialize_keys(dct_lungemboli, name_lungemboli)
 
+def sync_lungemboli_to_perc(idx):
 
-#html_låg = 'Om Låg --> <a href="/PERC" target="_self">PERC</a>'
-#st.markdown(html_låg, unsafe_allow_html=True)
+    st.session_state[f"perc_{idx}"] = st.session_state[f"lungemboli_{idx}"]
 
-#html_låg_perc = 'Om Låg och PERC bruten --> <a href="/Ddimer" target="_self">D-dimer</a>'
-#st.markdown(html_låg_perc, unsafe_allow_html=True)
+st.checkbox(
+    dct_lungemboli[0][0],\
+    key=f"lungemboli_0",\
+    help=f"Poäng: {dct_lungemboli[0][1]}",\
+    on_change=lungemboli_01_to_perc_01, 
+    args=())
 
-#html_måttlig = 'Om Måttlig --> <a href="/Ddimer" target="_self">D-dimer</a>'
-#st.markdown(html_måttlig, unsafe_allow_html=True)
-
-#html_hög = 'Om Hög --> <a href="/Röntgen" target="_self">Röntgen</a>'
-#st.markdown(html_hög, unsafe_allow_html=True)
+def create_checkboxes_lungemboli():
+    for i, j in enumerate(dct_lungemboli):
+        st.checkbox(
+            j[0],\
+            key=f"{name_lungemboli}_{i}",\
+            help=f"Poäng: {j[1]}",\
+            on_change=sync_lungemboli_to_perc, 
+            args=(i,))
