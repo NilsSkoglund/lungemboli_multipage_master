@@ -12,7 +12,7 @@ def calc_score(dct, name):
 	'''
 	total_score = 0
 	for index, question in enumerate(dct):
-		key = f"{name}{index}"
+		key = f"{name}_{index}"
 		if st.session_state[key]: # if True means the checkbox is ticked
 			total_score += dct.get(question)
 	return total_score
