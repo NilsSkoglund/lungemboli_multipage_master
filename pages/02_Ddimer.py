@@ -12,7 +12,7 @@ st.number_input("Ange ålder",
     )
 
 if st.session_state["Ddimer_age"]:
-    print("hej")
+    st.write("hej")
 
 
 st.number_input("Ange resultat D-dimer",
@@ -20,4 +20,4 @@ st.number_input("Ange resultat D-dimer",
     )
 
 
-Ddimer_display()
+#Ddimer_display()
