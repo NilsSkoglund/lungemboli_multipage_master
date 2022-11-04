@@ -18,7 +18,7 @@ st.number_input("Ange ålder",
 
 if st.session_state["Ddimer_age"]:
     st.session_state["beslutsgräns"] = max([0.50, st.session_state["Ddimer_age"]*0.01])
-    st.write(f"Åldersbaserad beslutsgräns: {st.session_state["beslutsgräns"]}")
+    st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
 
 st.number_input("Ange resultat D-dimer",
     key="Ddimer_result"
