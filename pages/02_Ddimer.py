@@ -24,7 +24,7 @@ st.number_input("Ange resultat D-dimer",
     key="Ddimer_result"
     )
 if st.session_state["Ddimer_result"]:
-    st.write(f"Resultat: {st.session_state["Ddimer_result"]}")
+    st.write(f"Resultat: {st.session_state['Ddimer_result']}")
 
 if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
     st.error(f"Positivt D-dimer test")
