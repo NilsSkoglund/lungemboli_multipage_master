@@ -1,5 +1,7 @@
 import streamlit as st
 from functions import f
+from PIL import Image
+
 
 def calc_score(dct, name):
 	'''
