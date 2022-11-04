@@ -22,9 +22,9 @@ name_perc = "perc"
 ############################## Program and UI #################################
 
 st.header("PERC")
-st.info("5 av 8 frågor i PERC ingår i Wells' PE formuläret.\
- När dessa frågor besvaras i Wells' PE formuläret \
-    ges de samma svar i PERC-formuläret.")
+st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
+ När dessa frågor besvaras i formuläret för Wells' kriterier\
+    ges de samma svar i PERC-formuläret nedan")
 
 for i, j in enumerate(dct_perc.items()):
     if i < 5:
