@@ -43,7 +43,7 @@ for i, j in enumerate(dct_perc.items()):
     if i < 5:
         st.checkbox(
             j[0],\
-            value=st.session_state[f"{name_lungemboli}_{i}"]\
+            value=st.session_state[f"{name_lungemboli}_{i}"],\
             key=f"{name_perc}_{i}")
     else:
         st.checkbox(
