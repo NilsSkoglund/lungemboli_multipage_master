@@ -26,9 +26,10 @@ name_pesi = "pesi"
 
 for i, j in enumerate(dct_pesi.items()):
     st.checkbox(
-        j[0],\
-        key=f"{name_pesi}_{i}",\
-        help=j[i])
+        j[0]\
+        , key=f"{name_pesi}_{i}"\
+        , help=f"Poäng: {j[i]}"
+        )
 
 st.markdown("---")
 st.metric("Totalpoäng PESI", value=f.calc_score(dct_pesi, name_pesi))
