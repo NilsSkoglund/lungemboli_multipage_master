@@ -27,7 +27,7 @@ if "total_score_pe" not in st.session_state:
 ####################### Initialize Variables THE END ##########################
 ############################## Program and UI #################################
 
-st.header("Formulär: Wells' kritier för Lungemboli")
+st.header("Formulär: Wells' kriterier för Lungemboli")
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
