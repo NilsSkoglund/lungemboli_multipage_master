@@ -36,4 +36,4 @@ for i, j in enumerate(dct_pesi.items()):
 
 st.markdown("---")
 st.metric("Totalpoäng PESI", value=f.calc_score(dct_pesi, name_pesi))
-#st.progess
+st.progess(f.calc_score(dct_pesi, name_pesi)/250)
