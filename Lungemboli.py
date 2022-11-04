@@ -72,9 +72,16 @@ def sync_lungemboli_to_perc(idx):
 
 
 for i, j in enumerate(dct_lungemboli.items()):
-    st.checkbox(
-        j[0],\
-        key=f"{name_lungemboli}_{i}",\
-        help=f"Poäng: {j[1]}",\
-        on_change=sync_lungemboli_to_perc, 
-        args=(i,))
+    if i < 5:
+        st.checkbox(
+            j[0],\
+            key=f"{name_lungemboli}_{i}",\
+            help=f"Poäng: {j[1]}",\
+            on_change=sync_lungemboli_to_perc, 
+            args=(i,))
+    else:
+        st.checkbox(
+            j[0],\
+            key=f"{name_lungemboli}_{i}",\
+            help=f"Poäng: hej {j[1]}",\ 
+            args=(i,))
