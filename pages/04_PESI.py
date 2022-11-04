@@ -34,4 +34,5 @@ for i, j in enumerate(dct_pesi.items()):
             j[0],\
             key=f"{name_pesi}_{i}")
 
-st.metric("Totalpoäng PESI", f.calc_score(dct_pesi, name_pesi))
+st.subheader("Totalpoäng PESI:")
+st.metric(value=f.calc_score(dct_pesi, name_pesi))
