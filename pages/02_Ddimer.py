@@ -1,26 +1,15 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
-def Ddimer_display():
-    '''
-    display function for D-dimer. Checks if score is above/below threshold ...
-    and displays result/recommendations accordingly
-    '''
-    if st.session_state["Ddimer_result"] > Ddimer_beslutsgräns():
-        st.write(f"Ålderbaserad beslutsgräns: >{Ddimer_beslutsgräns()}")
-        st.write(f"Resultat: {round(st.session_state['Ddimer_result'],2)}")
-        st.error(f"Positivt D-dimer test")
-        st.markdown("[Gå vidare till röntgen](#röntgen)")
-    else:
-        st.write(f"Ålderbaserad beslutsgräns: >{Ddimer_beslutsgräns()}")
-        st.write(f"Resultat: {round(st.session_state['Ddimer_result'],2)}")
-        st.success(f"Negativt D-dimer test, lungemboli kan uteslutas")
-        st.markdown("[Gå till överblick](#verblick)")
+########################### Initialize Variables ##############################
+
+if "beslutsgräns" not in st.session_state:
+    st.session_state["beslutsgräns"] = 50
+
+############################## Program and UI #################################
 
 st.subheader("D-dimer")
-
-st.write("Fyll i Ålder och resultat från D-dimer testet.\
-     När du är färdig, markera rutan 'D-dimer klar'")
-
+st.write("Ange ålder och resultat från D-dimer testet")
 
 st.number_input("Ange ålder",
     step=1,
@@ -28,13 +17,19 @@ st.number_input("Ange ålder",
     )
 
 if st.session_state["Ddimer_age"]:
-    beslutsgräns = max([0.50, st.session_state["Ddimer_age"]*0.01])
-    st.write(f"Beslutsgräns: {beslutsgräns}")
-
+    st.session_state["beslutsgräns"] = max([0.50, st.session_state["Ddimer_age"]*0.01])
+    st.write(f"Åldersbaserad beslutsgräns: {st.session_state["beslutsgräns"]}")
 
 st.number_input("Ange resultat D-dimer",
     key="Ddimer_result"
     )
+if st.session_state["Ddimer_result"]:
+    st.write(f"Resultat: {st.session_state["Ddimer_result"]}")
 
-
-#Ddimer_display()
+if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
+    st.error(f"Positivt D-dimer test")
+    kanpp_positiv_ddimer = st.button("Gå till Röntgen")
+    if kanpp_positiv_ddimer:
+        switch_page("Röntgen")
+else:
+    st.success(f"Negativt D-dimer test, Lungemboli kan uteslutas")
