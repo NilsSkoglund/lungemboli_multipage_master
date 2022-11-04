@@ -36,7 +36,7 @@ for i, j in enumerate(dct_perc.items()):
             key=f"{name_perc}_{i}")
 
 if f.calc_score(dct_perc, name_perc) > 0:
-    st.warning("Inget av kriterierna får vara uppfyllt")
+    st.error("Inget av kriterierna får vara uppfyllt")
     knapp_perc_bruten = st.button("Gå till Ddimer")
     if knapp_perc_bruten:
         switch_page("Ddimer")
