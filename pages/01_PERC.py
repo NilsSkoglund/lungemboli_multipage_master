@@ -1,7 +1,6 @@
 import streamlit as st
 
 st.session_state.update(st.session_state)
-st.checkbox("test me!", value=st.session_state["test_01"], key="test_02")
 
 def calc_score(dct, name):
 	'''
