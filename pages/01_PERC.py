@@ -1,5 +1,6 @@
 import streamlit as st
 from functions import f
+from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 ########################### Initialize Variables ##############################
@@ -36,7 +37,8 @@ for i, j in enumerate(dct_perc.items()):
 
 if f.calc_score(dct_perc, name_perc) > 0:
     st.warning("Inget av kriterierna får vara uppfyllt")
-    st.markdown("[Gå vidare till D-dimer](#d-dimer)")
+    knapp_perc_bruten = st.button("Gå till Ddimer")
+    if knapp_perc_bruten:
+        switch_page("Ddimer")
 else:
     st.success("PERC-regeln ej bruten, lungemboli kan uteslutas")
-    st.markdown("[Gå till Överblick](#verblick)")
