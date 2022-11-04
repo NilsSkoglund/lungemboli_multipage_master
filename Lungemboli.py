@@ -23,7 +23,7 @@ f.initialize_widget_keys(dct_lungemboli, name_lungemboli)
 
 if "total_score_pe" not in st.session_state:
     st.session_state["total_score_pe"] = 0
-    
+
 ####################### Initialize Variables THE END ##########################
 ############################## Program and UI #################################
 
@@ -37,7 +37,7 @@ for i, j in enumerate(dct_lungemboli.items()):
             j[0],\
             key=f"{name_lungemboli}_{i}",\
             help=f"Poäng: {j[1]}",\
-            on_change=sync_lungemboli_to_perc, 
+            on_change=f.sync_lungemboli_to_perc, 
             args=(i,))
     else:
         st.checkbox(
