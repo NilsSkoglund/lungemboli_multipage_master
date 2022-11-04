@@ -71,7 +71,7 @@ def sync_lungemboli_to_perc(idx):
     st.session_state[f"perc_{idx}"] = st.session_state[f"lungemboli_{idx}"]
 
 
-for i, j in enumerate(dct_lungemboli):
+for i, j in enumerate(dct_lungemboli.items()):
     st.checkbox(
         j[0],\
         key=f"{name_lungemboli}_{i}",\
