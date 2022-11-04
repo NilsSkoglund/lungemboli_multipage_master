@@ -1,7 +1,7 @@
 import streamlit as st
 from functions import f
 from PIL import Image
-
+from streamlit_extras.switch_page_button import switch_page
 
 def calc_score(dct, name):
 	'''
@@ -100,3 +100,24 @@ for i, j in enumerate(dct_lungemboli.items()):
 st.session_state["total_score_pe"] = calc_score(dct_lungemboli, name_lungemboli)
 
 pe_display(st.session_state["total_score_pe"])
+
+if st.session_state["total_score_pe"] < 2:
+    st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
+             lungemboli rekommenderas genomgång av PERC (Pulmonary Embolism Rule-out Criteria).")
+    knapp_låg = st.button("Gå till PERC")
+    if knapp_låg:
+        switch_page("PERC")
+elif st.session_state["total_score_pe"] < 6.5:
+    st.info("Patienten har en måttlig risk för lungemboli. \
+        För att undvika onödig strålning rekommenderas att man tar D-dimer för \
+            att avgöra om man kan avfärda lungemboli utan ytterligare bildundersökning.")
+    knapp_måttlig = st.button("Gå till D-dimer")
+    if knapp_måttlig:
+        switch_page("Ddimer")
+else:
+    st.info("Patienten har en hög risk för lungemboli. Patienten skall omgående\
+         startas på antikoagulantia-behandling och göra en akut DTLA. D-dimer\
+             är ej förlitligt för att utesluta lungemboli.")
+    knapp_hög = st.button("Gå till Röntgen")
+    if knapp_hög:
+        switch_page("Röntgen")
