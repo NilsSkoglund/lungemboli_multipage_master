@@ -35,6 +35,15 @@ def initialize_keys(dct, name):
 			st.session_state[key] = False
 	return None
 
+def pe_display(total_score):
+	'''
+    Takes a float as input and ...
+	displays result image for PE. One of 24 different images based on score
+	'''
+	text_total_score = str(int(total_score*10))
+	image = Image.open(f"img/t{text_total_score}.png")
+	return st.image(image)
+
 dct_perc = {
     "Kliniska tecken på DVT": 1,
     "Tidigare LE/DVT diagnos": 1,
@@ -84,3 +93,10 @@ for i, j in enumerate(dct_lungemboli.items()):
             j[0],\
             key=f"{name_lungemboli}_{i}",\
             help=f"Poäng: hej {j[1]}")
+
+
+st.session_state["total_score_pe"] =\
+    calc_score(st.session_state["wells_pe_dct"],\
+        st.session_state["wells_pe_name"])
+
+pe_display(st.session_state["total_score_pe"])
