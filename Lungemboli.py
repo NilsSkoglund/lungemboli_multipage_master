@@ -31,6 +31,14 @@ st.header("Formulär: Wells' kritier för Lungemboli")
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
+tooltip_style = """
+<style>
+div[data-baseweb="tooltip"] {
+  width: 350px;
+}
+</style>
+"""
+st.markdown(tooltip_style,unsafe_allow_html=True)
 for i, j in enumerate(dct_lungemboli.items()):
     if i < 5:
         st.checkbox(
