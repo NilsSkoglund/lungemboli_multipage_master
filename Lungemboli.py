@@ -95,8 +95,6 @@ for i, j in enumerate(dct_lungemboli.items()):
             help=f"Poäng: hej {j[1]}")
 
 
-st.session_state["total_score_pe"] =\
-    calc_score(st.session_state["wells_pe_dct"],\
-        st.session_state["wells_pe_name"])
+st.session_state["total_score_pe"] = calc_score(dct_lungemboli, name_lungemboli)
 
 pe_display(st.session_state["total_score_pe"])
