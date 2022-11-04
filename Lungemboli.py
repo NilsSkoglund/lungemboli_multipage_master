@@ -2,6 +2,20 @@ import streamlit as st
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
+
+
+
+st.checkbox("press me!", key="test")
+
+
+
+
+
+
+
+
+
+
 f.initialize_session_variables()
 
 ############################### Initialize PE #################################
