@@ -65,14 +65,14 @@ def lungemboli_display_viz(total_score):
 
 def lungemboli_display_txt(total_score):
     if total_score < 2:
-        st.info("Patienten har en låg risk för lungemboli. För att kunna utesluta\
+        st.success("Patienten har en låg risk för lungemboli. För att kunna utesluta\
              lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
         knapp_låg = st.button("Gå till PERC")
         if knapp_låg:
             switch_page("PERC")
     elif total_score < 6.5:
-        st.info("Patienten har en måttlig risk för lungemboli. För att undvika\
+        st.warning("Patienten har en måttlig risk för lungemboli. För att undvika\
              onödig strålning rekommenderas att man tar D-dimer för att avgöra\
                  om man kan avfärda lungemboli utan ytterligare\
                      bildundersökning.")
@@ -80,7 +80,7 @@ def lungemboli_display_txt(total_score):
         if knapp_måttlig:
             switch_page("Ddimer")
     else:
-        st.info("Patienten har en hög risk för lungemboli. Patienten skall\
+        st.error("Patienten har en hög risk för lungemboli. Patienten skall\
              omgående startas på antikoagulantia-behandling och göra en akut\
                  DTLA. D-dimer är ej förlitligt för att utesluta lungemboli.")
         knapp_hög = st.button("Gå till Röntgen")
