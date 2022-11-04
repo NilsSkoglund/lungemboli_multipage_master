@@ -34,7 +34,7 @@ st.header("Formulär: Wells' kritier för Lungemboli")
 tooltip_style = """
 <style>
 div[data-baseweb="tooltip"] {
-  width: 350px;
+  width: 100px;
 }
 </style>
 """
