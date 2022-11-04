@@ -2,6 +2,8 @@ import streamlit as st
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
+st.session_state.update(st.session_state)
+
 st.checkbox("test me!", value=st.session_state["test"], key="test2")
 
 st.header("PERC")
