@@ -54,7 +54,7 @@ div[data-baseweb="tooltip"] {
 </style>
 """
 st.markdown(tooltip_style,unsafe_allow_html=True)
-st.header("Formulär: Wells'")
+st.header("Formulär: Wells' Lungemboli")
 for i, j in enumerate(dct_lungemboli.items()):
     if i < 5:
         st.checkbox(
