@@ -3,25 +3,15 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 
+
 hide_streamlit_style = """
-            <style>
-            footer {
-                
-                visibility: hidden;
-                
-                }
-            footer:after {
-                visibility: visible;
-                display: block;
-                position: relative;
-                #background-color: red;
-                padding: 5px;
-                top: 2px;
-            }
-            </style>
-            """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+</style>
 
-
+"""
+if st.checkbox('Remove padding'):
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 ########################### Initialize Variables ##############################
