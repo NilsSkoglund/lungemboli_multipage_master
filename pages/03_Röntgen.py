@@ -2,6 +2,13 @@ import streamlit as st
 
 st.session_state.update(st.session_state)
 
+hide_streamlit_style = """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 2rem;}
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # Initialize variables for radiology_report
 	# dct with report_answer:score
 	# name for key

@@ -3,6 +3,14 @@ from functions import f
 
 st.session_state.update(st.session_state)
 
+hide_streamlit_style = """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 2rem;}
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 ########################### Initialize Variables ##############################
 
 st.header("PESI")
