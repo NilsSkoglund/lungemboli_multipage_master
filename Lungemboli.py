@@ -2,6 +2,15 @@ import streamlit as st
 from functions import f
 
 st.session_state.update(st.session_state)
+
+hide_streamlit_style = """
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 2rem;}
+</style>
+
+"""
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
@@ -27,7 +36,7 @@ if "total_score_pe" not in st.session_state:
 ####################### Initialize Variables THE END ##########################
 ############################## Program and UI #################################
 
-st.header("Formulär: Wells' kriterier för Lungemboli")
+st.header("Formulär: Wells'")
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
