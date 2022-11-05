@@ -30,7 +30,7 @@ name_perc = "perc"
 ############################## Program and UI #################################
 
 st.header("Formulär: PERC")
-with st.expander():
+with st.expander("Klicka för info"):
     st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
     När dessa frågor besvaras i formuläret för Wells' kriterier\
     ges de samma svar i PERC-formuläret nedan")
