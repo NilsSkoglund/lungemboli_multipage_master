@@ -4,9 +4,10 @@ from functions import f
 st.session_state.update(st.session_state)
 
 hide_streamlit_style = """
-<style>
-    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 2rem;}
-</style>
+.site-content {
+    margin-top: 0;
+    padding-top: 0;
+}
 
 """
 
