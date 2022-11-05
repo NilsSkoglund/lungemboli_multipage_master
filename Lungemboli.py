@@ -21,7 +21,7 @@ dct_lungemboli = {
     "Hemoptys": 1,
     "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1.5,
     "LE mer sannolik än annan diagnos": 3,
-    "Malignitet behandlad inom 6 mån eller palliation": 1
+    "Malignitet behandlad inom 6 mån alt. palliation": 1
     }
 name_lungemboli = "lungemboli"
 
