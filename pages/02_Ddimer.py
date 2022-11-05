@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 import pyautogui as pg
 
 import warnings
-warnings.filterwarnings(‘ignore’)
+warnings.filterwarnings("ignore")
 
 st.session_state.update(st.session_state)
 
