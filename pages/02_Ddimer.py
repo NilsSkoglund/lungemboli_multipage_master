@@ -40,6 +40,9 @@ st.number_input("Ange resultat D-dimer",
     key="Ddimer_result"
     )
 
+if st.session_state["Ddimer_result"]:
+    st.write("..")
+
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
     if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
