@@ -4,11 +4,9 @@ from functions import f
 st.session_state.update(st.session_state)
 
 hide_streamlit_style = """
-.site-content {
-    margin-top: 0;
-    padding-top: 0;
-}
-
+<style>
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 2rem;}
+</style>
 """
 
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
@@ -37,7 +35,7 @@ if "total_score_pe" not in st.session_state:
 ####################### Initialize Variables THE END ##########################
 ############################## Program and UI #################################
 
-st.header("Formulär: Wells'")
+
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
@@ -49,6 +47,7 @@ div[data-baseweb="tooltip"] {
 </style>
 """
 st.markdown(tooltip_style,unsafe_allow_html=True)
+st.header("Formulär: Wells'")
 for i, j in enumerate(dct_lungemboli.items()):
     if i < 5:
         st.checkbox(
