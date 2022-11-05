@@ -5,7 +5,7 @@ st.session_state.update(st.session_state)
 
 hide_streamlit_style = """
 <style>
-    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0.2rem;}
+    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0.1rem;}
 </style>
 """
 
