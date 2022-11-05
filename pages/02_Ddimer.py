@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
+import pyautogui as pg
 
 st.session_state.update(st.session_state)
 
@@ -42,6 +43,8 @@ st.number_input("Ange resultat D-dimer",
 
 if st.session_state["Ddimer_result"]:
     st.write("..")
+    pg.moveRel(0, 10)
+    pg.click()
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
