@@ -10,9 +10,8 @@ hide_streamlit_style = """
 </style>
 
 """
-if st.checkbox('Remove padding'):
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-#st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 ########################### Initialize Variables ##############################
 
