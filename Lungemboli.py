@@ -72,7 +72,7 @@ for i, j in enumerate(dct_lungemboli.items()):
 
 # calculate score and display vizualization, text & "change-page-button"
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
-f.lungemboli_display_viz(st.session_state["total_score_pe"])
+f.lungemboli_display_viz_v2(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 

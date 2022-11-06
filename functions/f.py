@@ -54,7 +54,7 @@ def initialize_widget_keys(dct, name):
 def sync_lungemboli_to_perc(idx):
     st.session_state[f"perc_{idx}"] = st.session_state[f"lungemboli_{idx}"]
 
-def lungemboli_display_viz(total_score):
+def lungemboli_display_viz_v1(total_score):
 	'''
     Takes a float as input and ...
 	displays result image for PE. One of 24 different images based on score
@@ -63,19 +63,34 @@ def lungemboli_display_viz(total_score):
 	image = Image.open(f"img/t{text_total_score}.png")
 	return st.image(image)
 
+def lungemboli_display_viz_v2(total_score):
+    '''
+    Takes a float as input and ...
+    displays result image for PE. One of 24 different images based on score
+    '''
+    text_total_score = str(int(total_score*10))
+    image_path = f"img/t{text_total_score}.png"
+    with open(image_path, 'rb') as f:
+        image = f.read()
+
+        image_bytes = base64.b64encode(image).decode()
+        local_file = f'<p style="text-align:center;"><img src="data:image/png;base64,{image_bytes}" alt="Image" width = 300> </p>'
+
+    return st.markdown(local_file, unsafe_allow_html = True)
+
 def lungemboli_display_txt(total_score):
     if total_score < 2:
-        st.success("Patienten har en låg risk för lungemboli. För att kunna utesluta\
-             lungemboli rekommenderas genomgång av PERC\
+        st.success("Patienten har en låg risk för lungemboli. För att kunna\
+             utesluta lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
         knapp_låg = st.button("Gå till PERC")
         if knapp_låg:
             switch_page("PERC")
     elif total_score < 6.5:
-        st.warning("Patienten har en måttlig risk för lungemboli. För att undvika\
-             onödig strålning rekommenderas att man tar D-dimer för att avgöra\
-                 om man kan avfärda lungemboli utan ytterligare\
-                     bildundersökning.")
+        st.warning("Patienten har en måttlig risk för lungemboli. För att\
+             undvika onödig strålning rekommenderas att man tar D-dimer för\
+             att avgöra om man kan avfärda lungemboli utan ytterligare\
+             bildundersökning.")
         knapp_måttlig = st.button("Gå till D-dimer")
         if knapp_måttlig:
             switch_page("Ddimer")
