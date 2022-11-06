@@ -66,7 +66,7 @@ if st.session_state["Ddimer_age"]:
 #                         , key="Ddimer_result_slider"
 #                         , on_change=ddimer_update_numin)
 
-st.number_input("Ange ålder"
+st.number_input("Ange resultat från D-dimer"
     , value=0.5
     , step=0.1
     , key="Ddimer_result"
