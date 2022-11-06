@@ -29,8 +29,7 @@ slider_value = st.slider('Ange ålder'
                         , value=50
                         , step=1
                         , key="Ddimer_age_slider"
-                        , on_change=update_numin
-                        , label_visibility="hidden")
+                        , on_change=update_numin)
 
 st.number_input("Ange ålder"
     , value=50
