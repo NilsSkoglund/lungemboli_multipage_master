@@ -1,5 +1,6 @@
 import streamlit as st
 from functions import f
+from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 
@@ -30,6 +31,16 @@ for i, j in enumerate(dct_radiology_report.items()):
     )
 
 st.info("visa bilder här baserat på svar")
+
+if st.session_state["dtla_0"]:
+    st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
+
+for i in range(1,5):
+    if st.session_state[f"dtla_{i}"]:
+        st.info("Patienten har en verifierad lungemboli")
+        knapp_pesi = st.button("Riskstratifiera enligt PESI")
+        if knapp_pesi:
+            switch_page("PESI")
 
 #om lungemboli:
 #    "Patienten har en verifierad lungemboli."
