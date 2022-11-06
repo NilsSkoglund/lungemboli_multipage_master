@@ -13,7 +13,10 @@ import base64
         # hide_padding
         # hide_hamburger
         # hide_footer
-        
+
+def klar():
+    return st.markdown('<a href="/Lungemboli" style="color: #39db95; font-family: serif; font-size: 20px;" target="_self">KLAR</a>', unsafe_allow_html=True)
+
 def hide_anchor_link():
     st.markdown("""
         <style>
