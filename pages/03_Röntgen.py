@@ -35,14 +35,11 @@ st.warning("visa bilder här baserat på svar")
 if st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
     st.markdown(
-        '''
-            <style>
-            a
-            {
-            color: red;
-            }
-            </style>
-        '''
+        """
+        <style>
+        a {color: red;}
+        </style>
+        """
         , unsafe_allow_html=True)
 
     st.markdown('<a href="/Lungemboli" target="_self">KLAR</a>', unsafe_allow_html=True)
