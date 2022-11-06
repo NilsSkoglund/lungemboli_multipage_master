@@ -18,9 +18,9 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
-def update_slider():
+def age_update_slider():
     st.session_state.Ddimer_age_slider = st.session_state.Ddimer_age
-def update_numin():
+def age_update_numin():
     st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
 
 slider_value = st.slider('Ange ålder'
@@ -29,13 +29,13 @@ slider_value = st.slider('Ange ålder'
                         , value=50
                         , step=1
                         , key="Ddimer_age_slider"
-                        , on_change=update_numin)
+                        , on_change=age_update_numin)
 
 st.number_input("Ange ålder"
     , value=50
     , step=1
     , key="Ddimer_age"
-    , on_change=update_slider
+    , on_change=age_update_slider
     , label_visibility="hidden"
     )
 
@@ -48,9 +48,29 @@ if st.session_state["Ddimer_age"]:
          round(st.session_state["beslutsgräns"],2)
     st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
 
-st.number_input("Ange resultat D-dimer",
-    key="Ddimer_result"
+
+
+def ddimer_update_slider():
+    st.session_state.Ddimer_result_slider = st.session_state.Ddimer_result
+def ddimer_update_numin():
+    st.session_state.Ddimer_result = st.session_state.Ddimer_result_slider  
+
+slider_value = st.slider('Ange resultat D-dimer'
+                        , min_value=0
+                        , max_value=10
+                        , value=0.5
+                        , step=0.1
+                        , key="Ddimer_result_slider"
+                        , on_change=ddimer_update_numin)
+
+st.number_input("Ange ålder"
+    , value=0.5
+    , step=0.1
+    , key="Ddimer_result"
+    , on_change=ddimer_update_slider
+    , label_visibility="hidden"
     )
+
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
