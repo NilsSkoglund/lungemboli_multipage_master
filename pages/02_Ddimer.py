@@ -23,7 +23,7 @@ def update_slider():
 def update_numin():
     st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
 
-slider_value = st.slider('slider'
+slider_value = st.slider('Ange ålder'
                         , min_value=0
                         , max_value=100
                         , value=50
@@ -37,6 +37,7 @@ st.number_input("Ange ålder"
     , step=1
     , key="Ddimer_age"
     , on_change=update_slider
+    , label_visibility="hidden"
     )
 
 
