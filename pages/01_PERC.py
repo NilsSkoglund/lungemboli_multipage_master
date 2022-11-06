@@ -27,7 +27,7 @@ dct_perc = {
     "Tidigare LE/DVT diagnos": 1,
     "Hjärtfrekvens >100/min": 1,
     "Hemoptys": 1,
-    "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1,
     "Ålder ≥50": 1,
     "Saturation >94% utan syrgas": 1,
     "Östrogenbehandling": 1
