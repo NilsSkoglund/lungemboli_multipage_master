@@ -18,9 +18,10 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
-st.number_input("Ange ålder",
-    step=1,
-    key="Ddimer_age"
+st.number_input("Ange ålder"
+    , value=50
+    , step=1
+    , key="Ddimer_age"
     )
 
 if st.session_state["Ddimer_age"]:
