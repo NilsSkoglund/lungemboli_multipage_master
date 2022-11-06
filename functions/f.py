@@ -15,7 +15,9 @@ import base64
         # hide_footer
 
 def klar():
-    return st.markdown('<a href="/Lungemboli" style="color: #39db95; font-family: serif; font-size: 20px;" target="_self">KLAR</a>', unsafe_allow_html=True)
+    return st.markdown('<a href="/Lungemboli" style="color: #39db95;\
+    font-family: serif; font-size: 20px;"\
+    target="_self">Klar - Tillbaka till start</a>', unsafe_allow_html=True)
 
 def hide_anchor_link():
     st.markdown("""
