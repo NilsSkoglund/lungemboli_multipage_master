@@ -35,6 +35,8 @@ st.info("visa bilder här baserat på svar")
 if st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
 
+verifierad_lungemboli = False
+
 for i in range(1,5):
     if st.session_state[f"dtla_{i}"]:
         verifierad_lungemboli = True
