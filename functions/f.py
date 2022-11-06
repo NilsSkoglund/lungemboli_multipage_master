@@ -16,7 +16,7 @@ import base64
 
 def klar():
     return st.markdown('<a href="/Lungemboli" style="color: #39db95;\
-    font-family: serif; font-size: 20px; text-align: center;"\
+    font-family: serif; font-size: 20px; align: center;"\
     target="_self">Starta ny session</a>', unsafe_allow_html=True)
 
 def hide_anchor_link():
