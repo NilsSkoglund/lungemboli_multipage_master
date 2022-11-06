@@ -18,11 +18,28 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
+def update_slider():
+    st.session_state.Ddimer_age_slider = st.session_state.Ddimer_age
+def update_numin():
+    st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
+
+slider_value = st.slider('slider'
+                        , min_value=0
+                        , max_value=100
+                        , value=50
+                        , step=1
+                        , key="Ddimer_age_slider"
+                        , on_change=update_numin
+                        , label_visibility="hidden")
+
 st.number_input("Ange ålder"
     , value=50
     , step=1
     , key="Ddimer_age"
+    , on_change=update_slider
     )
+
+
 
 if st.session_state["Ddimer_age"]:
     st.session_state["beslutsgräns"] =\
