@@ -106,7 +106,7 @@ def lungemboli_display_viz_v1(total_score):
 	displays result image for PE. One of 24 different images based on score
 	'''
 	text_total_score = str(int(total_score*10))
-	image = Image.open(f"img/t{text_total_score}.png")
+	image = Image.open(f"img/wells/t{text_total_score}.png")
 	return st.image(image)
 
 def lungemboli_display_viz_v2(total_score):

@@ -7,6 +7,7 @@ f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding()
+
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
