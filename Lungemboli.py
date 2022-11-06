@@ -76,6 +76,14 @@ for i, j in enumerate(dct_lungemboli.items()):
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
 
 #with st.empty():
+hide_img_fs = '''
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+'''
+st.markdown(hide_img_fs, unsafe_allow_html=True)
+
 f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
