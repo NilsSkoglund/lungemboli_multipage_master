@@ -30,7 +30,7 @@ for i, j in enumerate(dct_radiology_report.items()):
         , key=f"{name_rad}_{i}"
     )
 
-st.info("visa bilder här baserat på svar")
+st.warning("visa bilder här baserat på svar")
 
 if st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
