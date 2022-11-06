@@ -26,7 +26,7 @@ dct_lungemboli = {
     "Tidigare LE/DVT diagnos": 1.5,
     "Hjärtfrekvens >100/min": 1.5,
     "Hemoptys": 1,
-    "Immobiliserad i >3 dagar / Opererad senaste 4 veckor": 1.5,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
     "LE mer sannolik än annan diagnos": 3,
     "Malignitet behandlad inom 6 mån alt. palliation": 1
     }
