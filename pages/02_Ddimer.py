@@ -18,26 +18,29 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
-def age_update_slider():
-    st.session_state.Ddimer_age_slider = st.session_state.Ddimer_age
-def age_update_numin():
-    st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
+# def age_update_slider():
+#     st.session_state.Ddimer_age_slider = st.session_state.Ddimer_age
+# def age_update_numin():
+#     st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
+
+# st.number_input("Ange ålder"
+#     , value=50
+#     , step=1
+#     , key="Ddimer_age"
+#     , on_change=age_update_slider
+#     , label_visibility="hidden"
+#     )
 
 slider_value = st.slider('Ange ålder'
                         , min_value=0
                         , max_value=100
                         , value=50
                         , step=1
-                        , key="Ddimer_age_slider"
-                        , on_change=age_update_numin)
+                        , key="Ddimer_age"
+                        #, on_change=age_update_numin
+                        )
 
-st.number_input("Ange ålder"
-    , value=50
-    , step=1
-    , key="Ddimer_age"
-    , on_change=age_update_slider
-    , label_visibility="hidden"
-    )
+
 
 
 
@@ -50,26 +53,27 @@ if st.session_state["Ddimer_age"]:
 
 
 
-def ddimer_update_slider():
-    st.session_state.Ddimer_result_slider = st.session_state.Ddimer_result
-def ddimer_update_numin():
-    st.session_state.Ddimer_result = st.session_state.Ddimer_result_slider  
+# def ddimer_update_slider():
+#     st.session_state.Ddimer_result_slider = st.session_state.Ddimer_result
+# def ddimer_update_numin():
+#     st.session_state.Ddimer_result = st.session_state.Ddimer_result_slider  
 
-slider_value = st.slider('Ange resultat D-dimer'
-                        , min_value=0.0
-                        , max_value=10.0
-                        , value=0.5
-                        , step=0.1
-                        , key="Ddimer_result_slider"
-                        , on_change=ddimer_update_numin)
+# slider_value = st.slider('Ange resultat D-dimer'
+#                         , min_value=0.0
+#                         , max_value=10.0
+#                         , value=0.5
+#                         , step=0.1
+#                         , key="Ddimer_result_slider"
+#                         , on_change=ddimer_update_numin)
 
 st.number_input("Ange ålder"
     , value=0.5
     , step=0.1
     , key="Ddimer_result"
-    , on_change=ddimer_update_slider
-    , label_visibility="hidden"
+    #, on_change=ddimer_update_slider
     )
+
+
 
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
