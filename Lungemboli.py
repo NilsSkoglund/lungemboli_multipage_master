@@ -18,7 +18,7 @@ hide_menu_style = """
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
-f.hide_anchor_link()
+f.hide_anchor_link_v2()
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################

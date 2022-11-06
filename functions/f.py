@@ -38,6 +38,14 @@ def hide_anchor_link():
         """,
          unsafe_allow_html=True,
 )
+def hide_anchor_link_v2():
+    st.markdown("""
+        <style>
+        .css-15zrgzn {display: none}
+        .css-eczf16 {display: none}
+        .css-jn99sy {display: none}
+        </style>
+        """, unsafe_allow_html=True)
 
 def calc_score(dct, name):
 	'''
