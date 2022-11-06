@@ -60,14 +60,15 @@ for i, j in enumerate(dct_lungemboli.items()):
         st.checkbox(
             j[0],\
             key=f"{name_lungemboli}_{i}",\
-            help=f"Poäng: {j[1]}",\
+            #help=f"Poäng: {j[1]}",\
             on_change=f.sync_lungemboli_to_perc, 
             args=(i,))
     else:
         st.checkbox(
             j[0],\
             key=f"{name_lungemboli}_{i}",\
-            help=f"Poäng: {j[1]}")
+            #help=f"Poäng: {j[1]}"
+            )
 
 # calculate score and display vizualization, text & "change-page-button"
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
