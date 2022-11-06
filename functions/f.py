@@ -13,39 +13,38 @@ import base64
         # calc_score
         # intialize_widget_keys
 def hide_anchor_link():
-    st.markdown(
-        body="""
-        <style>
-            h1 > div > a {
-                display: none;
-            }
-            h2 > div > a {
-                display: none;
-            }
-            h3 > div > a {
-                display: none;
-            }
-            h4 > div > a {
-                display: none;
-            }
-            h5 > div > a {
-                display: none;
-            }
-            h6 > div > a {
-                display: none;
-            }
-        </style>
-        """,
-         unsafe_allow_html=True,
-)
-def hide_anchor_link_v2():
     st.markdown("""
         <style>
         .css-15zrgzn {display: none}
         .css-eczf16 {display: none}
         .css-jn99sy {display: none}
         </style>
-        """, unsafe_allow_html=True)
+        """
+        , unsafe_allow_html=True)
+
+def hide_padding():
+    st.markdown("""
+    <style>
+        #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
+    </style>
+        """
+        , unsafe_allow_html=True)
+
+def hide_hamburger():
+    st.markdown("""
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+        , unsafe_allow_html=True)
+
+def hide_footer():
+    st.markdown("""
+        <style>
+        footer {visibility: hidden;}
+        </style>
+        """
+        , unsafe_allow_html=True)
 
 def calc_score(dct, name):
 	'''
