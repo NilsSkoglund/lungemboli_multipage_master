@@ -56,8 +56,8 @@ def ddimer_update_numin():
     st.session_state.Ddimer_result = st.session_state.Ddimer_result_slider  
 
 slider_value = st.slider('Ange resultat D-dimer'
-                        , min_value=0
-                        , max_value=10
+                        , min_value=0.0
+                        , max_value=10.0
                         , value=0.5
                         , step=0.1
                         , key="Ddimer_result_slider"
