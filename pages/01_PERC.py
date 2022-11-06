@@ -50,4 +50,5 @@ if f.calc_score(dct_perc, name_perc) > 0:
         switch_page("Ddimer")
 else:
     st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos.")
+    f.klar()
     # KLAR knapp
