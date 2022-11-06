@@ -124,7 +124,7 @@ def lungemboli_display_txt(total_score):
         st.success("Patienten har en låg risk för lungemboli. För att kunna\
              utesluta lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
-        knapp_låg = st.button("Gå till PERC")
+        knapp_låg = st.button("Gå vidare till PERC")
         if knapp_låg:
             switch_page("PERC")
     elif total_score < 6.5:
@@ -132,7 +132,7 @@ def lungemboli_display_txt(total_score):
              undvika onödig strålning rekommenderas att man tar D-dimer för\
              att avgöra om man kan avfärda lungemboli utan ytterligare\
              bildundersökning.")
-        knapp_måttlig = st.button("Gå till D-dimer")
+        knapp_måttlig = st.button("Gå vidare till D-dimer")
         if knapp_måttlig:
             switch_page("Ddimer")
     else:

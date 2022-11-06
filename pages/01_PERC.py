@@ -44,9 +44,10 @@ for i, j in enumerate(dct_perc.items()):
             key=f"{name_perc}_{i}")
 
 if f.calc_score(dct_perc, name_perc) > 0:
-    st.error("Inget av kriterierna får vara uppfyllt")
-    knapp_perc_bruten = st.button("Gå till Ddimer")
+    st.error("PERC-positiv. Lungemboli kan ej uteslutas")
+    knapp_perc_bruten = st.button("Gå vidare till D-dimer")
     if knapp_perc_bruten:
         switch_page("Ddimer")
 else:
-    st.success("PERC-regeln ej bruten, Lungemboli kan uteslutas")
+    st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos")
+    # KLAR knapp

@@ -30,3 +30,10 @@ for i, j in enumerate(dct_radiology_report.items()):
     )
 
 st.info("visa bilder här baserat på svar")
+
+#om lungemboli:
+#    "Patienten har en verifierad lungemboli."
+#    knapp = "Riskstratifiera enligt PESI"
+
+#om ej:
+# gå hem, avlusta session
