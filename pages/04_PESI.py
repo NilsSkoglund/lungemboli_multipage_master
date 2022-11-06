@@ -53,5 +53,5 @@ st.metric("Totalpoäng PESI", value=pesi_score)
 #text_total_score = str(int(total_score*10))
 #image = 
 img_string = str(pesi_score)
-image = Image.open(f"img_pesi/pesi_{img_string}.png")
+image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
 st.image(image)
