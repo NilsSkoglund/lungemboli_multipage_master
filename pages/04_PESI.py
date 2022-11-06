@@ -3,20 +3,10 @@ from functions import f
 
 st.session_state.update(st.session_state)
 
-hide_streamlit_style = """
-<style>
-    #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}
-</style>
-"""
-
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+f.hide_anchor_link()
+f.hide_footer()
+f.hide_hamburger()
+f.hide_padding()
 
 ########################### Initialize Variables ##############################
 

@@ -7,11 +7,13 @@ from PIL import Image
 import base64
 
 ################################ Functions ####################################
-############################# General functions ###############################
+############################# markdown functions ##############################
     # used for multiple different pages
         # hide_anchor_link
-        # calc_score
-        # intialize_widget_keys
+        # hide_padding
+        # hide_hamburger
+        # hide_footer
+        
 def hide_anchor_link():
     st.markdown("""
         <style>
@@ -46,6 +48,10 @@ def hide_footer():
         """
         , unsafe_allow_html=True)
 
+############################# General functions ###############################
+    # used for multiple different pages
+        # calc_score
+        # intialize_widget_keys
 def calc_score(dct, name):
 	'''
     Takes a dictionary (dct) and a string (name) as inputs and ...
