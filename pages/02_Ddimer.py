@@ -23,25 +23,22 @@ st.header("D-dimer")
 # def age_update_numin():
 #     st.session_state.Ddimer_age = st.session_state.Ddimer_age_slider  
 
-# st.number_input("Ange ålder"
-#     , value=50
-#     , step=1
-#     , key="Ddimer_age"
-#     , on_change=age_update_slider
-#     , label_visibility="hidden"
-#     )
-
-slider_value = st.slider('Ange ålder'
-                        , min_value=0
-                        , max_value=100
-                        , value=50
-                        , step=1
-                        , key="Ddimer_age"
-                        #, on_change=age_update_numin
-                        )
+# slider_value = st.slider('Ange ålder'
+#                         , min_value=0
+#                         , max_value=100
+#                         , value=50
+#                         , step=1
+#                         , key="Ddimer_age"
+#                         #, on_change=age_update_numin
+#                         )
 
 
-
+st.number_input("Ange ålder"
+    , value=50
+    , step=1
+    , key="Ddimer_age"
+    #, on_change=age_update_slider
+    )
 
 
 if st.session_state["Ddimer_age"]:
@@ -67,7 +64,7 @@ if st.session_state["Ddimer_age"]:
 #                         , on_change=ddimer_update_numin)
 
 st.number_input("Ange resultat från D-dimer"
-    , value=0.5
+    , value=0.0
     , step=0.1
     , key="Ddimer_result"
     #, on_change=ddimer_update_slider
