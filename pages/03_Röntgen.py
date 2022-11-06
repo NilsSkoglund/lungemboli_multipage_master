@@ -38,7 +38,8 @@ if st.session_state["dtla_0"]:
 for i in range(1,5):
     if st.session_state[f"dtla_{i}"]:
         st.info("Patienten har en verifierad lungemboli")
-        knapp_pesi = st.button("Riskstratifiera enligt PESI")
+        knapp_pesi = st.button("Riskstratifiera enligt PESI",\
+            key=f"knapp_pesi{i}")
         if knapp_pesi:
             switch_page("PESI")
             break
