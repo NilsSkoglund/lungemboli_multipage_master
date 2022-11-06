@@ -1,5 +1,6 @@
 import streamlit as st
 from functions import f
+from PIL import Image
 
 st.session_state.update(st.session_state)
 
