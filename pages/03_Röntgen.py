@@ -42,7 +42,7 @@ if st.session_state["dtla_0"]:
         """
         , unsafe_allow_html=True)
 
-    st.markdown('<a href="/Lungemboli" style="color: pink;" target="_self">KLAR</a>', unsafe_allow_html=True)
+    st.markdown('<a href="/Lungemboli" style="color: red; font-family:sans serif;" target="_self">KLAR</a>', unsafe_allow_html=True)
 
 verifierad_lungemboli = False
 
