@@ -4,6 +4,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
+import base64
 
 ################################ Functions ####################################
 ############################# General functions ###############################
