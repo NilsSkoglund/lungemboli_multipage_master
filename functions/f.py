@@ -75,7 +75,7 @@ def lungemboli_display_viz_v2(total_score):
         image = f.read()
 
         image_bytes = base64.b64encode(image).decode()
-        local_file = f'<p style="text-align:center;"><img src="data:image/jpeg;base64,{image_bytes}" alt="Image" width = 300> </p>'
+        local_file = f'<p style="text-align:center;"><img src="data:image/jpeg;base64,{image_bytes}" alt="Image" width = 600> </p>'
 
     return st.markdown(local_file, unsafe_allow_html = True)
 
