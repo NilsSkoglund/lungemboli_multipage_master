@@ -34,6 +34,7 @@ st.warning("visa bilder här baserat på svar")
 
 if st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
+    st.write("[KLAR](https://nilsskoglund-lungemboli-multipage-master-lungemboli-gtesbp.streamlit.app/)")
 
 verifierad_lungemboli = False
 
