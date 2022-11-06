@@ -41,6 +41,7 @@ for i in range(1,5):
         knapp_pesi = st.button("Riskstratifiera enligt PESI")
         if knapp_pesi:
             switch_page("PESI")
+            break
 
 #om lungemboli:
 #    "Patienten har en verifierad lungemboli."
