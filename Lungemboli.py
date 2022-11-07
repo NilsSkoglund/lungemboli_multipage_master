@@ -79,7 +79,7 @@ button_style = """
         .stButton > button {
             color: #ffffff;
             background: #eb4034;
-            border: 2px solid #ffffff;
+            border: 1px solid #ffffff;
         }
         </style>
         """
