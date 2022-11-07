@@ -38,12 +38,6 @@ for i in range(1,5):
     if st.session_state[f"dtla_{i}"]:
         verifierad_lungemboli = True
 
-if verifierad_lungemboli:
-    st.info("Patienten har en verifierad lungemboli")
-    knapp_pesi = st.button("Riskstratifiera enligt PESI")
-    if knapp_pesi:
-        switch_page("PESI")
-
 if st.session_state["dtla_0"] and verifierad_lungemboli:
     verifierad_lungemboli = False
     st.error("Går inte ihop")
@@ -56,8 +50,13 @@ elif st.session_state["dtla_0"]:
         </style>
         """
         , unsafe_allow_html=True)
-
     f.klar()
+elif verifierad_lungemboli:
+    st.info("Patienten har en verifierad lungemboli")
+    knapp_pesi = st.button("Riskstratifiera enligt PESI")
+    if knapp_pesi:
+        switch_page("PESI")
+
 
 
 
