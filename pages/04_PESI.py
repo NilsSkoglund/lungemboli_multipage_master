@@ -11,8 +11,6 @@ f.hide_padding()
 
 ########################### Initialize Variables ##############################
 
-st.header("PESI")
-
 dct_pesi = {
 	"Manligt kön":30,
 	"Malignitet":30,
@@ -30,6 +28,15 @@ name_pesi = "pesi"
 
 ############################## Program and UI #################################
 
+st.header("PESI")
+
+st.number_input("Ange ålder"
+    , value=st.session_state["Ddimer_age"]
+    , step=1
+    , key="pesi_age"
+    #, on_change=age_update_slider
+    )
+
 tooltip_style = """
 <style>
 div[data-baseweb="tooltip"] {
@@ -44,7 +51,7 @@ for i, j in enumerate(dct_pesi.items()):
         , key=f"{name_pesi}_{i}"\
         , help=f"Poäng: {j[1]}"
         )
-pesi_score = f.calc_score(dct_pesi, name_pesi)
+pesi_score = f.calc_score(dct_pesi, name_pesi) + st.session_state["pesi_age"]
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
