@@ -77,8 +77,8 @@ st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
 button_style = """
         <style>
         .stButton > button {
-            color: red;
-            background: gray;
+            color: #ffffff;
+            background: #eb4034;
         }
         </style>
         """
