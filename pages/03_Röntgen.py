@@ -32,10 +32,6 @@ for i, j in enumerate(dct_radiology_report.items()):
 
 st.warning("visa bilder här baserat på svar")
 
-if st.session_state["dtla_0"]:
-    st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
-    f.klar()
-
 verifierad_lungemboli = False
 
 for i in range(1,5):
@@ -47,6 +43,23 @@ if verifierad_lungemboli:
     knapp_pesi = st.button("Riskstratifiera enligt PESI")
     if knapp_pesi:
         switch_page("PESI")
+
+if st.session_state["dtla_0"] and verifierad_lungemboli:
+    verifierad_lungemboli = False
+    st.error("Går inte ihop")
+elif st.session_state["dtla_0"]:
+    st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
+    st.markdown(
+        """
+        <style>
+        a {color: red;}
+        </style>
+        """
+        , unsafe_allow_html=True)
+
+    f.klar()
+
+
 
 
 #om lungemboli:
