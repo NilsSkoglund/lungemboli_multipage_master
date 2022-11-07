@@ -117,6 +117,7 @@ def lungemboli_display_viz_v1(total_score):
 	'''
 	text_total_score = str(int(total_score*10))
     if text_total_score = "0":
+        st.write("hej")
         image = Image.open(f"img/t{text_total_score}.png")
         return st.image(image)
     else:
