@@ -94,6 +94,20 @@ button_style = """
 #st.markdown(button_style, unsafe_allow_html=True)
 
 f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
+
+from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie_spinner
+import requests
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_url = "https://assets6.lottiefiles.com/packages/lf20_mplw7nfo.json"
+lottie_json = load_lottieurl(lottie_url)
+
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 
