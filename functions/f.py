@@ -6,6 +6,16 @@ from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import base64
 
+from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie_spinner
+import requests
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 ################################ Functions ####################################
 ############################# markdown functions ##############################
     # used for multiple different pages
@@ -129,7 +139,13 @@ def lungemboli_display_txt(total_score):
         st.success("Patienten har en låg risk för lungemboli. För att kunna\
              utesluta lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
-        knapp_låg = st.button("Gå vidare till PERC")
+        col1, col2 = st.columns(2)
+        with col1:
+            lottie_url = "https://assets6.lottiefiles.com/packages/lf20_mplw7nfo.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json)
+        with col2:
+            knapp_låg = st.button("Gå vidare till PERC")
         if knapp_låg:
             switch_page("PERC")
     elif total_score < 6.5:
