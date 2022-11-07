@@ -74,11 +74,19 @@ button[title="View fullscreen"]{
 '''
 st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
 
-button_style = """
+button_style_red = """
         <style>
         .stButton > button {
             color: #ffffff;
             background: #eb4034;
+            border: 1px solid #ffffff;
+        }
+        </style>
+        """
+
+button_style = """
+        <style>
+        .stButton > button {
             border: 1px solid #ffffff;
         }
         </style>
