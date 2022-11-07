@@ -40,16 +40,9 @@ for i in range(1,5):
 
 if st.session_state["dtla_0"] and verifierad_lungemboli:
     verifierad_lungemboli = False
-    st.error("Går inte ihop")
+    st.error("Konflikterande information.")
 elif st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
-    st.markdown(
-        """
-        <style>
-        a {color: red;}
-        </style>
-        """
-        , unsafe_allow_html=True)
     f.klar()
 elif verifierad_lungemboli:
     st.info("Patienten har en verifierad lungemboli")
