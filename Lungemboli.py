@@ -107,6 +107,7 @@ def load_lottieurl(url: str):
 
 lottie_url = "https://assets6.lottiefiles.com/packages/lf20_mplw7nfo.json"
 lottie_json = load_lottieurl(lottie_url)
+st_lottie(lottie_json)
 
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
