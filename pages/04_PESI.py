@@ -30,12 +30,12 @@ name_pesi = "pesi"
 
 st.header("PESI")
 
-st.number_input("Ange ålder"
-    , value=st.session_state["Ddimer_age"]
-    , step=1
-    , key="pesi_age"
-    #, on_change=age_update_slider
-    )
+# st.number_input("Ange ålder"
+#     , value=st.session_state["Ddimer_age"]
+#     , step=1
+#     , key="pesi_age"
+#     #, on_change=age_update_slider
+#     )
 
 tooltip_style = """
 <style>
