@@ -32,9 +32,11 @@ st.header("D-dimer")
 #                         #, on_change=age_update_numin
 #                         )
 
-
+if "Ddimer_age" not in st.session_state:
+    st.session_state["Ddimer_age"] = 50
+    
 st.number_input("Ange ålder"
-    , value=50
+    , value=st.session_state["Ddimer_age"]
     , step=1
     , key="Ddimer_age"
     #, on_change=age_update_slider
