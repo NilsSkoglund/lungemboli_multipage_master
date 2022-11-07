@@ -141,7 +141,7 @@ def lungemboli_display_txt(total_score):
                  (Pulmonary Embolism Rule-out Criteria).")
         col1, col2 = st.columns(2)
         with col1:
-            lottie_url = "https://assets6.lottiefiles.com/packages/lf20_mplw7nfo.json"
+            lottie_url = "https://assets10.lottiefiles.com/packages/lf20_Sz5T65.json"
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json)
         with col2:
