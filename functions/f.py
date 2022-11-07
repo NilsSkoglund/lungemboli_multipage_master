@@ -139,10 +139,10 @@ def lungemboli_display_txt(total_score):
         st.success("Patienten har en låg risk för lungemboli. För att kunna\
              utesluta lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
+        knapp_låg = st.button("Gå vidare till PERC")
         lottie_url = "https://assets1.lottiefiles.com/packages/lf20_83ssyqhj.json"
         lottie_json = load_lottieurl(lottie_url)
-        st_lottie(lottie_json, height=50, width=20)
-        knapp_låg = st.button("Gå vidare till PERC")
+        st_lottie(lottie_json, height=50, width=100)
         if knapp_låg:
             switch_page("PERC")
     elif total_score < 6.5:
