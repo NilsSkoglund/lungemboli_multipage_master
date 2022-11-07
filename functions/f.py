@@ -141,7 +141,7 @@ def lungemboli_display_txt(total_score):
                  (Pulmonary Embolism Rule-out Criteria).")
         with st.container():
             knapp_låg = st.button("Gå vidare till PERC")
-            lottie_url = "https://assets5.lottiefiles.com/packages/lf20_awdrx4ku.json"
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json, height=50, width=150)
         if knapp_låg:
