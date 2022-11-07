@@ -143,7 +143,7 @@ def lungemboli_display_txt(total_score):
     else:
         st.error("Patienten har en hög risk för lungemboli. Patienten skall\
              omgående startas på antikoagulantia-behandling och göra en akut\
-                 DTLA. D-dimer är ej förlitligt för att utesluta lungemboli.")
+                 DTLA. D-dimer är ej tillförlitligt för att utesluta lungemboli.")
         knapp_hög = st.button("Gå till Röntgen")
         if knapp_hög:
             switch_page("Röntgen")
