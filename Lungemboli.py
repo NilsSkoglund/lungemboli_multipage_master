@@ -74,6 +74,18 @@ button[title="View fullscreen"]{
 '''
 st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
 
+button_style = """
+        <style>
+        .stButton > button {
+            color: blue;
+            background: gray;
+            width: 100px;
+            height: 50px;
+        }
+        </style>
+        """
+st.markdown(button_style, unsafe_allow_html=True)
+
 f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
