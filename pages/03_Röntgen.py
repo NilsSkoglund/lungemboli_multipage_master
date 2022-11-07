@@ -32,19 +32,20 @@ for i, j in enumerate(dct_radiology_report.items()):
 
 st.warning("visa bilder här baserat på svar")
 
-verifierad_lungemboli = False
+if "verifierad_lungemboli" not in st.session_state:
+    st.session_state["verifierad_lungemboli"] = False
 
 for i in range(1,5):
     if st.session_state[f"dtla_{i}"]:
-        verifierad_lungemboli = True
+        st.session_state["verifierad_lungemboli"] = True
 
-if st.session_state["dtla_0"] and verifierad_lungemboli:
-    verifierad_lungemboli = False
+if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
+    st.session_state["verifierad_lungemboli"] = False
     st.error("Konflikterande information.")
 elif st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
-elif verifierad_lungemboli:
+elif st.session_state["verifierad_lungemboli"]:
     st.info("Patienten har en verifierad lungemboli")
     knapp_pesi = st.button("Riskstratifiera enligt PESI")
     if knapp_pesi:
