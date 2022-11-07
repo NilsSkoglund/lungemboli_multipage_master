@@ -44,14 +44,10 @@ for i, j in enumerate(dct_pesi.items()):
         , key=f"{name_pesi}_{i}"\
         , help=f"Poäng: {j[1]}"
         )
-
-st.markdown("---")
 pesi_score = f.calc_score(dct_pesi, name_pesi)
-st.metric("Totalpoäng PESI", value=pesi_score)
 
+#st.metric("Totalpoäng PESI", value=pesi_score)
 
-#text_total_score = str(int(total_score*10))
-#image = 
 img_string = str(pesi_score)
 image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
 st.image(image)
