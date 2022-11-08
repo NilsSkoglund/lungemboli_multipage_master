@@ -12,7 +12,8 @@ f.hide_img_fullscreen()
 
 st.markdown("""
     <style>
-    .css-1n76uvr [data-testid=stVerticalBlock]{row-gap: 0.1rem;}
+    [data-testid=stVerticalBlock]{row-gap: 0.1rem;}
+    [data-testid=stVerticalBlock]{gap: 0.1rem;}
     .css-eca21k [data-testid=stVerticalBlock]{row-gap: 0.1rem;}
     .css-1hrnv83 [data-testid=stVerticalBlock]{row-gap: 0.1rem;}
     </style>
