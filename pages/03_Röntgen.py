@@ -40,16 +40,16 @@ for i in range(1,5):
     if st.session_state[f"dtla_{i}"]:
         st.session_state["verifierad_lungemboli"] = True
 
-    if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
-        st.session_state["verifierad_lungemboli"] = False
-        st.error("Konflikterande information.")
-    elif st.session_state["dtla_0"]:
-        st.session_state["verifierad_lungemboli"] = False
-        st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
-        f.klar()
-    elif st.session_state["verifierad_lungemboli"]:
-        st.info("Patienten har en verifierad lungemboli")
-        knapp_pesi = st.button("Riskstratifiera enligt PESI")
-        if knapp_pesi:
-            switch_page("PESI")
+if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
+    st.session_state["verifierad_lungemboli"] = False
+    st.error("Konflikterande information.")
+elif st.session_state["dtla_0"]:
+    st.session_state["verifierad_lungemboli"] = False
+    st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
+    f.klar()
+elif st.session_state["verifierad_lungemboli"]:
+    st.info("Patienten har en verifierad lungemboli")
+    knapp_pesi = st.button("Riskstratifiera enligt PESI")
+    if knapp_pesi:
+        switch_page("PESI")
 
