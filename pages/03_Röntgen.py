@@ -52,15 +52,8 @@ for i in range(1,5):
         knapp_pesi = st.button("Riskstratifiera enligt PESI")
         if knapp_pesi:
             switch_page("PESI")
-
-if "dtla_count" not in st.session_state:
-    st.session_state["dtla_count"] = 0
-for i in range(1,5):
-    if st.session_state[f"dtla_{i}"]:
-        st.session_state["dtla_count"] += 1
-
-if st.session_state["dtla_count"] == 0:
-    st.session_state["verifierad_lungemboli"] = False
+    else:
+        st.session_state["verifierad_lungemboli"] = False
 
 
 
