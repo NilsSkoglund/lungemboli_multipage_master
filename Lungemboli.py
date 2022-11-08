@@ -61,11 +61,11 @@ st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungembol
 #with st.empty():
 
 
-button_style_red = """
+button_style_blue = """
         <style>
         .stButton > button {
             color: #ffffff;
-            background: #4287f5;
+            background: #1f498c;
             border: 1px solid #ffffff;
         }
         </style>
@@ -78,7 +78,7 @@ button_style = """
         }
         </style>
         """
-st.markdown(button_style_red, unsafe_allow_html=True)
+st.markdown(button_style_blue, unsafe_allow_html=True)
 with st.expander("Riskvisualisering", expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
