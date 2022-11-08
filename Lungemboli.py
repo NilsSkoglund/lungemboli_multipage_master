@@ -13,7 +13,7 @@ f.hide_img_fullscreen()
 
 st.markdown("""
     <style>
-    .css-6ewd8b {
+    .css-6ewd8b [data-testid=stVerticalBlock]{
         gap: 0.1rem;
     }
     </style>
