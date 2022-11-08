@@ -83,6 +83,6 @@ if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
         if kanpp_positiv_ddimer:
             switch_page("Röntgen")
     else:
-        st.success(f"Negativt D-dimer test, Lungemboli kan uteslutas.\
+        st.success(f"Negativt D-dimer test, lungemboli kan uteslutas.\
          Överväg annan diagnos.")
         f.klar()
