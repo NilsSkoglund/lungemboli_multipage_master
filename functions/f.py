@@ -139,25 +139,30 @@ def lungemboli_display_txt(total_score):
         st.success("Patienten har en låg risk för lungemboli. För att kunna\
              utesluta lungemboli rekommenderas genomgång av PERC\
                  (Pulmonary Embolism Rule-out Criteria).")
-        with st.container():
-            knapp_låg = st.button("Gå vidare till PERC")
-            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
-            lottie_json = load_lottieurl(lottie_url)
-            st_lottie(lottie_json, height=20, width=145)
-        if knapp_låg:
-            switch_page("PERC")
     elif total_score < 6.5:
         st.warning("Patienten har en måttlig risk för lungemboli. För att\
              undvika onödig strålning rekommenderas att man tar D-dimer för\
              att avgöra om man kan avfärda lungemboli utan ytterligare\
              bildundersökning.")
-        knapp_måttlig = st.button("Gå vidare till D-dimer")
-        if knapp_måttlig:
-            switch_page("Ddimer")
     else:
         st.error("Patienten har en hög risk för lungemboli. Patienten skall\
              omgående startas på antikoagulantia-behandling och göra en akut\
                  DTLA. D-dimer är ej tillförlitligt för att utesluta lungemboli.")
+
+def lungemboli_display_button(total_score):
+    if total_score < 2:
+        knapp_låg = st.button("Gå vidare till PERC")
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=145)
+        if knapp_låg:
+            switch_page("PERC")
+
+    elif total_score < 6.5:
+        knapp_måttlig = st.button("Gå vidare till D-dimer")
+        if knapp_måttlig:
+            switch_page("Ddimer")
+    else:
         knapp_hög = st.button("Gå till Röntgen")
         if knapp_hög:
             switch_page("Röntgen")

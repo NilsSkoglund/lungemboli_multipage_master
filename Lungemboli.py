@@ -94,6 +94,7 @@ button_style = """
 #st.markdown(button_style, unsafe_allow_html=True)
 
 f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
+f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 st.markdown("""
     <style>
@@ -110,8 +111,4 @@ with col1:
 with col3:
     pass
 with col2:
-    f.lungemboli_display_txt(st.session_state["total_score_pe"])
-
-
-
-
+    f.lungemboli_display_button(st.session_state["total_score_pe"])
