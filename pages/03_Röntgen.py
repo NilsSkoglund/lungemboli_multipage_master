@@ -25,18 +25,6 @@ name_rad = "dtla"
 
 st.header("Röntgen")
 
-for i, j in enumerate(dct_radiology_report.items()):
-    st.checkbox(
-        j[0]\
-        , key=f"{name_rad}_{i}"
-        , on_change=dtla_state
-    )
-
-st.warning("visa bilder här baserat på svar")
-
-if "verifierad_lungemboli" not in st.session_state:
-    st.session_state["verifierad_lungemboli"] = False
-
 def dtla_state():
     for i in range(1,5):
         if st.session_state[f"dtla_{i}"]:
@@ -54,6 +42,20 @@ def dtla_state():
             knapp_pesi = st.button("Riskstratifiera enligt PESI")
             if knapp_pesi:
                 switch_page("PESI")
+
+for i, j in enumerate(dct_radiology_report.items()):
+    st.checkbox(
+        j[0]\
+        , key=f"{name_rad}_{i}"
+        , on_change=dtla_state
+    )
+
+st.warning("visa bilder här baserat på svar")
+
+if "verifierad_lungemboli" not in st.session_state:
+    st.session_state["verifierad_lungemboli"] = False
+
+dtla_state()
 
 
 
