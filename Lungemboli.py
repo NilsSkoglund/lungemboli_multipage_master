@@ -9,6 +9,16 @@ f.hide_hamburger()
 f.hide_padding()
 f.hide_img_fullscreen()
 
+
+
+st.markdown("""
+    <style>
+    .css-6ewd8b {
+        gap: 0.5rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
