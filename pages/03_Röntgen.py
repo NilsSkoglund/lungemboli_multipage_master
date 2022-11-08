@@ -52,6 +52,5 @@ elif st.session_state["verifierad_lungemboli"]:
     knapp_pesi = st.button("Riskstratifiera enligt PESI")
     if knapp_pesi:
         switch_page("PESI")
-
-    
-
+else:
+    st.session_state["verifierad_lungemboli"] = False
