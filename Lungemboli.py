@@ -79,8 +79,8 @@ button_style = """
         </style>
         """
 #st.markdown(button_style, unsafe_allow_html=True)
-
-f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
+with st.expander(expanded=True):
+    f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 st.markdown("""
