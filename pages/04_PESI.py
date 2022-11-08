@@ -8,6 +8,7 @@ f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding()
+f.hide_img_fullscreen()
 
 ########################### Initialize Variables ##############################
 

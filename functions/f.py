@@ -22,6 +22,17 @@ def klar():
     text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\
     target="_self">Avsluta</a>', unsafe_allow_html=True)
 
+def hide_img_fullscreen():
+    st.markdown('''
+                <style>
+                button[title="View fullscreen"]{
+                    visibility: hidden;}
+                </style>
+                '''
+                , unsafe_allow_html=True)
+                
+st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
+
 def hide_anchor_link():
     st.markdown("""
         <style>
