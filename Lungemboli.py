@@ -103,7 +103,7 @@ st.markdown("""
     </style>
     """,unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(1,10,1)
+col1, col2, col3 = st.columns([1,10,1])
 
 with col1:
     pass
