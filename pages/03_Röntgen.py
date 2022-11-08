@@ -39,6 +39,9 @@ if "verifierad_lungemboli" not in st.session_state:
 for i in range(1,6):
     if st.session_state[f"dtla_{i}"]:
         st.session_state["verifierad_lungemboli"] = True
+        break
+    else:
+        st.session_state["verifierad_lungemboli"] = False
 
 if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
     st.session_state["verifierad_lungemboli"] = False
