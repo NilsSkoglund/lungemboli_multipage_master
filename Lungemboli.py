@@ -103,7 +103,14 @@ st.markdown("""
     </style>
     """,unsafe_allow_html=True)
 
-f.lungemboli_display_txt(st.session_state["total_score_pe"])
+col1, col2, col3 = st.columns(1,10,1):
+
+with col1:
+    pass
+with col3:
+    pass
+with col2:
+    f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 
 
