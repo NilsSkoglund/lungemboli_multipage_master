@@ -5,16 +5,9 @@ from PIL import Image
 from streamlit_extras.switch_page_button import switch_page
 from PIL import Image
 import base64
-
 from streamlit_lottie import st_lottie
-from streamlit_lottie import st_lottie_spinner
 import requests
 
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
 ################################ Functions ####################################
 ############################# markdown functions ##############################
@@ -105,6 +98,7 @@ def initialize_widget_keys(dct, name):
 # used only for Lungemboli page
         # sync_lungemboli_to_perc
         # lungemboli_display_viz
+        # load_lottieurl
         # lungemboli_display_txt
 
 def sync_lungemboli_to_perc(idx):
@@ -133,6 +127,12 @@ def lungemboli_display_viz_v2(total_score):
         local_file = f'<p style="text-align:center;"><img src="data:image/jpeg;base64,{image_bytes}" alt="Image" width = 600> </p>'
 
     return st.markdown(local_file, unsafe_allow_html = True)
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 
 def lungemboli_display_txt(total_score):
     if total_score < 2:
