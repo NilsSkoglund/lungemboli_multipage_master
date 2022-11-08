@@ -154,7 +154,7 @@ def lungemboli_display_button(total_score):
         knapp_låg = st.button("Gå vidare till PERC")
         lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
         lottie_json = load_lottieurl(lottie_url)
-        st_lottie(lottie_json, height=20, width=145)
+        st_lottie(lottie_json, height=20, width=148.45)
         if knapp_låg:
             switch_page("PERC")
 
