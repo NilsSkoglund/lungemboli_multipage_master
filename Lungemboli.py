@@ -97,9 +97,9 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
 
-with col2:
+with col3:
     f.lungemboli_display_button(st.session_state["total_score_pe"])
     f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
