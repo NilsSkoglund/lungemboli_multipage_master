@@ -44,6 +44,7 @@ if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
     st.session_state["verifierad_lungemboli"] = False
     st.error("Konflikterande information.")
 elif st.session_state["dtla_0"]:
+    st.session_state["verifierad_lungemboli"] = False
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
 elif st.session_state["verifierad_lungemboli"]:
