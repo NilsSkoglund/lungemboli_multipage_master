@@ -52,17 +52,4 @@ for i in range(1,5):
         knapp_pesi = st.button("Riskstratifiera enligt PESI")
         if knapp_pesi:
             switch_page("PESI")
-    else:
-        st.session_state["verifierad_lungemboli"] = False
 
-
-
-
-
-
-#om lungemboli:
-#    "Patienten har en verifierad lungemboli."
-#    knapp = "Riskstratifiera enligt PESI"
-
-#om ej:
-# gå hem, avlusta session
