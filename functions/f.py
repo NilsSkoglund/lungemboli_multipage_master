@@ -128,12 +128,6 @@ def lungemboli_display_viz_v2(total_score):
 
     return st.markdown(local_file, unsafe_allow_html = True)
 
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
 def lungemboli_display_txt(total_score):
     if total_score < 2:
         st.success("Patienten har en låg risk för lungemboli. För att kunna\
@@ -152,9 +146,6 @@ def lungemboli_display_txt(total_score):
 def lungemboli_display_button(total_score):
     if total_score < 2:
         knapp_låg = st.button("Gå vidare till PERC")
-        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
-        lottie_json = load_lottieurl(lottie_url)
-        st_lottie(lottie_json, height=20, width=148.45)
         if knapp_låg:
             switch_page("PERC")
 
@@ -166,3 +157,33 @@ def lungemboli_display_button(total_score):
         knapp_hög = st.button("Gå till Röntgen")
         if knapp_hög:
             switch_page("Röntgen")
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+def lungemboli_display_lottie(total_score):
+    if total_score < 2:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=148.45)
+        except:
+            st.markdown("---")
+
+    elif total_score < 6.5:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=160)
+        except:
+            st.markdown("---") 
+    else:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.jsos"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=200)
+        except:
+            st.markdown("---")
