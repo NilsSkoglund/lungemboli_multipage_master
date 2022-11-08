@@ -13,9 +13,9 @@ f.hide_img_fullscreen()
 
 st.markdown("""
     <style>
-    .css-1n76uvr [data-testid=stVerticalBlock]{
-        gap: 0.1rem;
-    }
+    .css-1n76uvr [data-testid=stVerticalBlock]{gap: 0.1rem;}
+
+    .css-1hrnv83 [data-testid=stVerticalBlock] {gap: 0.1rem;}
     </style>
     """, unsafe_allow_html=True)
 
