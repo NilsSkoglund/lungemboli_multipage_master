@@ -68,6 +68,7 @@ if pesi_score < 86:
         switch_page("Behandling")
 else:
     st.error("Hög risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
+    st.write("+46737129109")
     knapp_inläggning = st.button("Gå vidare till inläggning")
     if knapp_inläggning:
         switch_page("Inläggning")
