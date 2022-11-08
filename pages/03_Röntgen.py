@@ -14,10 +14,11 @@ f.hide_padding()
 	# name for key
 dct_radiology_report={
 	"Ingen lungemboli": 0,
-	"Lungemboli på subsegmentell nivå": 1,
-	"Lungemboli på segmentell nivå": 2,
-	"Lungemboli på lobär nivå": 3,
-	"Sadelemboli": 4
+    "Perifer lungemboli": 1,
+	"Lungemboli på subsegmentell nivå": 2,
+	"Lungemboli på segmentell nivå": 3,
+	"Lungemboli på lobär nivå": 4,
+	"Sadelemboli": 5
 	}
 
 name_rad = "dtla"
