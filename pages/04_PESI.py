@@ -71,3 +71,6 @@ else:
     knapp_inläggning = st.button("Gå vidare till inläggning")
     if knapp_inläggning:
         switch_page("Inläggning")
+    knapp_ultraljud = st.button("Gå vidare till ultraljud")
+    if knapp_ultraljud:
+        switch_page("Ultraljud")
