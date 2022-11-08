@@ -176,7 +176,7 @@ def lungemboli_display_button(total_score):
     elif total_score < 6.5:
         knapp_måttlig = st.button("Gå vidare till D-dimer")
         if knapp_måttlig:
-            switch_page("Ddimer")
+            switch_page("D-dimer")
     else:
         knapp_hög = st.button("Gå till Röntgen")
         if knapp_hög:

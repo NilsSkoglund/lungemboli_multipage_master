@@ -47,7 +47,7 @@ if f.calc_score(dct_perc, name_perc) > 0:
     st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
     knapp_perc_bruten = st.button("Gå vidare till D-dimer")
     if knapp_perc_bruten:
-        switch_page("Ddimer")
+        switch_page("D-dimer")
 else:
     st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
