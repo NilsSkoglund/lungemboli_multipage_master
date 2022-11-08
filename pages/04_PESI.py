@@ -71,12 +71,9 @@ else:
     css_example = '''
     I'm importing the font-awesome icons as a stylesheet!                                                                                                                                                       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
-                                                                                                                                                                                                                
-    <i class="fa-solid fa-square"></i>                                                                                                                                                                          
-    <i class="fa-solid fa-dragon"></i>                                                                                                                                                                          
-    <i class="fa-solid fa-paw"></i> 
+
     <i class="fa-solid fa-phone"></i> 
-    <a href='tel:+4673-712-9109'>&#128222; Ring Jour</a>"
+    <a href='tel:+4673-712-9109'>Ring Jour</a>"
 
     '''
 
