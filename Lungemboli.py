@@ -65,8 +65,8 @@ button_style_red = """
         <style>
         .stButton > button {
             color: #ffffff;
-            background: #eb4034;
-            border: 1px solid #ffffff;
+            background: #4287f5;
+            border: 0px solid #ffffff;
         }
         </style>
         """
@@ -78,7 +78,7 @@ button_style = """
         }
         </style>
         """
-#st.markdown(button_style, unsafe_allow_html=True)
+st.markdown(button_style_red, unsafe_allow_html=True)
 with st.expander("Riskvisualisering", expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
