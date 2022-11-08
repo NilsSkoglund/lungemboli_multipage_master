@@ -1,11 +1,10 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
-with st.expander("Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling\
-     1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1"):
-    st.write("...")
 
-with st.expander("Behandling 2"):
-    st.write("...")
+st.header("Ultraljud")
+st.write("...")
 
-with st.expander("Behandling 3"):
-    st.write("...")
+knapp_behandling = st.button("Gå vidare till behandling")
+if knapp_behandling:
+    switch_page("Behandling")
