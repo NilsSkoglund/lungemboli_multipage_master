@@ -36,7 +36,7 @@ st.warning("visa bilder här baserat på svar")
 if "verifierad_lungemboli" not in st.session_state:
     st.session_state["verifierad_lungemboli"] = False
 
-for i in range(1,5):
+for i in range(1,6):
     if st.session_state[f"dtla_{i}"]:
         st.session_state["verifierad_lungemboli"] = True
 
@@ -52,4 +52,6 @@ elif st.session_state["verifierad_lungemboli"]:
     knapp_pesi = st.button("Riskstratifiera enligt PESI")
     if knapp_pesi:
         switch_page("PESI")
+
+    
 
