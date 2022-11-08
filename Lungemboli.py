@@ -104,7 +104,7 @@ st.markdown("""
     </style>
     """,unsafe_allow_html=True)
 
-col1 = st.columns(1)
+col1, col2 = st.columns([1,1])
 
 with col1:
     f.lungemboli_display_button(st.session_state["total_score_pe"])
