@@ -7,6 +7,7 @@ f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding()
+f.hide_img_fullscreen()
 
 ########################### Initialize Variables ##############################
 
@@ -37,14 +38,6 @@ if "total_score_pe" not in st.session_state:
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
-tooltip_style = """
-<style>
-div[data-baseweb="tooltip"] {
-  width: 100px;
-}
-</style>
-"""
-# st.markdown(tooltip_style,unsafe_allow_html=True)
 
 st.header("Formulär: Wells' Lungemboli")
 for i, j in enumerate(dct_lungemboli.items()):
@@ -66,13 +59,7 @@ for i, j in enumerate(dct_lungemboli.items()):
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
 
 #with st.empty():
-hide_img_fullscreen = '''
-<style>
-button[title="View fullscreen"]{
-    visibility: hidden;}
-</style>
-'''
-st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
+
 
 button_style_red = """
         <style>
@@ -102,7 +89,7 @@ st.markdown("""
         gap: 0.1rem;
     }
     </style>
-    """,unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 col1, col2 = st.columns([1,1])
 

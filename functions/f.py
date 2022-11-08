@@ -12,15 +12,13 @@ import requests
 ################################ Functions ####################################
 ############################# markdown functions ##############################
     # used for multiple different pages
+        # hide_img_fullscreen
         # hide_anchor_link
         # hide_padding
         # hide_hamburger
         # hide_footer
+        # control_tooltip
 
-def klar():
-    return st.markdown('<a href="/Lungemboli" style="display: block;\
-    text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\
-    target="_self">Avsluta</a>', unsafe_allow_html=True)
 
 def hide_img_fullscreen():
     st.markdown('''
@@ -30,7 +28,7 @@ def hide_img_fullscreen():
                 </style>
                 '''
                 , unsafe_allow_html=True)
-                
+
 st.markdown(hide_img_fullscreen, unsafe_allow_html=True)
 
 def hide_anchor_link():
@@ -67,10 +65,25 @@ def hide_footer():
         """
         , unsafe_allow_html=True)
 
+def control_tooltip():
+    st.markdown("""
+                <style>
+                div[data-baseweb="tooltip"] {
+                width: 100px;
+                }
+                </style>
+                """, unsafe_allow_html=True)
+
 ############################# General functions ###############################
     # used for multiple different pages
+        # klar
         # calc_score
         # intialize_widget_keys
+def klar():
+    return st.markdown('<a href="/Lungemboli" style="display: block;\
+    text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\
+    target="_self">Avsluta</a>', unsafe_allow_html=True)
+
 def calc_score(dct, name):
 	'''
     Takes a dictionary (dct) and a string (name) as inputs and ...
