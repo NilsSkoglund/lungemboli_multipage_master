@@ -97,7 +97,7 @@ f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 
 st.markdown("""
     <style>
-    div:nth-child(16) [data-testid=stVerticalBlock]{
+    .css-ocqkz7 [data-testid=stVerticalBlock]{
         gap: 0rem;
     }
     </style>
