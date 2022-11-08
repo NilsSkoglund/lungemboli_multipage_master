@@ -68,6 +68,13 @@ if pesi_score < 86:
         switch_page("Behandling")
 else:
     st.error("Hög risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
+    knapp_inläggning = st.button("Gå vidare till inläggning")
+    if knapp_inläggning:
+        switch_page("Inläggning")
+    knapp_ultraljud = st.button("Gå vidare till ultraljud")
+    if knapp_ultraljud:
+        switch_page("Ultraljud")
+
     css_example = '''                                                                                                                                                    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
 
@@ -75,11 +82,4 @@ else:
     <a style="color:white" href='tel:+4673-712-9109'>Ring Jour</a>
 
     '''
-
     st.write(css_example, unsafe_allow_html=True)
-    knapp_inläggning = st.button("Gå vidare till inläggning")
-    if knapp_inläggning:
-        switch_page("Inläggning")
-    knapp_ultraljud = st.button("Gå vidare till ultraljud")
-    if knapp_ultraljud:
-        switch_page("Ultraljud")
