@@ -1,6 +1,7 @@
 import streamlit as st
 from functions import f
 from PIL import Image
+from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 
@@ -59,3 +60,14 @@ pesi_score = f.calc_score(dct_pesi, name_pesi)
 img_string = str(pesi_score)
 image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
 st.image(image)
+
+if pesi_score < 86: 
+    st.warning("Låg risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
+    knapp_behandling = st.button("Gå vidare till behandling")
+    if knapp_behandling:
+        switch_page("Behandling")
+else:
+    st.error("Hög risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
+    knapp_inläggning = st.button("Gå vidare till inläggning")
+    if knapp_inläggning:
+        switch_page("Inläggning")
