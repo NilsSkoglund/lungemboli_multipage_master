@@ -171,7 +171,7 @@ def lungemboli_display_lottie(total_score):
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json, height=20, width=148.45)
         except:
-            st.markdown("---")
+            st.write(".")
 
     elif total_score < 6.5:
         try:
@@ -179,11 +179,11 @@ def lungemboli_display_lottie(total_score):
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json, height=20, width=160)
         except:
-            st.markdown("---") 
+            st.write(".")
     else:
         try:
             lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.jsos"
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json, height=20, width=200)
         except:
-            st.markdown("---")
+            st.write(".")
