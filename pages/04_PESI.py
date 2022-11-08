@@ -76,6 +76,7 @@ else:
     <i class="fa-solid fa-dragon"></i>                                                                                                                                                                          
     <i class="fa-solid fa-paw"></i> 
     <i class="fa-solid fa-phone"></i> 
+    <a href='tel:+4673-712-9109'>&#128222; Ring Jour</a>"
 
     '''
 
