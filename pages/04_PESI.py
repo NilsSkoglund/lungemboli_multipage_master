@@ -75,6 +75,8 @@ else:
     <i class="fa-solid fa-square"></i>                                                                                                                                                                          
     <i class="fa-solid fa-dragon"></i>                                                                                                                                                                          
     <i class="fa-solid fa-paw"></i> 
+    <i class="fa-solid fa-phone"></i> 
+
     '''
 
     st.write(css_example, unsafe_allow_html=True)
