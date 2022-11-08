@@ -68,7 +68,7 @@ if pesi_score < 86:
         switch_page("Behandling")
 else:
     st.error("Hög risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
-    st.markdown("<a href='tel:+4673-712-9109'>Ring Jour</a>", unsafe_allow_html=True)
+    st.markdown("<a href='tel:+4673-712-9109'>\u0001F4DE Ring Jour</a>", unsafe_allow_html=True)
     knapp_inläggning = st.button("Gå vidare till inläggning")
     if knapp_inläggning:
         switch_page("Inläggning")
