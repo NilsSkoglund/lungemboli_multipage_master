@@ -89,6 +89,8 @@ st.markdown(button_style_blue, unsafe_allow_html=True)
 with st.expander("Riskvisualisering", expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 
+f.lungemboli_display_txt(st.session_state["total_score_pe"])
+
 st.markdown("""
     <style>
     .css-ocqkz7 [data-testid=stVerticalBlock]{
@@ -103,4 +105,3 @@ with col1:
     f.lungemboli_display_button(st.session_state["total_score_pe"])
     f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
-f.lungemboli_display_txt(st.session_state["total_score_pe"])
