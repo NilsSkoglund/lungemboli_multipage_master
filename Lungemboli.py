@@ -14,7 +14,7 @@ f.hide_img_fullscreen()
 st.markdown("""
     <style>
     .css-6ewd8b {
-        gap: 0.5rem;
+        gap: 0.1rem;
     }
     </style>
     """, unsafe_allow_html=True)
