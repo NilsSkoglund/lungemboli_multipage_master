@@ -99,7 +99,7 @@ f.lungemboli_display_txt(st.session_state["total_score_pe"])
 st.markdown("""
     <style>
     .css-ocqkz7 [data-testid=stVerticalBlock]{
-        gap: 0rem;
+        gap: 0.1rem;
     }
     </style>
     """,unsafe_allow_html=True)
