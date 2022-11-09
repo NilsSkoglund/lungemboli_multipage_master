@@ -44,8 +44,6 @@ for i, j in enumerate(dct_perc.items()):
             j[0],\
             key=f"{name_perc}_{i}")
 
-
-
 if f.calc_score(dct_perc, name_perc) > 0:
     st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
 

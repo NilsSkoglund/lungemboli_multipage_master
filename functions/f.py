@@ -12,6 +12,7 @@ import requests
 ################################ Functions ####################################
 ############################# markdown functions ##############################
     # used for multiple different pages
+        # col_control_rem
         # button_style
         # reduce_padding
         # hide_img_fullscreen
@@ -20,6 +21,16 @@ import requests
         # hide_hamburger
         # hide_footer
         # control_tooltip
+
+def col_control_rem():
+    st.markdown("""
+                <style>
+                .css-ocqkz7 [data-testid=stVerticalBlock]{
+                    gap: 0.1rem;
+                }
+                </style>
+                """
+                , unsafe_allow_html=True)
 
 def button_style():
     st.markdown("""
@@ -239,6 +250,16 @@ def perc_display_lottie():
         lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
         lottie_json = load_lottieurl(lottie_url)
         st_lottie(lottie_json, height=20, width=167)
+    except:
+        pass
+    else:
+        pass
+
+def ddimer_display_lottie():
+    try:
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=124)
     except:
         pass
     else:
