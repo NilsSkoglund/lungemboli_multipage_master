@@ -7,7 +7,7 @@ st.session_state.update(st.session_state)
 f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
-f.hide_padding()
+f.hide_padding_top()
 
 # Initialize variables for radiology_report
 	# dct with report_answer:score

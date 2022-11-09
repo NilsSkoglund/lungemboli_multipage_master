@@ -12,6 +12,7 @@ import requests
 ################################ Functions ####################################
 ############################# markdown functions ##############################
     # used for multiple different pages
+        # reduce_padding
         # hide_img_fullscreen
         # hide_anchor_link
         # hide_padding
@@ -19,6 +20,13 @@ import requests
         # hide_footer
         # control_tooltip
 
+def reduce_padding():
+    st.markdown("""
+                <style>
+                [data-testid=stVerticalBlock]{gap: 0.5rem;}
+                </style>
+                """
+                , unsafe_allow_html=True)
 
 def hide_img_fullscreen():
     st.markdown('''
@@ -41,7 +49,7 @@ def hide_anchor_link():
         """
         , unsafe_allow_html=True)
 
-def hide_padding():
+def hide_padding_top():
     st.markdown("""
     <style>
         #root > div:nth-child(1) > div > div > div > div > section > div {padding-top: 0rem;}

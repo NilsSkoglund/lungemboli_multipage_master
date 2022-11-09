@@ -6,15 +6,9 @@ st.session_state.update(st.session_state)
 f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
-f.hide_padding()
+f.hide_padding_top()
 f.hide_img_fullscreen()
-
-
-st.markdown("""
-    <style>
-    [data-testid=stVerticalBlock]{gap: 0.5rem;}
-    </style>
-    """, unsafe_allow_html=True)
+f.reduce_padding()
 
 ########################### Initialize Variables ##############################
 
