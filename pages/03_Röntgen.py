@@ -4,6 +4,7 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.session_state.update(st.session_state)
 
+f.button_style()
 f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()

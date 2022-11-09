@@ -12,6 +12,7 @@ import requests
 ################################ Functions ####################################
 ############################# markdown functions ##############################
     # used for multiple different pages
+        # button_style
         # reduce_padding
         # hide_img_fullscreen
         # hide_anchor_link
@@ -19,6 +20,19 @@ import requests
         # hide_hamburger
         # hide_footer
         # control_tooltip
+
+def button_style():
+    st.markdown("""
+                <style>
+                .stButton > button {
+                    color: #ffffff;
+                    background: #1f498c;
+                    border: 1px solid #ffffff;
+                }
+                </style>
+                """
+                , unsafe_allow_html=True)
+
 
 def reduce_padding():
     st.markdown("""

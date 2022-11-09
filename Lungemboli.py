@@ -3,6 +3,7 @@ from functions import f
 
 st.session_state.update(st.session_state)
 
+f.button_style()
 f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
@@ -59,27 +60,6 @@ for i, j in enumerate(dct_lungemboli.items()):
 # calculate score and display vizualization, text & "change-page-button"
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
 
-#with st.empty():
-
-
-button_style_blue = """
-        <style>
-        .stButton > button {
-            color: #ffffff;
-            background: #1f498c;
-            border: 1px solid #ffffff;
-        }
-        </style>
-        """
-
-button_style = """
-        <style>
-        .stButton > button {
-            border: 1px solid #ffffff;
-        }
-        </style>
-        """
-st.markdown(button_style_blue, unsafe_allow_html=True)
 with st.expander("Riskvisualisering", expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 
