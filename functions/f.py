@@ -233,3 +233,13 @@ def lungemboli_display_lottie(total_score):
             st_lottie(lottie_json, height=20, width=124)
         except:
             pass
+
+def perc_display_lottie():
+    try:
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=167)
+    except:
+        pass
+    else:
+        pass
