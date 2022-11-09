@@ -63,7 +63,6 @@ st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungembol
 with st.expander("Riskvisualisering", expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 
-f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
 st.markdown("""
     <style>
@@ -79,3 +78,4 @@ with col1:
     f.lungemboli_display_button(st.session_state["total_score_pe"])
     f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
+f.lungemboli_display_txt(st.session_state["total_score_pe"])
