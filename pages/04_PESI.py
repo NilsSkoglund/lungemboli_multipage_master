@@ -57,9 +57,10 @@ pesi_score = f.calc_score(dct_pesi, name_pesi)
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
-img_string = str(pesi_score)
-image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
-st.image(image)
+with st.expander("Riskvisualisering"):
+    img_string = str(pesi_score)
+    image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
+    st.image(image)
 
 if pesi_score < 86: 
     st.warning("Låg risk. (gränsen för tillfället är satt till 86 men detta är arbiträrt för tillfället)")
