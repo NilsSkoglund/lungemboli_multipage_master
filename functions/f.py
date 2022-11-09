@@ -23,7 +23,7 @@ import requests
 def reduce_padding():
     st.markdown("""
                 <style>
-                [data-testid=stVerticalBlock]{gap: 0.5rem;}
+                [data-testid=stVerticalBlock]{gap: 0.7rem;}
                 </style>
                 """
                 , unsafe_allow_html=True)
