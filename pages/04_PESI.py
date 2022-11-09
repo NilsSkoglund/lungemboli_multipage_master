@@ -58,6 +58,7 @@ pesi_score = f.calc_score(dct_pesi, name_pesi)
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
 with st.expander("Riskvisualisering"):
+    st.write("")
     img_string = str(pesi_score)
     image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
     st.image(image)
