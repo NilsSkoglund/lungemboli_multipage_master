@@ -32,12 +32,11 @@ name_pesi = "pesi"
 
 st.header("PESI")
 
-# st.number_input("Ange ålder"
-#     , value=st.session_state["Ddimer_age"]
-#     , step=1
-#     , key="pesi_age"
-#     #, on_change=age_update_slider
-#     )
+st.number_input("Ange ålder"
+    , value=st.session_state["Ddimer_age"]
+    , step=1
+    , key="pesi_age"
+    )
 
 tooltip_style = """
 <style>
@@ -54,6 +53,8 @@ for i, j in enumerate(dct_pesi.items()):
         , help=f"Poäng: {j[1]}"
         )
 pesi_score = f.calc_score(dct_pesi, name_pesi)
+
+pesi_score += st.session_state["pesi_age"]
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
