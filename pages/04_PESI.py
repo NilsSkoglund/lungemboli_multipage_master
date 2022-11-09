@@ -62,6 +62,7 @@ pesi_score += st.session_state["pesi_age"]
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
 with st.expander("Riskvisualisering"):
+    pesi_score = min(180, pesi_score)
     img_string = str(pesi_score)
     image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
     st.image(image)
