@@ -78,8 +78,7 @@ else:
         switch_page("Ultraljud")
 
     css_example = '''                                                                                                                                                    
-    <link rel="stylesheet" href="https:\
-        //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
 
     <i class="fa-solid fa-phone"></i> 
     <a style="color:white" href='tel:+4673-712-9109'>Ring Jour</a>
