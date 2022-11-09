@@ -58,8 +58,6 @@ if f.calc_score(dct_perc, name_perc) > 0:
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        f.lungemboli_display_button(st.session_state["total_score_pe"])
-        f.lungemboli_display_lottie(st.session_state["total_score_pe"])
         st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
         knapp_perc_bruten = st.button("Gå vidare till D-dimer")
         f.perc_display_lottie()
