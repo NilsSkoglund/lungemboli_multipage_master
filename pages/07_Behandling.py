@@ -2,8 +2,7 @@ import streamlit as st
 
 st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
 
-with st.expander("Behandling                           \r\n 1 Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling\
-     1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1Behandling 1..."):
+with st.expander("Behandling"):
     st.write("...")
 
 with st.expander("Behandling 2"):
