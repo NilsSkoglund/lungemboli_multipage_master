@@ -2,7 +2,7 @@ import streamlit as st
 
 st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
 
-with st.expander("Behandling"):
+with st.expander("Behandling 1"):
     st.write("...")
 
 with st.expander("Behandling 2"):
