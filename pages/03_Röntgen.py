@@ -53,6 +53,11 @@ elif st.session_state["dtla_0"]:
     f.klar()
 elif st.session_state["verifierad_lungemboli"]:
     st.info("Patienten har en verifierad lungemboli")
-    knapp_pesi = st.button("Riskstratifiera enligt PESI")
-    if knapp_pesi:
-        switch_page("PESI")
+
+    col1, col2 = st.columns([1, 1])
+    f.col_control_rem()
+    with col1:
+        knapp_pesi = st.button("Riskstratifiera enligt PESI")
+        f.dtla_display_lottie()
+        if knapp_pesi:
+            switch_page("PESI")

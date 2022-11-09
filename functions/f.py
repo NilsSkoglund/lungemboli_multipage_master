@@ -264,3 +264,13 @@ def ddimer_display_lottie():
         pass
     else:
         pass
+
+def dtla_display_lottie():
+    try:
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=192)
+    except:
+        pass
+    else:
+        pass
