@@ -10,6 +10,7 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding()
 f.hide_img_fullscreen()
+f.control_tooltip()
 
 ########################### Initialize Variables ##############################
 
@@ -41,14 +42,7 @@ st.number_input("Ange ålder"
     , key="pesi_age"
     )
 
-tooltip_style = """
-<style>
-div[data-baseweb="tooltip"] {
-  width: 100px;
-}
-</style>
-"""
-st.markdown(tooltip_style,unsafe_allow_html=True)
+# Create checkboxes
 for i, j in enumerate(dct_pesi.items()):
     st.checkbox(
         j[0]\
@@ -82,7 +76,8 @@ else:
         switch_page("Ultraljud")
 
     css_example = '''                                                                                                                                                    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
+    <link rel="stylesheet" href="https:\
+        //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
 
     <i class="fa-solid fa-phone"></i> 
     <a style="color:white" href='tel:+4673-712-9109'>Ring Jour</a>
