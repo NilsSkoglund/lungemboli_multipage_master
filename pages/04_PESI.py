@@ -63,12 +63,12 @@ with st.expander("Riskvisualisering"):
     st.image(image)
 
 if pesi_score < 86: 
-    st.warning("Låg risk. (gränsen för tillfället är satt till 86)")
+    st.warning("Låg risk. (gränsen är för tillfället satt till 86)")
     knapp_behandling = st.button("Gå vidare till behandling")
     if knapp_behandling:
         switch_page("Behandling")
 else:
-    st.error("Hög risk. (gränsen för tillfället är satt till 86)")
+    st.error("Hög risk. (gränsen är för tillfället satt till 86)")
     knapp_inläggning = st.button("Gå vidare till inläggning")
     if knapp_inläggning:
         switch_page("Inläggning")
