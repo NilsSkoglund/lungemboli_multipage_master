@@ -44,12 +44,27 @@ for i, j in enumerate(dct_perc.items()):
             j[0],\
             key=f"{name_perc}_{i}")
 
+
+
 if f.calc_score(dct_perc, name_perc) > 0:
-    st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
-    knapp_perc_bruten = st.button("Gå vidare till D-dimer")
-    f.perc_display_lottie()
-    if knapp_perc_bruten:
-        switch_page("D-dimer")
+    st.markdown("""
+    <style>
+    .css-ocqkz7 [data-testid=stVerticalBlock]{
+        gap: 0.1rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        f.lungemboli_display_button(st.session_state["total_score_pe"])
+        f.lungemboli_display_lottie(st.session_state["total_score_pe"])
+        st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
+        knapp_perc_bruten = st.button("Gå vidare till D-dimer")
+        f.perc_display_lottie()
+        if knapp_perc_bruten:
+            switch_page("D-dimer")
 else:
     st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
