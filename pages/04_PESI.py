@@ -32,6 +32,9 @@ name_pesi = "pesi"
 
 st.header("PESI")
 
+if "Ddimer_age" not in st.session_state:
+    st.session_state["Ddimer_age"] = 50
+
 st.number_input("Ange ålder"
     , value=st.session_state["Ddimer_age"]
     , step=1
