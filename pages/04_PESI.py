@@ -13,6 +13,7 @@ f.hide_hamburger()
 f.hide_padding_top()
 f.hide_img_fullscreen()
 f.control_tooltip()
+f.col_control_rem()
 
 ########################### Initialize Variables ##############################
 
@@ -56,6 +57,8 @@ pesi_score = f.calc_score(dct_pesi, name_pesi)
 pesi_score += st.session_state["pesi_age"]
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
+col1, col2 = st.columns([1, 1])
+
 
 with st.expander("Riskvisualisering", expanded=True):
     pesi_score = min(180, pesi_score)
@@ -65,15 +68,21 @@ with st.expander("Riskvisualisering", expanded=True):
 
 if pesi_score < 86: 
     st.warning("Låg risk. (gränsen är för tillfället satt till 86)")
-    knapp_behandling = st.button("Gå vidare till behandling")
-    if knapp_behandling:
-        switch_page("Behandling")
+    with col1:
+        knapp_behandling = st.button("Gå vidare till behandling")
+        f.pesi_display_lottie(188.75)
+        if knapp_behandling:
+            switch_page("Behandling")
 else:
     st.error("Hög risk. (gränsen är för tillfället satt till 86)")
-    knapp_inläggning = st.button("Gå vidare till inläggning")
+    with col1:
+        knapp_inläggning = st.button("Gå vidare till inläggning")
+        f.pesi_display_lottie(183.19)
+        knapp_ultraljud = st.button("Gå vidare till ultraljud")
+        f.pesi_display_lottie(169.89)
+    
     if knapp_inläggning:
         switch_page("Inläggning")
-    knapp_ultraljud = st.button("Gå vidare till ultraljud")
     if knapp_ultraljud:
         switch_page("Ultraljud")
 
