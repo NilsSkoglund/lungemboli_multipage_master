@@ -66,15 +66,17 @@ with st.expander("Riskvisualisering", expanded=True):
 
 col1, col2 = st.columns([1, 1])
 
+container = st.container()
+
 if pesi_score < 86: 
-    st.warning("Låg risk. (gränsen är för tillfället satt till 86)")
+    container.warning("Låg risk. (gränsen är för tillfället satt till 86)")
     with col1:
         knapp_behandling = st.button("Gå vidare till behandling")
         f.pesi_display_lottie(188.75)
         if knapp_behandling:
             switch_page("Behandling")
 else:
-    st.error("Hög risk. (gränsen är för tillfället satt till 86)")
+    container.error("Hög risk. (gränsen är för tillfället satt till 86)")
     with col1:
         knapp_inläggning = st.button("Gå vidare till inläggning")
         f.pesi_display_lottie(183.19)
