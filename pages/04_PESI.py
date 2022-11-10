@@ -85,9 +85,9 @@ else:
         t1.start()
         t2.start()
         knapp_inläggning = st.button("Gå vidare till inläggning")
-        t1.run()
+        t1.join()
         knapp_ultraljud = st.button("Gå vidare till ultraljud")
-        t2.run()
+        t2.join()
     
     if knapp_inläggning:
         switch_page("Inläggning")
