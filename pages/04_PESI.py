@@ -80,11 +80,13 @@ if pesi_score < 86:
 else:
     container.error("Hög risk. (gränsen är för tillfället satt till 86)")
     with col1:
-        knapp_inläggning = st.button("Gå vidare till inläggning")
         t1 = Thread(target=f.pesi_display_lottie,args=(183.19,))
-        knapp_ultraljud = st.button("Gå vidare till ultraljud")
         t2 = Thread(target=f.pesi_display_lottie, args=(169.89,))
+        t1.start()
+        t2.start()
+        knapp_inläggning = st.button("Gå vidare till inläggning")
         t1.run()
+        knapp_ultraljud = st.button("Gå vidare till ultraljud")
         t2.run()
     
     if knapp_inläggning:
