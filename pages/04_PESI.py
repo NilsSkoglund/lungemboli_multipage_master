@@ -64,9 +64,9 @@ with st.expander("Riskvisualisering", expanded=True):
     image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
     st.image(image)
 
-col1, col2 = st.columns([1, 1])
-
 container = st.container()
+
+col1, col2 = st.columns([1, 1])
 
 if pesi_score < 86: 
     container.warning("Låg risk. (gränsen är för tillfället satt till 86)")
