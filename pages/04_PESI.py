@@ -68,6 +68,8 @@ container = st.container()
 
 col1, col2 = st.columns([1, 1])
 
+from threading import Thread
+
 if pesi_score < 86: 
     container.warning("Låg risk. (gränsen är för tillfället satt till 86)")
     with col1:
@@ -79,9 +81,11 @@ else:
     container.error("Hög risk. (gränsen är för tillfället satt till 86)")
     with col1:
         knapp_inläggning = st.button("Gå vidare till inläggning")
-        f.pesi_display_lottie(183.19)
+        t1 = Thread(f.pesi_display_lottie,183.19)
         knapp_ultraljud = st.button("Gå vidare till ultraljud")
-        f.pesi_display_lottie(169.89)
+        t2 = Thread(f.pesi_display_lottie, 169.89)
+        t1.run()
+        t2.run()
     
     if knapp_inläggning:
         switch_page("Inläggning")
