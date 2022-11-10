@@ -87,7 +87,6 @@ else:
             t1.start()
             t2.start()
             knapp_inläggning = st.button("Gå vidare till inläggning")
-            t1._target
             knapp_ultraljud = st.button("Gå vidare till ultraljud")
             t2.run()
     
