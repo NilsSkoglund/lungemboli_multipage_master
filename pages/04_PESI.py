@@ -85,7 +85,7 @@ else:
         t1.start()
         t2.start()
         knapp_inläggning = st.button("Gå vidare till inläggning")
-        Thread(target=t1)
+        Thread(target=t1).run()
         knapp_ultraljud = st.button("Gå vidare till ultraljud")
         #t2.run()
     
