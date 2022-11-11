@@ -82,7 +82,7 @@ else:
     with col1:
             knapp_inläggning = st.button("Gå vidare till inläggning")
             knapp_ultraljud = st.button("Gå vidare till ultraljud")
-            a = f.pesi_display_lottie,args=(183.19,)
+            a = f.pesi_display_lottie(183.19)
         # if __name__ == '__main__':
         #     t1 = Thread(target=f.pesi_display_lottie,args=(183.19,))
         #     t2 = Thread(target=f.pesi_display_lottie, args=(169.89,))
