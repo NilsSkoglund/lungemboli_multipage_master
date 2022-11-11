@@ -70,6 +70,8 @@ col1, col2 = st.columns([1, 1])
 
 from threading import Thread
 
+from streamlit.runtime.scriptrunner.script_run_context import get_script_run_ctx
+
 if pesi_score < 86: 
     container.warning("Låg risk. (gränsen är för tillfället satt till 86)")
     with col1:
@@ -80,8 +82,9 @@ if pesi_score < 86:
 else:
     container.error("Hög risk. (gränsen är för tillfället satt till 86)")
     with col1:
-            Thread(target=f.pesi_display_lottie,args=(183.19,)).start()
-            Thread(target=f.pesi_display_lottie, args=(169.89,))
+            t=Thread(target=f.pesi_display_lottie,args=(183.19,)).start()
+            get_script_run_ctx(t)
+            #Thread(target=f.pesi_display_lottie, args=(169.89,))
             knapp_inläggning = st.button("Gå vidare till inläggning")
             knapp_ultraljud = st.button("Gå vidare till ultraljud")
     
