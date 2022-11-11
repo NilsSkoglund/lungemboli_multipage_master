@@ -79,9 +79,12 @@ else:
     container.error("Hög risk. (gränsen är för tillfället satt till 86)")
     with col1:
             knapp_inläggning = st.button("Gå vidare till inläggning")
-            f.pesi_display_lottie(183.19)
+            width_a=183.19
+            width_b=169.89
+
+            f.pesi_display_lottie(175)
             knapp_ultraljud = st.button("Gå vidare till ultraljud")
-            f.pesi_display_lottie(169.89)
+            f.pesi_display_lottie(175)
     
     if knapp_inläggning:
         switch_page("Inläggning")
