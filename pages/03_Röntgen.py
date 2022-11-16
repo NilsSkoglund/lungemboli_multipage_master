@@ -46,13 +46,13 @@ for i in range(1,6):
 
 if st.session_state["dtla_0"] and st.session_state["verifierad_lungemboli"]:
     st.session_state["verifierad_lungemboli"] = False
-    st.error("Konflikterande information.")
+    st.warning("Konflikterande information.")
 elif st.session_state["dtla_0"]:
     st.session_state["verifierad_lungemboli"] = False
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
 elif st.session_state["verifierad_lungemboli"]:
-    st.info("Patienten har en verifierad lungemboli")
+    st.error("Patienten har en verifierad lungemboli. Bedöm inläggningsbehov med PESI.")
 
     col1, col2 = st.columns([1, 1])
     f.col_control_rem()
