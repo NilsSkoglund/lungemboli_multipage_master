@@ -45,7 +45,7 @@ for i, j in enumerate(dct_perc.items()):
             key=f"{name_perc}_{i}")
 
 if f.calc_score(dct_perc, name_perc) > 0:
-    st.error("PERC-positiv. Lungemboli kan ej uteslutas.")
+    st.error("PERC-positiv. Lungemboli kan ej uteslutas. Ta D-dimer för fortsatt utredning.")
 
     st.markdown("""
     <style>
@@ -58,7 +58,7 @@ if f.calc_score(dct_perc, name_perc) > 0:
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        knapp_perc_bruten = st.button("Gå vidare till D-dimer")
+        knapp_perc_bruten = st.button("Ange D-dimer svar")
         f.perc_display_lottie()
         if knapp_perc_bruten:
             switch_page("D-dimer")
