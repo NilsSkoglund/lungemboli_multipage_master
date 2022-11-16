@@ -57,7 +57,7 @@ if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
         col1, col2 = st.columns([1, 1])
         f.col_control_rem()
         with col1:
-            knapp_positiv_ddimer = st.button("Gå till Röntgen")
+            knapp_positiv_ddimer = st.button("Fyll i röntgensvar")
             f.ddimer_display_lottie()
             if knapp_positiv_ddimer:
                 switch_page("Röntgen")
