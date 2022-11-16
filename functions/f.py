@@ -207,7 +207,7 @@ def lungemboli_display_button(total_score):
             switch_page("PERC")
 
     elif total_score < 6.5:
-        knapp_måttlig = st.button("Gå vidare till D-dimer")
+        knapp_måttlig = st.button("Ange D-dimer svar")
         if knapp_måttlig:
             switch_page("D-dimer")
     else:
