@@ -52,7 +52,7 @@ st.number_input("Ange resultat från D-dimer"
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
     if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
-        st.error(f"Positivt D-dimer test")
+        st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Rekommenderas göra DTLA för fortsatt diagnostik")
 
         col1, col2 = st.columns([1, 1])
         f.col_control_rem()
