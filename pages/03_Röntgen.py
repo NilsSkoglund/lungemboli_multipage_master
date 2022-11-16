@@ -52,7 +52,7 @@ elif st.session_state["dtla_0"]:
     st.success("Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
 elif st.session_state["verifierad_lungemboli"]:
-    st.error("Patienten har en verifierad lungemboli. Bedöm inläggningsbehov med PESI.")
+    st.error("Patienten har en verifierad lungemboli. Bedöm vårdnivå med hjälp av PESI.")
 
     col1, col2 = st.columns([1, 1])
     f.col_control_rem()
