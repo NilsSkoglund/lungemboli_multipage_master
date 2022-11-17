@@ -3,6 +3,8 @@ from functions import f
 
 st.session_state.update(st.session_state)
 
+st.sidebar("hello")
+
 f.button_style()
 f.hide_anchor_link()
 f.hide_footer()
