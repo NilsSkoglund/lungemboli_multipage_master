@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.session_state.update(st.session_state)
+
 st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
 
 with st.expander("Behandling 1"):
