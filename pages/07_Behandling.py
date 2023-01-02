@@ -2,7 +2,7 @@ import streamlit as st
 
 st.session_state.update(st.session_state)
 
-with st.expander("Behandling 1"):
+with st.expander("Behandling 1", expanded=True):
     st.header("Rukrik")
     st.subheader("Underrubrik")
     st.write("Brödtext...")
