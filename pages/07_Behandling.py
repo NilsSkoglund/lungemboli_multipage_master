@@ -6,6 +6,11 @@ with st.expander("Behandling 1"):
     st.header("Rukrik")
     st.subheader("Underrubrik")
     st.write("Brödtext...")
+    mer_info = st.checkbox("Visa mer info")
+    if mer_info: 
+        st.header("Rukrik")
+        st.subheader("Underrubrik")
+        st.write("Brödtext...")
 
 with st.expander("Behandling 2"):
     st.write("...")
