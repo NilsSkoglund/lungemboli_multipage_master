@@ -2,15 +2,28 @@ import streamlit as st
 
 st.session_state.update(st.session_state)
 
-with st.expander("Behandling 1", expanded=True):
-    st.header("Rukrik")
-    st.subheader("Underrubrik")
-    st.write("Brödtext...")
+with st.expander("Fragmin(dalteparin)", expanded=True):
+    st.header("Fragmin(dalteparin)")
+    st.write("Dos: 200 E/kg/dygn")
+    st.subheader("Absoluta kontraindikationer:")
+    st.markdown(
+"""
+- Ti överkänslighet för Fragmin
+"""
+)
+    st.write("Absoluta kontraindikationer: ")
+
     st.checkbox("Visa mer info", key = "mer_info_1")
     if st.session_state["mer_info_1"]: 
         st.header("Rukrik")
-        st.subheader("Underrubrik")
-        st.write("Brödtext...")
+        st.subheader("Relativa ki:")
+        st.markdown(
+"""
+- Pågående blödning
+- Tidigare HIT typ II
+- Svår koagulationsrubbning
+"""
+)
 
 with st.expander("Behandling 2"):
     st.header("Rukrik")
