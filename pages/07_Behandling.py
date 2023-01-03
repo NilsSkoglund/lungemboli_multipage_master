@@ -6,10 +6,11 @@ with st.expander("Fragmin(dalteparin)", expanded=True):
     st.header("Fragmin(dalteparin)")
     st.markdown(
 """
-Dos:
+**Dos:**
 - 200 E/kg/dygn
 """
 )
+    st.write("")
     st.markdown(
 """
 Absoluta kontraindikationer:
