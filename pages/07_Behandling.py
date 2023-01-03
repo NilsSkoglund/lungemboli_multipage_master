@@ -11,14 +11,12 @@ Absoluta kontraindikationer:
 - Ti överkänslighet för Fragmin
 """
 )
-    st.write("Absoluta kontraindikationer: ")
 
     st.checkbox("Visa mer info", key = "mer_info_1")
     if st.session_state["mer_info_1"]: 
-        st.header("Rukrik")
-        st.subheader("Relativa ki:")
         st.markdown(
 """
+Relativa ki:
 - Pågående blödning
 - Tidigare HIT typ II
 - Svår koagulationsrubbning
