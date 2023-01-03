@@ -22,7 +22,7 @@ with st.expander("Fragmin(dalteparin)", expanded=True):
     if st.session_state["mer_info_1"]: 
         st.markdown(
 """
-Relativa ki:
+**Relativa ki:**
 - Pågående blödning
 - Tidigare HIT typ II
 - Svår koagulationsrubbning
@@ -49,7 +49,7 @@ with st.expander("Eliquis (apixaban)", expanded=True):
     if st.session_state["mer_info_2"]: 
         st.markdown(
 """
-Relativa ki:
+**Relativa ki:**
 - Graviditet
 - Pågående blödning
 - Leversjukdom associerad med koagulationsrubbning.
