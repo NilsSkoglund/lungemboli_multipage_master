@@ -52,9 +52,9 @@ with st.expander("Eliquis (apixaban)", expanded=True):
 **Relativa ki:**
 - Graviditet
 - Pågående blödning
-- Leversjukdom associerad med koagulationsrubbning.
+- Leversjukdom associerad med koagulationsrubbning
 - Tillstånd med ökad blödningsrisk såsom esofagus varicer
-- Svår koagulationsrubbning.
+- Svår koagulationsrubbning
 - Ti obesitasoperation
 - Samtidig behandling med annat antikoagulantium
 """
