@@ -13,7 +13,7 @@ with st.expander("Fragmin(dalteparin)", expanded=True):
     st.write("")
     st.markdown(
 """
-Absoluta kontraindikationer:
+**Absoluta kontraindikationer:**
 - Ti överkänslighet för Fragmin
 """
 )
@@ -33,13 +33,14 @@ with st.expander("Eliquis (apixaban)", expanded=True):
     st.header("Eliquis (apixaban)")
     st.markdown(
 """
-Dos:
+**Dos:**
 - 10 mg x 2 i 7 dagar, därefter 5 mg x 2
 """
 )
+    st.write("")
     st.markdown(
 """
-Absoluta kontraindikationer:
+**Absoluta kontraindikationer:**
 - Ti överkänslighet Eliquis
 """
 )
