@@ -5,9 +5,9 @@ st.session_state.update(st.session_state)
 with st.expander("Fragmin(dalteparin)", expanded=True):
     st.header("Fragmin(dalteparin)")
     st.write("Dos: 200 E/kg/dygn")
-    st.subheader("Absoluta kontraindikationer:")
     st.markdown(
 """
+Absoluta kontraindikationer:
 - Ti överkänslighet för Fragmin
 """
 )
