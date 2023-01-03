@@ -11,7 +11,7 @@ Absoluta kontraindikationer:
 - Ti överkänslighet för Fragmin
 """
 )
-    st.empty()
+    st.write("")
     st.checkbox("Visa mer info", key = "mer_info_1")
     if st.session_state["mer_info_1"]: 
         st.markdown(
