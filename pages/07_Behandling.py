@@ -4,7 +4,12 @@ st.session_state.update(st.session_state)
 
 with st.expander("Fragmin(dalteparin)", expanded=True):
     st.header("Fragmin(dalteparin)")
-    st.write("Dos: 200 E/kg/dygn")
+    st.markdown(
+"""
+Dos:
+- 200 E/kg/dygn
+"""
+)
     st.markdown(
 """
 Absoluta kontraindikationer:
@@ -23,15 +28,21 @@ Relativa ki:
 """
 )
 
-with st.expander("Eliquis (apixaban)"):
+with st.expander("Eliquis (apixaban)", expanded=True):
     st.header("Eliquis (apixaban)")
-    st.write("Dos: 10 mg x 2 i 7 dagar, därefter 5 mg x 2")
+    st.markdown(
+"""
+Dos:
+- 10 mg x 2 i 7 dagar, därefter 5 mg x 2
+"""
+)
     st.markdown(
 """
 Absoluta kontraindikationer:
 - Ti överkänslighet Eliquis
 """
 )
+    st.write("")
     st.checkbox("Visa mer info", key = "mer_info_2")
     if st.session_state["mer_info_2"]: 
         st.markdown(
