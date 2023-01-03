@@ -2,8 +2,8 @@ import streamlit as st
 
 st.session_state.update(st.session_state)
 
-with st.expander("Fragmin(dalteparin)", expanded=True):
-    st.header("Fragmin(dalteparin)")
+with st.expander("Fragmin (dalteparin)", expanded=True):
+    st.header("Fragmin (dalteparin)")
     st.markdown(
 """
 **Dos:**
