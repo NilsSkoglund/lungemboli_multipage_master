@@ -23,23 +23,28 @@ Relativa ki:
 """
 )
 
-with st.expander("Behandling 2"):
-    st.header("Rukrik")
-    st.subheader("Underrubrik")
-    st.write("Brödtext...")
+with st.expander("Eliquis (apixaban)"):
+    st.header("Eliquis (apixaban)")
+    st.write("Dos: 10 mg x 2 i 7 dagar, därefter 5 mg x 2")
+    st.markdown(
+"""
+Absoluta kontraindikationer:
+- Ti överkänslighet Eliquis
+"""
+)
     st.checkbox("Visa mer info", key = "mer_info_2")
     if st.session_state["mer_info_2"]: 
-        st.header("Rukrik")
-        st.subheader("Underrubrik")
-        st.write("Brödtext...")
+        st.markdown(
+"""
+Relativa ki:
+- Graviditet
+- Pågående blödning
+- Leversjukdom associerad med koagulationsrubbning.
+- Tillstånd med ökad blödningsrisk såsom esofagus varicer
+- Svår koagulationsrubbning.
+- Ti obesitasoperation
+- Samtidig behandling med annat antikoagulantium
+"""
+)
 
-with st.expander("Behandling 3"):
-    st.header("Rukrik")
-    st.subheader("Underrubrik")
-    st.write("Brödtext...")
-    st.checkbox("Visa mer info", key = "mer_info_3")
-    if st.session_state["mer_info_3"]: 
-        st.header("Rukrik")
-        st.subheader("Underrubrik")
-        st.write("Brödtext...")
 
