@@ -1,8 +1,9 @@
 import streamlit as st
 
 st.session_state.update(st.session_state)
+horizontal_line = """<hr style="height:1px;background-color:#FAFAFA;" /> """
 ## Fragmin
-st.write("---")
+st.markdown(horizontal_line, unsafe_allow_html=True)
 st.header("Fragmin (dalteparin)")
 st.markdown(
 """
@@ -28,10 +29,8 @@ with st.expander("Visa kontraindikationer", expanded=False):
     """
     )
 
-st.markdown("""<hr style="height:1px;background-color:#FAFAFA;" /> """, unsafe_allow_html=True)
-
 ## Eliquis
-st.write("***")
+st.markdown(horizontal_line, unsafe_allow_html=True)
 st.header("Eliquis (apixaban)")
 st.markdown(
 """
@@ -61,7 +60,7 @@ with st.expander("Visa kontraindikationer", expanded=False):
     - Samtidig behandling med annat antikoagulantium
     """
 )
-st.write("---")
+st.markdown(horizontal_line, unsafe_allow_html=True)
 
 # with st.expander("Eliquis (apixaban)", expanded=True):
 #     st.markdown(
