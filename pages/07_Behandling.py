@@ -27,10 +27,9 @@ with st.expander("Visa kontraindikationer", expanded=False):
     - Svår koagulationsrubbning
     """
     )
-st.write("---")
 
 ## Eliquis
-st.write("---")
+st.write("**---**")
 st.header("Eliquis (apixaban)")
 st.markdown(
 """
