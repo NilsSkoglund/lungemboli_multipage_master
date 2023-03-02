@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.session_state.update(st.session_state)
-horizontal_line = """<hr style="height:1px;background-color:#d9dadb;" /> """
+horizontal_line = """<hr style="height:1px;background-color:#dcdcdc;" /> """
 ## Fragmin
 st.markdown(horizontal_line, unsafe_allow_html=True)
 st.header("Fragmin (dalteparin)")
