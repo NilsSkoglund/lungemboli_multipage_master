@@ -29,7 +29,7 @@ with st.expander("Visa kontraindikationer", expanded=False):
     )
 
 ## Eliquis
-st.write("**---**")
+st.write("---")
 st.header("Eliquis (apixaban)")
 st.markdown(
 """
