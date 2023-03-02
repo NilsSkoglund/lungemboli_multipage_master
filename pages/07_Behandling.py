@@ -14,14 +14,14 @@ st.markdown(
 with st.expander("Visa kontraindikationer", expanded=False):
     st.markdown(
 """
-**Absoluta kontraindikationer:**
+**Absoluta kontraindikationer**
 - Ti överkänslighet för Fragmin
 """
 )
     st.write("")
     st.markdown(
 """
-**Relativa ki:**
+**Relativa ki**
 - Pågående blödning
 - Tidigare HIT typ II
 - Svår koagulationsrubbning
