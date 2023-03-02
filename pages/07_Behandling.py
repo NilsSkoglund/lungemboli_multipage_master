@@ -28,6 +28,8 @@ with st.expander("Visa kontraindikationer", expanded=False):
     """
     )
 
+st.markdown("""<hr style="height:10px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+
 ## Eliquis
 st.write("***")
 st.header("Eliquis (apixaban)")
