@@ -1,15 +1,17 @@
 import streamlit as st
 
 st.session_state.update(st.session_state)
-
-with st.expander("Fragmin (dalteparin)", expanded=True):
-    st.header("Fragmin (dalteparin)")
-    st.markdown(
+## Fragmin
+st.write("---")
+st.header("Fragmin (dalteparin)")
+st.markdown(
 """
 **Dos:** 200 E/kg/dygn
+
+**Att tänka på:** överkänsliget, vikt, koagulationsrubbning, HIT
 """
 )
-    st.write("")
+with st.expander("Visa kontraindikationer", expanded=False):
     st.markdown(
 """
 **Absoluta kontraindikationer:**
@@ -17,9 +19,7 @@ with st.expander("Fragmin (dalteparin)", expanded=True):
 """
 )
     st.write("")
-    st.checkbox("Visa mer info", key = "mer_info_1")
-    if st.session_state["mer_info_1"]: 
-        st.markdown(
+    st.markdown(
 """
 **Relativa ki:**
 - Pågående blödning
@@ -27,6 +27,7 @@ with st.expander("Fragmin (dalteparin)", expanded=True):
 - Svår koagulationsrubbning
 """
 )
+st.write("---")
 
 with st.expander("Eliquis (apixaban)", expanded=True):
     st.header("Eliquis (apixaban)")
