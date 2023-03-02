@@ -28,7 +28,7 @@ with st.expander("Visa kontraindikationer", expanded=False):
     """
     )
 
-st.markdown("""<hr style="height:3px;border:none;background-color:#FAFAFA;" /> """, unsafe_allow_html=True)
+st.markdown("""<hr style="height:3px;background-color:#FAFAFA;" /> """, unsafe_allow_html=True)
 
 ## Eliquis
 st.write("***")
