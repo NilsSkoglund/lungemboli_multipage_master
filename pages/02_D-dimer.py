@@ -27,7 +27,6 @@ def update_pesi_from_ddimer():
     st.session_state["pesi_age"] = st.session_state["Ddimer_age"]
     
 st.number_input("Ange ålder"
-    , value=st.session_state["Ddimer_age"]
     , step=1
     , key="Ddimer_age"
     , on_change=update_pesi_from_ddimer
