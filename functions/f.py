@@ -211,7 +211,7 @@ def lungemboli_display_button(total_score):
         if knapp_måttlig:
             switch_page("D-dimer")
     else:
-        knapp_hög = st.button("Gå till Röntgen")
+        knapp_hög = st.button("Fyll i röntgensvar")
         if knapp_hög:
             switch_page("Röntgen")
 
@@ -234,14 +234,14 @@ def lungemboli_display_lottie(total_score):
         try:
             lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
             lottie_json = load_lottieurl(lottie_url)
-            st_lottie(lottie_json, height=20, width=167)
+            st_lottie(lottie_json, height=20, width=147.5)
         except:
             pass
     else:
         try:
             lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
             lottie_json = load_lottieurl(lottie_url)
-            st_lottie(lottie_json, height=20, width=124)
+            st_lottie(lottie_json, height=20, width=140)
         except:
             pass
 
