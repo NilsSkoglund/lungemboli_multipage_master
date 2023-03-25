@@ -259,7 +259,7 @@ def ddimer_display_lottie():
     try:
         lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
         lottie_json = load_lottieurl(lottie_url)
-        st_lottie(lottie_json, height=20, width=124)
+        st_lottie(lottie_json, height=20, width=140)
     except:
         pass
     else:
