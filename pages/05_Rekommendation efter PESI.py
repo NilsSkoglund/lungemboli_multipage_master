@@ -2,7 +2,7 @@ import streamlit as st
 
 st.header("Rekommendation efter PESI")
 
-if "verifierad_lungemboli" in st.session_state:
+if "dtla_1" in st.session_state:
     st.session_state["most_severe_dtla"] = ""
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
