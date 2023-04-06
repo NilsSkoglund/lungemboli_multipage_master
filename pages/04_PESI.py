@@ -82,7 +82,7 @@ st.session_state["pesi_score"] = pesi_score
 knapp_behandling = st.button("Gå vidare")
 f.pesi_display_lottie(188.75)
 if knapp_behandling:
-    switch_page("Rekommendationer efter PESI")
+    switch_page("Rekommendation efter PESI")
 
 
 # if pesi_score < 66: 
