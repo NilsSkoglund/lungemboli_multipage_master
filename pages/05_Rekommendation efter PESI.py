@@ -22,7 +22,7 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
     st.info("**30 dagars mortalitet:** 3.2-7.1%")
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         st.write("**Vårdnivå 1:**")
@@ -33,6 +33,10 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     with col3:
         st.button("Inläggning")
         st.button("MIMA")
+    with col4:
+        st.write("")
+        st.button("IVA")
+    
 
 
 #     st.write("**Allmän vårdnivå:** Patienten rekommenderas läggas in på en avdelning med telemetri")
