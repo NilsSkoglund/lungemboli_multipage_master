@@ -2,6 +2,10 @@ import streamlit as st
 
 st.header("Rekommendation efter PESI")
 
+for i in range(1,6):
+    x = st.session_state[f"dtla_{i}"]
+    st.write(x)
+
 if "pesi_score" not in st.session_state:
     st.session_state["pesi_score"] = 70
 
