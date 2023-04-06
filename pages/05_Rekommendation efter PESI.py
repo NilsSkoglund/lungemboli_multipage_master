@@ -65,7 +65,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem)
         st.radio("Telemetri:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem)
         st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed", disabled=is_hem)
-        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem)
+        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
     
     st.subheader("Remiss")
 
@@ -78,7 +78,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
 
     with col22:
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
-        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
+        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed")
         st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
 
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
