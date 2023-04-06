@@ -25,7 +25,7 @@ st.number_input("Ange resultat från D-dimer"
     #, on_change=ddimer_update_slider
     )
 
-if 0.5 <= st.session_state["Ddimer_result"] <= 1.0:
+if 0.5 < st.session_state["Ddimer_result"] < 1.0:
 
     if "Ddimer_age" not in st.session_state:
         st.session_state["Ddimer_age"] = 50
