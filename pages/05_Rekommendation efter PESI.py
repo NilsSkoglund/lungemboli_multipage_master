@@ -2,9 +2,21 @@ import streamlit as st
 
 st.header("Rekommendation efter PESI")
 
-for i in range(1,6):
-    x = st.session_state[f"dtla_{i}"]
-    st.write(x)
+if "verifierad_lungemboli" in st.session_state:
+    st.session_state["most_severe_dtla"] = ""
+    for i in range(1,6):
+        x = st.session_state[f"dtla_{i}"]
+        if x == True:
+            if i == 1:
+                st.session_state["most_severe_dtla"] = "perifer lungemboli"
+            elif i == 2:
+                st.session_state["most_severe_dtla"] = "lungemobli på subsegmentell nivå"
+            elif i == 3:
+                st.session_state["most_severe_dtla"] = "lungemboli på segmentell nivå"
+            elif i == 4:
+                st.session_state["most_severe_dtla"] = "lungemobli på lobär nivå"
+            elif i == 5:
+                st.session_state["most_severe_dtla"] = "sadelemboli"
 
 if "pesi_score" not in st.session_state:
     st.session_state["pesi_score"] = 70
@@ -22,7 +34,9 @@ with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
     st.write("...")
 
 with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
-    st.info("PESI riskgrupp 2 med 30 dagars mortalitet mellan 1.7-3.5%")
+    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+        tillhörande PESI riskgrupp 2 med 30 dagars mortalitet mellan 1.7-3.5%"
+    st.info(info_msg)
     # Define custom CSS
     custom_css = """
     <style>
