@@ -21,12 +21,12 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     <style>
     /* Custom CSS for Streamlit columns */
 
-    .stGrid {
+    .css-ocqkz7.e1tzin5v4 {
     display: flex !important;
     flex-wrap: nowrap !important;
     }
 
-    .stGrid > div {
+    .css-ocqkz7.e1tzin5v4 > div {
     flex: 1 !important;
     min-width: 0 !important;
     }
