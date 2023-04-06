@@ -27,7 +27,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     }
 
     .css-ocqkz7.e1tzin5v4 > div {
-    flex: 3 !important;
+    flex: 1 !important;
     min-width: 0 !important;
     }
     </style>
@@ -36,7 +36,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([1,3])
     with col1:
         st.write("Vårdnivå 1:")
         st.write("Vårdnivå 2:")
