@@ -39,11 +39,13 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
+    st.subheader("Vårdrekommendationer")
+
     col1, col2 = st.columns([1,3])
 
     # Adjust column widths based on custom CSS
     st.markdown(
-        f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 3 !important; }}</style>",
+        f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 2 !important; }}</style>",
         unsafe_allow_html=True,
     )
 
@@ -67,14 +69,6 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     st.subheader("Remisser")
 
     col11, col22 = st.columns([1,3])
-
-    # Adjust column widths based on custom CSS
-    st.markdown(
-        f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 2 !important; }}</style>",
-        unsafe_allow_html=True,
-    )
-
-    
 
     with col11:
         st.write("Hjärteko")
