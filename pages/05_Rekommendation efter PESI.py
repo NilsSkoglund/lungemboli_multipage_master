@@ -27,8 +27,8 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     st.markdown(
     """
     **Ytterligare rekommendationer:**
-    - News x4.
-    - Beställ Troponin. Om positiv, kontakta kärlkirurg. 
+    - News x4
+    - Beställ Troponin. Om positiv, kontakta kärlkirurg
     """
 )
 
