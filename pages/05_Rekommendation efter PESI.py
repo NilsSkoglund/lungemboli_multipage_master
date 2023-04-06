@@ -2,6 +2,9 @@ import streamlit as st
 
 st.header("Rekommendation efter PESI")
 
+if "pesi_score" not in st.session_state:
+    st.session_state["pesi_score"] = 70
+
 st.write("Pesi score:", st.session_state["pesi_score"])
 
 def expand_recommendation(lower_limit, upper_limit):
