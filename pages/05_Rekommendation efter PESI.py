@@ -100,7 +100,10 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     
 
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
-    st.info("**30 dagars mortalitet:** 3.2-7.1%")
+    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+        Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
+        dagars mortaliteten är mellan 3.2-7.1%"
+    st.info(info_msg)
     display_recommendations(3)
     
 
