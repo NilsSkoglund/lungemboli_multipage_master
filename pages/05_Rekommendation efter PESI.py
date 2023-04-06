@@ -35,16 +35,22 @@ def display_recommendations(x):
         behandling_index = 1
         telemetri_index = 1
         news_index = 0
+        koag_index = 0
+        vårdcentral_index = 0
     elif x == 2:
         vårdnivå1_index = 1
         behandling_index = 0
         telemetri_index = 1
         news_index = 0
+        koag_index = 1
+        vårdcentral_index = 1
     elif x == 3:
         vårdnivå1_index = 1
         behandling_index = 0
         telemetri_index = 0
         news_index = 1
+        koag_index = 1
+        vårdcentral_index = 1
     with col1:
         st.write("Vårdnivå 1:")
         st.write("Vårdnivå 2:")
@@ -74,8 +80,8 @@ def display_recommendations(x):
 
     with col22:
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
-        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
-        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
+        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
+        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=vårdcentral_index, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
 
 
 st.header("Rekommendation efter PESI")
