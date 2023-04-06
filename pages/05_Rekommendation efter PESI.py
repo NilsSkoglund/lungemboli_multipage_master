@@ -36,7 +36,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     with col1:
         st.write("Vårdnivå 1:")
         st.write("Vårdnivå 2:")
