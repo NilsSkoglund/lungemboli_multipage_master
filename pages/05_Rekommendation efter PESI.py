@@ -63,7 +63,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
     
-    st.subheader("Remisser")
+    st.subheader("Remiss")
 
     col11, col22 = st.columns([1,3])
 
