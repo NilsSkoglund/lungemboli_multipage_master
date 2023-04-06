@@ -42,14 +42,14 @@ def display_recommendations(x):
         behandling_index = 0
         telemetri_index = 1
         news_index = 0
-        koag_index = 1
+        koag_index = 0
         vårdcentral_index = 1
     elif x == 3:
         vårdnivå1_index = 1
         behandling_index = 0
         telemetri_index = 0
         news_index = 1
-        koag_index = 1
+        koag_index = 0
         vårdcentral_index = 1
     with col1:
         st.write("Vårdnivå 1:")
