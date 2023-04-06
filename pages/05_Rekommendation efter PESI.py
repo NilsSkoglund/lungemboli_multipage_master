@@ -11,12 +11,17 @@ def expand_recommendation(lower_limit, upper_limit):
 st.write("Hej")
 
 
-st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66))
+with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
+    st.write("...")
 
-st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86))
+with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
+    st.write("...")
 
-st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106))
+with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
+    st.write("...")
 
-st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126))
+with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
+    st.write("...")
 
-st.expander("Riskgrupp 3", expanded=expand_recommendation(125, 300))
+with st.expander("Riskgrupp 3", expanded=expand_recommendation(125, 300)):
+    st.write("...")
