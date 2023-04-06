@@ -40,9 +40,8 @@ if "Ddimer_age" not in st.session_state:
     st.session_state["Ddimer_age"] = 50
 
 st.number_input("Ange ålder"
-    , value=50
     , step=1
-    , key="pesi_age"
+    , key="Ddimer_age"
     )
 
 # Create checkboxes
