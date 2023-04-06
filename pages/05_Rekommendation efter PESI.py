@@ -1,6 +1,6 @@
 import streamlit as st
 
-def display_recommendations():
+def display_recommendations(x):
     custom_css = """
     <style>
     /* Custom CSS for Streamlit columns */
@@ -37,8 +37,8 @@ def display_recommendations():
         st.write("Behandling:")
 
     with col2:
-        vård1 = st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed")
-        if vård1 == "Hem":
+        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed", key=f"vård{x}")
+        if st.session_state[f"vård{x}"] == "Hem":
             is_hem = True
         else:
             is_hem = False
@@ -161,7 +161,7 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     st.subheader("Rekommendation för riskgrupp 3")
 
     st.info("**30 dagars mortalitet:** 3.2-7.1%")
-    display_recommendations()
+    display_recommendations(3)
     
 
 
