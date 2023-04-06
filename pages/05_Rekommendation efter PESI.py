@@ -63,7 +63,10 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("Telemetri:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed")
         st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
-    col1, col2 = st.columns([1,3])
+    
+    st.write("Remiss")
+    
+    col11, col22 = st.columns([1,3])
 
     # Adjust column widths based on custom CSS
     st.markdown(
@@ -71,14 +74,14 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         unsafe_allow_html=True,
     )
 
-    st.write("Remiss")
+    
 
-    with col1:
+    with col11:
         st.write("Hjärteko")
         st.write("Koagulationsmottagning")
         st.write("Vårdcentral")
 
-    with col2:
+    with col22:
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
