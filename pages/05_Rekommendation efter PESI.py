@@ -61,10 +61,11 @@ def display_recommendations(x):
         st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed")
         st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
 
+
 st.header("Rekommendation efter PESI")
 
+st.session_state["most_severe_dtla"] = ""
 if "dtla_1" in st.session_state:
-    st.session_state["most_severe_dtla"] = ""
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
         if x == True:
