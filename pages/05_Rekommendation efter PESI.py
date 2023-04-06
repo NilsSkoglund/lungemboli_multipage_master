@@ -23,5 +23,5 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
     st.write("...")
 
-with st.expander("Riskgrupp 3", expanded=expand_recommendation(125, 300)):
+with st.expander("Riskgrupp 5", expanded=expand_recommendation(125, 300)):
     st.write("...")
