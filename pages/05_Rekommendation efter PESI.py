@@ -53,6 +53,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.write("Telemetrik:")
         st.write("News:")
         st.write("Behandling:")
+        st.write("**Remiss**")
     with col2:
         st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed")
