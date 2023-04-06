@@ -8,6 +8,8 @@ def expand_recommendation(lower_limit, upper_limit):
 
     return lower_limit < st.session_state["pesi_score"] < upper_limit
 
+st.write("Hej")
+
 
 st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66))
 
