@@ -20,7 +20,9 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     st.subheader("Rekommendation för riskgrupp 3")
 
-    st.write("**30 dagars mortalitet:** 3.2-7.1%")
+    st.info("**30 dagars mortalitet:** 3.2-7.1%")
+
+    st.write("Patienten rekommenderas läggas in på en avdelning med telemetri")
 
 with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
     st.write("...")
