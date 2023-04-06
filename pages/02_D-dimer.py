@@ -65,8 +65,10 @@ elif st.session_state["Ddimer_result"] > 1.0:
         f.ddimer_display_lottie()
         if knapp_positiv_ddimer:
             switch_page("Röntgen")
+
+
 # om man har fyllt i både ålder och resulat --> presentera slutsats
-elif st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
+if "Ddimer_age" in st.session_state:
     if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
         st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Fortsätt utredning med DTLA.")
 
