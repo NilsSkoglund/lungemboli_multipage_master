@@ -19,6 +19,8 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
+st.session_state["Ddimer_result"] = 0.5
+
 st.number_input("Ange resultat från D-dimer"
     , step=0.01
     , key="Ddimer_result"
