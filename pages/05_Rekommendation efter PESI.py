@@ -32,6 +32,7 @@ def display_recommendations(x):
 
     if x == 1:
         vårdnivå1_index = 0
+        vårdnivå2_index = 0
         behandling_index = 1
         telemetri_index = 1
         news_index = 0
@@ -39,6 +40,7 @@ def display_recommendations(x):
         vårdcentral_index = 0
     elif x == 2:
         vårdnivå1_index = 1
+        vårdnivå2_index = 0
         behandling_index = 0
         telemetri_index = 1
         news_index = 0
@@ -46,6 +48,15 @@ def display_recommendations(x):
         vårdcentral_index = 1
     elif x == 3:
         vårdnivå1_index = 1
+        vårdnivå2_index = 0
+        behandling_index = 0
+        telemetri_index = 0
+        news_index = 1
+        koag_index = 0
+        vårdcentral_index = 1
+    elif x == 4:
+        vårdnivå1_index = 1
+        vårdnivå2_index = 1
         behandling_index = 0
         telemetri_index = 0
         news_index = 1
@@ -64,7 +75,7 @@ def display_recommendations(x):
             is_hem = True
         else:
             is_hem = False
-        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
+        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=vårdnivå2_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
         st.radio("Telemetri:", options=["Ja", "Nej"], index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
         st.radio("News:", options=["x4", "x6", "x8"], index=news_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=behandling_index, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
@@ -147,7 +158,11 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
 
 with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
-    st.write("...")
+    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+        Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
+        dagars mortaliteten är mellan 4.0-11.4%"
+    st.info(info_msg)
+    display_recommendations(4)
 
 with st.expander("Riskgrupp 5", expanded=expand_recommendation(125, 300)):
     st.write("...")
