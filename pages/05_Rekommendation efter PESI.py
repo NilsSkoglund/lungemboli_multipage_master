@@ -35,7 +35,8 @@ with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
 
 with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        tillhörande PESI riskgrupp 2 med 30 dagars mortalitet mellan 1.7-3.5%"
+        Riskstratifieras enligt PESI i riskgrupp 2 där den genomsnittliga 30\
+        dagars mortaliteten är mellan 1.7-3.5%"
     st.info(info_msg)
     # Define custom CSS
     custom_css = """
