@@ -19,33 +19,34 @@ if "beslutsgräns" not in st.session_state:
 
 st.header("D-dimer")
 
-
-if "Ddimer_age" not in st.session_state:
-    st.session_state["Ddimer_age"] = 50
-
-def update_pesi_from_ddimer():
-    st.session_state["pesi_age"] = st.session_state["Ddimer_age"]
-    
-st.number_input("Ange ålder"
-    , step=1
-    , key="Ddimer_age"
-    , on_change=update_pesi_from_ddimer
-    )
-
-
-if st.session_state["Ddimer_age"]:
-    st.session_state["beslutsgräns"] =\
-         max([0.50, st.session_state["Ddimer_age"]*0.01])
-    st.session_state["beslutsgräns"] =\
-         round(st.session_state["beslutsgräns"],2)
-    st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
-
-
 st.number_input("Ange resultat från D-dimer"
     , step=0.01
     , key="Ddimer_result"
     #, on_change=ddimer_update_slider
     )
+
+if 0.5 >= st.session_state["Ddimer_result"] <= 1.0:
+
+    if "Ddimer_age" not in st.session_state:
+        st.session_state["Ddimer_age"] = 50
+
+    def update_pesi_from_ddimer():
+        st.session_state["pesi_age"] = st.session_state["Ddimer_age"]
+        
+    st.number_input("Ange ålder"
+        , step=1
+        , key="Ddimer_age"
+        , on_change=update_pesi_from_ddimer
+        )
+
+
+    if st.session_state["Ddimer_age"]:
+        st.session_state["beslutsgräns"] =\
+            max([0.50, st.session_state["Ddimer_age"]*0.01])
+        st.session_state["beslutsgräns"] =\
+            round(st.session_state["beslutsgräns"],2)
+        st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
+
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if st.session_state["Ddimer_age"] and st.session_state["Ddimer_result"]:
