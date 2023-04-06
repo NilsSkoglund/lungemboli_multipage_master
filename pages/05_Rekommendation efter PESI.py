@@ -78,7 +78,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
 
     with col11:
         st.write("Hjärteko")
-        st.write("Koagulationsmottagning")
+        st.write("Koag. mottagn.")
         st.write("Vårdcentral")
 
     with col22:
