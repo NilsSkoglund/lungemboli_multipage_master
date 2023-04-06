@@ -102,7 +102,11 @@ def expand_recommendation(lower_limit, upper_limit):
     return lower_limit < st.session_state["pesi_score"] < upper_limit
 
 with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
-    st.write("...")
+    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+    Riskstratifieras enligt PESI i riskgrupp 1 där den genomsnittliga 30\
+    dagars mortaliteten är mellan 0.0-1.6%"
+    st.info(info_msg)
+    display_recommendations(1)
 
 with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
