@@ -27,15 +27,19 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     with col1:
         st.write("**Vårdnivå 1:**")
         st.write("**Vårdnivå 2:**")
+        st.write("**News:**")
     with col2: 
         st.button("Hem")
         st.button("Avdelning")
+        st.button("x4")
     with col3:
         st.button("Inläggning")
         st.button("MIMA")
+        st.button("x6")
     with col4:
         st.button("N/A", disabled=True)
         st.button("IVA")
+        st.button("x8")
     
 
 
