@@ -59,7 +59,7 @@ def display_recommendations(x):
         vårdnivå2_index = 1
         behandling_index = 0
         telemetri_index = 0
-        news_index = 1
+        news_index = 2
         koag_index = 0
         vårdcentral_index = 1
     elif x == 5:
@@ -67,7 +67,7 @@ def display_recommendations(x):
         vårdnivå2_index = 2
         behandling_index = 0
         telemetri_index = 0
-        news_index = 1
+        news_index = 2
         koag_index = 0
         vårdcentral_index = 1
     with col1:
@@ -167,14 +167,14 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
 with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp 4 där den genomsnittliga 30\
         dagars mortaliteten är mellan 4.0-11.4%"
     st.info(info_msg)
     display_recommendations(4)
 
 with st.expander("Riskgrupp 5", expanded=expand_recommendation(125, 300)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp 5 där den genomsnittliga 30\
         dagars mortaliteten är mellan 10.0-25.5%"
     st.info(info_msg)
     display_recommendations(5)
