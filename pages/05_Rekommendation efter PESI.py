@@ -53,9 +53,10 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.write("Telemetrik:")
         st.write("News:")
         st.write("Behandling:")
-        st.write("**Remiss**")
-        st.write("**Hjärteko**")
-        st.write("**Koagulationsmottagning**")
+        st.write("Remiss Hjärteko")
+        st.write("Remiss Koagulationsmottagning")
+        st.write("Remiss Vårdcentral")
+
 
 
     with col2:
@@ -66,6 +67,8 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
+        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
+
 
 
 
