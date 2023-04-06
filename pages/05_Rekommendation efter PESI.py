@@ -26,12 +26,14 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
     with col1:
         st.write("**Vårdnivå 1:**")
-        st.button("Hem")
         st.write("**Vårdnivå 2:**")
-        st.button("Avdelning")
     with col2: 
+        st.button("Hem")
+        st.button("Avdelning")
+    with col3:
         st.button("Inläggning")
         st.button("MIMA")
+
 
 #     st.write("**Allmän vårdnivå:** Patienten rekommenderas läggas in på en avdelning med telemetri")
 
