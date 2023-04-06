@@ -94,13 +94,13 @@ def display_recommendations(x):
 
     with col11:
         st.write("Hjärteko")
-        st.write("Koag. mottagn.")
         st.write("Vårdcentral")
+        st.write("Koag. mottagn.")
 
     with col22:
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
-        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
         st.radio("Vårdcentral:", options=["Ja", "Nej"], index=vårdcentral_index, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
+        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
 
 
 st.header("Rekommendation efter PESI")
