@@ -42,7 +42,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.write("Vårdnivå 2:")
     with col2:
         st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed")
-        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True)
+        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed")
     
     st.radio("Telemetrik:", options=["JA", "NEJ"], index=0, horizontal=True)
     st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True)
