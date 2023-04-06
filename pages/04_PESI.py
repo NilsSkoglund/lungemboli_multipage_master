@@ -53,7 +53,7 @@ for i, j in enumerate(dct_pesi.items()):
         )
 pesi_score = f.calc_score(dct_pesi, name_pesi)
 
-pesi_score += st.session_state["pesi_age"]
+pesi_score += st.session_state["Ddimer_age"]
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
@@ -67,31 +67,42 @@ container = st.container()
 
 col1, col2 = st.columns([1, 1])
 
-if pesi_score < 86: 
-    container.warning("Låg risk. (gränsen är för tillfället satt till 86)")
-    with col1:
-        knapp_behandling = st.button("Gå vidare till behandling")
-        f.pesi_display_lottie(188.75)
-        if knapp_behandling:
-            switch_page("Behandling")
-else:
-    container.error("Hög risk. (gränsen är för tillfället satt till 86)")
-    with col1:
-            knapp_inläggning = st.button("Gå vidare till inläggning")
-            f.pesi_display_lottie(183.19)
-            knapp_ultraljud = st.button("Gå vidare till ultraljud")
-            f.pesi_display_lottie(169.89)
+if pesi_score < 66: 
+    container.warning("Riskgrupp 1.")
+elif pesi_score < 86:
+    container.warning("Riskgrupp 2.")
+elif pesi_score < 106:
+    container.warning("Riskgrupp 3.")
+elif pesi_score < 126:
+    container.warning("Riskgrupp 4.")
+elif pesi_score > 125:
+    container.warning("Riskgrupp 5.")
+
+# if pesi_score < 66: 
+#     container.warning("Riskgrupp 1.")
+#     with col1:
+#         knapp_behandling = st.button("Gå vidare till behandling")
+#         f.pesi_display_lottie(188.75)
+#         if knapp_behandling:
+#             switch_page("Behandling")
+# else:
+#     container.error("Hög risk. (gränsen är för tillfället satt till 86)")
+#     with col1:
+#             knapp_inläggning = st.button("Gå vidare till inläggning")
+#             f.pesi_display_lottie(183.19)
+#             knapp_ultraljud = st.button("Gå vidare till ultraljud")
+#             f.pesi_display_lottie(169.89)
     
-    if knapp_inläggning:
-        switch_page("Inläggning")
-    if knapp_ultraljud:
-        switch_page("Ultraljud")
+#     if knapp_inläggning:
+#         switch_page("Inläggning")
+#     if knapp_ultraljud:
+#         switch_page("Ultraljud")
 
-    css_example = '''                                                                                                                                                    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
+#     css_example = '''                                                                                                                                                    
+#     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
 
-    <i class="fa-solid fa-phone"></i> 
-    <a style="color:white" href='tel:+4673-712-9109'>Ring Jour</a>
+#     <i class="fa-solid fa-phone"></i> 
+#     <a style="color:white" href='tel:+4673-712-9109'>Ring Jour</a>
 
-    '''
-    st.write(css_example, unsafe_allow_html=True)
+#     '''
+#     st.write(css_example, unsafe_allow_html=True)
