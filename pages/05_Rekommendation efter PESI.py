@@ -17,7 +17,7 @@ with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
 with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     st.info("PESI riskgrupp 2 med 30 dagars mortalitet mellan 1.7-3.5%")
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([1,3])
     with col1:
         st.write("Vårdnivå 1:")
     with col2:
