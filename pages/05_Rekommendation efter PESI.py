@@ -36,7 +36,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    col1, col2 = st.columns([1,3])
+    col1, col2 = st.columns([1,4])
 
     # Adjust column widths based on custom CSS
     st.markdown(
