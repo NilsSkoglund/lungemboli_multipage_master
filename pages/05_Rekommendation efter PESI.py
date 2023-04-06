@@ -29,10 +29,17 @@ def display_recommendations(x):
         f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 2 !important; }}</style>",
         unsafe_allow_html=True,
     )
+
+    if x == 2:
+        telemetri_index = 1
+        news_index = 0
+    elif x == 3:
+        telemetri_index = 0
+        news_index = 1
     with col1:
         st.write("Vårdnivå 1:")
         st.write("Vårdnivå 2:")
-        st.write("Telemetrik:")
+        st.write("Telemetri:")
         st.write("News:")
         st.write("Behandling:")
 
@@ -43,8 +50,8 @@ def display_recommendations(x):
         else:
             is_hem = False
         st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
-        st.radio("Telemetri:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
-        st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
+        st.radio("Telemetri:", options=["Ja", "Nej"], index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
+        st.radio("News:", options=["x4", "x6", "x8"], index=news_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
     
     st.subheader("Remiss")
