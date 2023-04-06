@@ -15,7 +15,11 @@ with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
     st.write("...")
 
 with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
-    st.write("...")
+    st.info("PESI riskgrupp 2 med 30 dagars mortalitet mellan 1.7-3.5%")
+    st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], horizontal=True)
+    st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=1, horizontal=True)
+    st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True)
+
 
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     st.subheader("Rekommendation för riskgrupp 3")
