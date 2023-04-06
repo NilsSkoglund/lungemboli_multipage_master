@@ -83,7 +83,7 @@ def display_recommendations(x):
             is_hem = True
         else:
             is_hem = False
-        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=vårdnivå2_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
+        st.radio("Vårdnivå 2:", options=["Avd.", "MIMA", "IVA"], index=vårdnivå2_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
         st.radio("Telemetri:", options=["Ja", "Nej"], index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
         st.radio("News:", options=["x4", "x6", "x8"], index=news_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=behandling_index, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
