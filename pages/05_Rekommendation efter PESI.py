@@ -39,7 +39,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    st.subheader("Vårdrekommendationer")
+    st.subheader("Vård")
 
     col1, col2 = st.columns([1,3])
 
@@ -55,9 +55,6 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.write("Telemetrik:")
         st.write("News:")
         st.write("Behandling:")
-
-
-
 
     with col2:
         st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed")
@@ -79,13 +76,6 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
-
-
-
-
-    st.multiselect("Remiss:", options=["Hjärteko", "Koagulationsmottagning", "Vårdcentral"])
-    
-
 
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
     st.subheader("Rekommendation för riskgrupp 3")
