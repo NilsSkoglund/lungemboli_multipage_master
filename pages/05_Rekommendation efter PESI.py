@@ -31,14 +31,17 @@ def display_recommendations(x):
     )
 
     if x == 1:
+        vårdnivå1_index = 0
         behandling_index = 1
         telemetri_index = 1
         news_index = 0
     elif x == 2:
+        vårdnivå1_index = 1
         behandling_index = 0
         telemetri_index = 1
         news_index = 0
     elif x == 3:
+        vårdnivå1_index = 1
         behandling_index = 0
         telemetri_index = 0
         news_index = 1
@@ -50,7 +53,7 @@ def display_recommendations(x):
         st.write("Behandling:")
 
     with col2:
-        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
+        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=vårdnivå1_index, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
         if st.session_state[f"radio1_{x}"] == "Hem":
             is_hem = True
         else:
