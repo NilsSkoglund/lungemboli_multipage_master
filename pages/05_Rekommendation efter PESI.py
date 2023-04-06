@@ -64,13 +64,13 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
         st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
     
-    st.write("Remiss")
-    
+    st.subheader("Remisser")
+
     col11, col22 = st.columns([1,3])
 
     # Adjust column widths based on custom CSS
     st.markdown(
-        f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 3 !important; }}</style>",
+        f"<style>.css-ocqkz7.e1tzin5v4 > div:nth-child(1) {{ flex: 1 !important; }} .css-ocqkz7.e1tzin5v4 > div:nth-child(2) {{ flex: 2 !important; }}</style>",
         unsafe_allow_html=True,
     )
 
