@@ -30,10 +30,16 @@ def display_recommendations(x):
         unsafe_allow_html=True,
     )
 
-    if x == 2:
+    if x == 1:
+        behandling_index = 1
+        telemetri_index = 1
+        news_index = 0
+    elif x == 2:
+        behandling_index = 0
         telemetri_index = 1
         news_index = 0
     elif x == 3:
+        behandling_index = 0
         telemetri_index = 0
         news_index = 1
     with col1:
@@ -52,7 +58,7 @@ def display_recommendations(x):
         st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
         st.radio("Telemetri:", options=["Ja", "Nej"], index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
         st.radio("News:", options=["x4", "x6", "x8"], index=news_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
-        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
+        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=behandling_index, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
     
     st.subheader("Remiss")
 
