@@ -37,15 +37,15 @@ def display_recommendations(x):
         st.write("Behandling:")
 
     with col2:
-        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed", key=f"vård{x}")
-        if st.session_state[f"vård{x}"] == "Hem":
+        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
+        if st.session_state[f"radio1_{x}"] == "Hem":
             is_hem = True
         else:
             is_hem = False
-        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem)
-        st.radio("Telemetri:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem)
-        st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed", disabled=is_hem)
-        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed")
+        st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
+        st.radio("Telemetri:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
+        st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
+        st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=0, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
     
     st.subheader("Remiss")
 
@@ -57,9 +57,9 @@ def display_recommendations(x):
         st.write("Vårdcentral")
 
     with col22:
-        st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
-        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed")
-        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed")
+        st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
+        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=0, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
+        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
 
 
 st.header("Rekommendation efter PESI")
