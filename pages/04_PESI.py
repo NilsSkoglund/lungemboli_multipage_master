@@ -80,7 +80,7 @@ elif pesi_score > 125:
 
 st.session_state["pesi_score"] = pesi_score
 knapp_behandling = st.button("Gå vidare")
-f.pesi_display_lottie(188.75)
+f.pesi_display_lottie(89)
 if knapp_behandling:
     switch_page("Rekommendation efter PESI")
 
