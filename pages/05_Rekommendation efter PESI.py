@@ -86,7 +86,7 @@ def display_recommendations(x):
 
 st.header("Rekommendation efter PESI")
 
-st.session_state["most_severe_dtla"] = ""
+st.session_state["most_severe_dtla"] = "lungemboli"
 if "dtla_1" in st.session_state:
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
