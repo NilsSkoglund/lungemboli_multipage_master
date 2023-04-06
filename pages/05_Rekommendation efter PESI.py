@@ -20,7 +20,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     st.radio("Vårdnivå 2:", options=["Avdelning", "MIMA", "IVA"], index=0, horizontal=True)
     st.radio("Telemetrik:", options=["JA", "NEJ"], index=0, horizontal=True)
     st.radio("News:", options=["x4", "x6", "x8"], index=1, horizontal=True)
-    st.multiselect("Remiss", options=["Hjärteko", "Koagulationsmottagning", "Vårdcentral"], horizontal=True)
+    st.multiselect("Remiss", options=["Hjärteko", "Koagulationsmottagning", "Vårdcentral"])
 
 
 with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
