@@ -22,15 +22,22 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
     st.info("**30 dagars mortalitet:** 3.2-7.1%")
 
-    st.write("**Allmän vårdnivå:** Patienten rekommenderas läggas in på en avdelning med telemetri")
+    col1, col2, col3 = st.columns(3)
 
-    st.markdown(
-    """
-    **Ytterligare rekommendationer:**
-    - News x4
-    - Beställ Troponin. Om positiv, kontakta kärlkirurg
-    """
-)
+    with col1:
+        st.button("Hem")
+    with col2: 
+        st.button("Inläggning")
+
+#     st.write("**Allmän vårdnivå:** Patienten rekommenderas läggas in på en avdelning med telemetri")
+
+#     st.markdown(
+#     """
+#     **Ytterligare rekommendationer:**
+#     - News x4
+#     - Beställ Troponin. Om positiv, kontakta kärlkirurg
+#     """
+# )
 
 
 
