@@ -34,7 +34,7 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
         st.button("Inläggning")
         st.button("MIMA")
     with col4:
-        st.button("")
+        st.button("N/A", disabled=True)
         st.button("IVA")
     
 
