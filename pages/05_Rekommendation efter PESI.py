@@ -27,7 +27,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     }
 
     .css-ocqkz7.e1tzin5v4 > div {
-    flex: 1 !important;
+    flex: 3 !important;
     min-width: 0 !important;
     }
     </style>
