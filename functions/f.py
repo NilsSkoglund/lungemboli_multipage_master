@@ -109,9 +109,13 @@ def control_tooltip():
 
 ############################# General functions ###############################
     # used for multiple different pages
+        # display flow 
         # klar
         # calc_score
         # intialize_widget_keys
+def display_flow(img):
+    image = Image.open(f"img/flow/{img}.png")
+    return st.image(image)
 def klar():
     return st.markdown('<a href="/Lungemboli" style="display: block;\
     text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\

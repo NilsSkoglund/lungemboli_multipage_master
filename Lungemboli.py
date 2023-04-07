@@ -10,7 +10,9 @@ f.hide_hamburger()
 f.hide_padding_top()
 f.hide_img_fullscreen()
 f.reduce_padding()
-
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow("flow_wells")
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
