@@ -33,8 +33,8 @@ st.number_input("Ange resultat från D-dimer"
 
 if 0.5 < st.session_state["Ddimer_result"] < 1.0:
 
-    # if "Ddimer_age" not in st.session_state:
-    #     st.session_state["Ddimer_age"] = 50
+    if "Ddimer_age" not in st.session_state:
+        st.session_state["Ddimer_age"] = 50
 
     def update_pesi_from_ddimer():
         st.session_state["pesi_age"] = st.session_state["Ddimer_age"]

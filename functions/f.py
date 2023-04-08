@@ -165,12 +165,14 @@ def display_flow_v2():
                             img_path += "_sadel"
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
-        if st.session_state["Ddimer_status"] == "positive":
-            img_path += "_positive"
-        elif st.session_state["Ddimer_status"] == "negative":
-            img_path += "_negative"
-        elif "D-dimer_påbörjad" in st.session_state:
+        if "D-dimer_påbörjad" in st.session_state:
             img_path += "_unknown"
+        if st.session_state["Ddimer_status"] == "positive":
+            img_path = "måttlig/måttlig_positive"
+        elif st.session_state["Ddimer_status"] == "negative":
+            img_path = "måttlig/måttlig_negative"
+        
+            
     elif st.session_state["total_score_pe"] > 6:
         img_path = "hög/hög"
     image = Image.open(f"img/flow/{img_path}.png")
