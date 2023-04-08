@@ -12,7 +12,8 @@ f.hide_padding_top()
 
 ############################ Flow Illustration  ###############################
 with st.sidebar:
-    f.display_flow("flow_låg_perc")
+    f.display_flow_v2()
+    #f.display_flow("flow_låg_perc")
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
