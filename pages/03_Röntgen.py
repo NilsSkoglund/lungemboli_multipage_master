@@ -13,10 +13,12 @@ f.hide_padding_top()
 if "total_score_pe" not in st.session_state:
     st.session_state["total_score_pe"] = 0
 with st.sidebar:
-    if 2 <= st.session_state["total_score_pe"] < 6.5 :
+    if st.session_state["total_score_pe"] < 2:
+        img = "flow_låg_perc_ddimer_röntgen"
+    elif 2 <= st.session_state["total_score_pe"] < 6.5 :
         img = "flow_måttlig_ddimer_röntgen"
     else:
-        img = "flow_låg_perc_ddimer_röntgen"
+        img = "flow_hög_röntgen"
     f.display_flow(img)
 
 # Initialize variables for radiology_report
