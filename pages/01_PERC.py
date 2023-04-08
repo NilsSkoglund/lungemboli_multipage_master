@@ -12,6 +12,8 @@ f.hide_padding_top()
 
 ########################### Initialize Variables ##############################
 
+st.session_state["perc_påbörjad"] = True
+
 ############################# Local Variables #################################
 
 dct_perc = {

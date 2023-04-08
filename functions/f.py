@@ -139,8 +139,11 @@ def display_flow_v2():
     # if low
         img_path = "låg/låg"
         # check if PERC has been broken
-        if calc_score(dct_perc, name_perc) > 0:
-            img_path += "_broken"
+        if "perc_påbörjad" in st.session_state:
+            if calc_score(dct_perc, name_perc) > 0:
+                img_path += "_broken"
+            else:
+                img_path += "_unbroken"
         # check d-dimer status
         if st.session_state["Ddimer_status"] == "positive":
             img_path += "_positive"
