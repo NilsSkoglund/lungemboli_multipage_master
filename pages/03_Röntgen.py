@@ -10,6 +10,15 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 
+if "total_score_pe" not in st.session_state:
+    st.session_state["total_score_pe"] = 0
+with st.sidebar:
+    if st.session_state["total_score_pe"] >= 2:
+        img = ""
+    else:
+        img = "flow_låg_perc_ddimer_röntgen"
+    f.display_flow(img)
+
 # Initialize variables for radiology_report
 	# dct with report_answer:score
 	# name for key
