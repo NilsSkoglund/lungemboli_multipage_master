@@ -10,10 +10,6 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 
-############################ Flow Illustration  ###############################
-with st.sidebar:
-    f.display_flow_v2()
-    #f.display_flow("flow_låg_perc")
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
@@ -70,3 +66,8 @@ else:
     st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos.")
     f.klar()
     # KLAR knapp
+
+
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow_v2()
