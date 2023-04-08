@@ -13,6 +13,8 @@ st.session_state.update(st.session_state)
 
 ########################### Initialize Variables ##############################
 
+st.session_state["D-dimer_påbörjad"] = True
+
 if "beslutsgräns" not in st.session_state:
     st.session_state["beslutsgräns"] = 50
 
