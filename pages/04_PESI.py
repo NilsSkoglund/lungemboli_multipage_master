@@ -15,6 +15,38 @@ f.hide_img_fullscreen()
 f.control_tooltip()
 f.col_control_rem()
 
+############################ Flow Illustration  ###############################
+if "dtla_1" in st.session_state:
+    for i in range(1,6):
+        x = st.session_state[f"dtla_{i}"]
+        if x == True:
+            if i == 1:
+                st.session_state["most_severe_dtla"] = "perifer lungemboli"
+            elif i == 2:
+                st.session_state["most_severe_dtla"] = "lungemobli på subsegmentell nivå"
+            elif i == 3:
+                st.session_state["most_severe_dtla"] = "lungemboli på segmentell nivå"
+            elif i == 4:
+                st.session_state["most_severe_dtla"] = "lungemobli på lobär nivå"
+            elif i == 5:
+                st.session_state["most_severe_dtla"] = "sadelemboli"
+else:
+    st.session_state["most_severe_dtla"] = "ingen lungemboli"
+
+
+
+if "total_score_pe" not in st.session_state:
+    st.session_state["total_score_pe"] = 0
+with st.sidebar:
+    if st.session_state["total_score_pe"] < 2:
+        if 
+        img = "flow_låg_perc_ddimer_röntgen"
+    elif 2 <= st.session_state["total_score_pe"] < 6.5 :
+        img = "flow_måttlig_ddimer_röntgen"
+    else:
+        img = "flow_hög_röntgen"
+    f.display_flow(img)
+
 ########################### Initialize Variables ##############################
 
 dct_pesi = {
