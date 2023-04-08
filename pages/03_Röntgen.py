@@ -10,7 +10,7 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 
-with st.sidebar():
+with st.sidebar:
     f.display_flow_v2()
 
 # Initialize variables for radiology_report
