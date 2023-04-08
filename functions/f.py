@@ -179,20 +179,23 @@ def klar():
     target="_self">Avsluta</a>', unsafe_allow_html=True)
 
 def calc_score(dct, name):
-	'''
+    '''
     Takes a dictionary (dct) and a string (name) as inputs and ...
-	calculates total score for:
-        DVT
-        PE
-        PERC
-        PESI
-	'''
-	total_score = 0
-	for index, question in enumerate(dct):
-		key = f"{name}_{index}"
-		if st.session_state[key]: # if True means the checkbox is ticked
-			total_score += dct.get(question)
-	return total_score
+    calculates total score for:
+    DVT
+    PE
+    PERC
+    PESI
+    '''
+    total_score = 0
+    for index, question in enumerate(dct):  
+        key = f"{name}_{index}"
+        if key in st.session_state:
+            if st.session_state[key]: # if True means the checkbox is ticked
+                total_score += dct.get(question)
+        else:
+            pass
+    return total_score
 
 def initialize_widget_keys(dct, name):
 	'''

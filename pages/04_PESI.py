@@ -16,8 +16,8 @@ f.control_tooltip()
 f.col_control_rem()
 
 ############################ Flow Illustration  ###############################
-if "most_severe_dtla_img" not in st.session_state:
-    st.session_state["most_severe_dtla_img"] = "ingen"
+# if "most_severe_dtla_img" not in st.session_state:
+#     st.session_state["most_severe_dtla_img"] = "ingen"
 
 if "dtla_1" in st.session_state:
     for i in range(1,6):
