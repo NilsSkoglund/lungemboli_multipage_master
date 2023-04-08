@@ -10,10 +10,10 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 
-########################### Initialize Variables ##############################
 ############################ Flow Illustration  ###############################
 with st.sidebar:
     f.display_flow("flow_låg_perc")
+########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
 

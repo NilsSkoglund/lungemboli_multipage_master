@@ -2,13 +2,16 @@ import streamlit as st
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
 
-st.session_state.update(st.session_state)
 
 f.button_style()
 f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow("flow_måttlig_ddimer")
+st.session_state.update(st.session_state)
 
 ########################### Initialize Variables ##############################
 
