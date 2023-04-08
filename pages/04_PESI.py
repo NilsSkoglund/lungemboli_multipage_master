@@ -15,11 +15,8 @@ f.hide_img_fullscreen()
 f.control_tooltip()
 f.col_control_rem()
 
-############################ Flow Illustration  ###############################
-with st.sidebar:
-    f.display_flow_v2()
-
 ########################### Initialize Variables ##############################
+st.session_state["D-dimer_påbörjad"] = True
 
 dct_pesi = {
 	"Manligt kön":30,
@@ -87,6 +84,10 @@ knapp_behandling = st.button("Gå vidare")
 f.pesi_display_lottie(89)
 if knapp_behandling:
     switch_page("Rekommendation efter PESI")
+
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow_v2()
 
 
 # if pesi_score < 66: 

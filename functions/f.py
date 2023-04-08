@@ -179,6 +179,8 @@ def display_flow_v2():
                         img_path = "hög/hög_lobär"
                     elif i == 5:
                         img_path = "hög/hög_sadel"
+            if "pesi_påbörjad" in st.session_state:
+                img_path += "_1"
     image = Image.open(f"img/flow/{img_path}.png")
     return st.image(image)
 
