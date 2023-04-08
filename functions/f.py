@@ -113,6 +113,63 @@ def control_tooltip():
         # klar
         # calc_score
         # intialize_widget_keys
+def display_flow_v2():
+    dct_perc = {
+    "Kliniska tecken på DVT": 1,
+    "Tidigare LE/DVT diagnos": 1,
+    "Hjärtfrekvens >100/min": 1,
+    "Hemoptys": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1,
+    "Ålder ≥50": 1,
+    "Saturation >94% utan syrgas": 1,
+    "Östrogenbehandling": 1
+    }
+    name_perc = "perc"
+
+    if "total_score_pe" not in st.session_state:
+        st.session_state["total_score_pe"] = 0
+    if "Ddimer_status" not in st.session_state:
+        st.session_state["Ddimer_status"] = "unknown"
+    if "verifierad_lungemboli" not in st.session_state:
+        st.session_state["verifierad_lungemboli"] = False
+    
+    img_path = ""
+    # check wells score
+    if st.session_state["total_score_pe"] < 2:
+    # if low
+        img_path += "låg/låg"
+        # check if PERC has been broken
+        if calc_score(dct_perc, name_perc) > 0:
+            img_path += "_broken"
+        # check d-dimer status
+        if st.session_state["Ddimer_status"] == "positive":
+            img_path += "_positive"
+        # check röntgen
+        if st.session_state["verifierad_lungemboli"] == True:
+            if "dtla_1" in st.session_state:
+                for i in range(1,6):
+                    x = st.session_state[f"dtla_{i}"]
+                    if x == True:
+                        if i == 1:
+                            img_path += "_perifer"
+                        elif i == 2:
+                            img_path += "_subsegmentell"
+                        elif i == 3:
+                            img_path += "_segmentell"
+                        elif i == 4:
+                            img_path += "_lobär"
+                        elif i == 5:
+                            img_path += "_sadel"
+    image = Image.open(f"img/flow/{img_path}.png")
+    return st.image(image)
+
+    # elif måttlig
+        # check d-dimer
+        # check röntgen
+    # elif hög
+        # check röntgen
+    # check if PERC has been broken
+    # check if 
 def display_flow(img):
     image = Image.open(f"img/flow/{img}.png")
     return st.image(image)
