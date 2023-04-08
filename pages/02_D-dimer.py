@@ -31,7 +31,7 @@ st.number_input("Ange resultat från D-dimer"
     #, on_change=ddimer_update_slider
     )
 
-if 0.5 <= st.session_state["Ddimer_result"] <= 1.0:
+if 0.5 < st.session_state["Ddimer_result"] < 1.0:
 
     if "Ddimer_age" not in st.session_state:
         st.session_state["Ddimer_age"] = 50
@@ -54,13 +54,13 @@ if 0.5 <= st.session_state["Ddimer_result"] <= 1.0:
         st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
 
 # om man har fyllt i resulatunder 0.5 --> presentera slutsats
-if st.session_state["Ddimer_result"] < 0.5:
+if 0 < st.session_state["Ddimer_result"] <= 0.5:
     st.session_state["Ddimer_status"] = "negative"
     st.success(f"Negativt D-dimer test. Lungemboli kan uteslutas.\
          Överväg annan diagnos.")
     f.klar()
 
-elif st.session_state["Ddimer_result"] > 1.0:
+elif st.session_state["Ddimer_result"] >= 1.0:
     st.session_state["Ddimer_status"] = "positive"
     st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Fortsätt utredning med DTLA.")
 
