@@ -141,12 +141,12 @@ def display_flow_v2():
         # check if PERC has been broken
         if "perc_påbörjad" in st.session_state:
             if calc_score(dct_perc, name_perc) > 0:
-                img_path += "_broken"
+                img_path = "låg/låg_broken"
             else:
-                img_path += "_unbroken"
+                img_path = "låg/låg_unbroken"
         # check d-dimer status
         if st.session_state["Ddimer_status"] == "positive":
-            img_path += "_positive"
+            img_path = "låg/låg_broken_positive"
         # check röntgen
         if st.session_state["verifierad_lungemboli"] == True:
             if "dtla_1" in st.session_state:
@@ -166,7 +166,7 @@ def display_flow_v2():
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
         if "D-dimer_påbörjad" in st.session_state:
-            img_path += "_unknown"
+            img_path = "måttlig/måttlig_unknown"
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "måttlig/måttlig_positive"
         elif st.session_state["Ddimer_status"] == "negative":
