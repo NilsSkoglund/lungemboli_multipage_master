@@ -63,11 +63,13 @@ if 0.5 < st.session_state["Ddimer_result"] < 1.0:
 
 # om man har fyllt i resulatunder 0.5 --> presentera slutsats
 if st.session_state["Ddimer_result"] < 0.5:
+    st.session_state["Ddimer_status"] = "negative"
     st.success(f"Negativt D-dimer test. Lungemboli kan uteslutas.\
          Överväg annan diagnos.")
     f.klar()
 
 elif st.session_state["Ddimer_result"] > 1.0:
+    st.session_state["Ddimer_status"] = "positive"
     st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Fortsätt utredning med DTLA.")
 
     col1, col2 = st.columns([1, 1])
@@ -82,6 +84,7 @@ elif st.session_state["Ddimer_result"] > 1.0:
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if "Ddimer_age" in st.session_state:
     if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
+        st.session_state["Ddimer_status"] = "positive"
         st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Fortsätt utredning med DTLA.")
 
         col1, col2 = st.columns([1, 1])
@@ -92,6 +95,7 @@ if "Ddimer_age" in st.session_state:
             if knapp_positiv_ddimer:
                 switch_page("Röntgen")
     else:
+        st.session_state["Ddimer_status"] = "negative"
         st.success(f"Negativt D-dimer test. Lungemboli kan uteslutas.\
          Överväg annan diagnos.")
         f.klar()
