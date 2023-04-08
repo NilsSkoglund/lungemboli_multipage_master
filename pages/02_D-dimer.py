@@ -25,13 +25,13 @@ st.header("D-dimer")
 if "Ddimer_result" not in st.session_state:
     st.session_state["Ddimer_result"] = 0.5
 
-st.number_input("Ange resultat från D-dimer"
+result = st.number_input("Ange resultat från D-dimer"
     , step=0.01
     , key="Ddimer_result"
     #, on_change=ddimer_update_slider
     )
 
-if 0.5 < st.session_state["Ddimer_result"] < 1.0:
+if 0.5 <= st.session_state["Ddimer_result"] <= 1.0 and result:
 
     if "Ddimer_age" not in st.session_state:
         st.session_state["Ddimer_age"] = 50
