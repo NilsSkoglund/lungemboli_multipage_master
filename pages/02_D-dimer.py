@@ -8,10 +8,18 @@ f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
-############################ Flow Illustration  ###############################
-with st.sidebar:
-    f.display_flow("flow_måttlig_ddimer")
+
 st.session_state.update(st.session_state)
+############################ Flow Illustration  ###############################
+if "total_score_pe" not in st.session_state:
+    st.session_state["total_score_pe"] = 0
+with st.sidebar:
+    if st.session_state["total_score_pe"] >= 2:
+        img = "flow_måttlig_ddimer"
+    else:
+        img = "flow_låg_perc_ddimer"
+    f.display_flow(img)
+
 
 ########################### Initialize Variables ##############################
 
