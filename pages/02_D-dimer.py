@@ -10,10 +10,6 @@ f.hide_hamburger()
 f.hide_padding_top()
 
 st.session_state.update(st.session_state)
-############################ Flow Illustration  ###############################
-with st.sidebar:
-    f.display_flow_v2()
-
 
 ########################### Initialize Variables ##############################
 
@@ -93,3 +89,7 @@ if "Ddimer_age" in st.session_state:
         st.success(f"Negativt D-dimer test. Lungemboli kan uteslutas.\
          Överväg annan diagnos.")
         f.klar()
+
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow_v2()

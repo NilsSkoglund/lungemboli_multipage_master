@@ -10,9 +10,6 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 
-with st.sidebar:
-    f.display_flow_v2()
-
 # Initialize variables for radiology_report
 	# dct with report_answer:score
 	# name for key
@@ -64,3 +61,6 @@ elif st.session_state["verifierad_lungemboli"]:
         f.dtla_display_lottie()
         if knapp_pesi:
             switch_page("PESI")
+
+with st.sidebar:
+    f.display_flow_v2()

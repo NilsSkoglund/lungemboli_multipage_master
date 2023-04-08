@@ -164,6 +164,8 @@ def display_flow_v2():
         img_path = "måttlig/måttlig"
         if st.session_state["Ddimer_status"] == "positive":
             img_path += "_positive"
+    elif st.session_state["total_score_pe"] > 6:
+        img_path = "hög/hög"
     image = Image.open(f"img/flow/{img_path}.png")
     return st.image(image)
 
