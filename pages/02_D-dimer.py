@@ -11,7 +11,7 @@ f.hide_padding_top()
 
 st.session_state.update(st.session_state)
 ############################ Flow Illustration  ###############################
-with st.sidebar():
+with st.sidebar:
     f.display_flow_v2()
 
 
