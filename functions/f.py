@@ -148,21 +148,7 @@ def display_flow_v2():
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "låg/låg_broken_positive"
         # check röntgen
-        if st.session_state["verifierad_lungemboli"] == True:
-            if "dtla_1" in st.session_state:
-                for i in range(1,6):
-                    x = st.session_state[f"dtla_{i}"]
-                    if x == True:
-                        if i == 1:
-                            img_path += "_perifer"
-                        elif i == 2:
-                            img_path += "_subsegmentell"
-                        elif i == 3:
-                            img_path += "_segmentell"
-                        elif i == 4:
-                            img_path += "_lobär"
-                        elif i == 5:
-                            img_path += "_sadel"
+
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
         if "D-dimer_påbörjad" in st.session_state:
@@ -175,6 +161,23 @@ def display_flow_v2():
             
     elif st.session_state["total_score_pe"] > 6:
         img_path = "hög/hög"
+        if st.session_state["verifierad_lungemboli"] == True:
+            if "dtla_0" in st.session_state:
+                for i in range(0,6):
+                    x = st.session_state[f"dtla_{i}"]
+                    if x == True:
+                        if i == 0:
+                            img_path = "hög/hög_ingen"
+                        elif i == 1:
+                            img_path = "hög/hög_perifer"
+                        elif i == 2:
+                            img_path = "hög/hög_subsegmentell"
+                        elif i == 3:
+                            img_path = "hög/hög_segmentell"
+                        elif i == 4:
+                            img_path = "hög/hög_lobär"
+                        elif i == 5:
+                            img_path = "hög/hög_sadel"
     image = Image.open(f"img/flow/{img_path}.png")
     return st.image(image)
 
