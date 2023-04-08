@@ -133,11 +133,11 @@ def display_flow_v2():
     if "verifierad_lungemboli" not in st.session_state:
         st.session_state["verifierad_lungemboli"] = False
     
-    img_path = ""
+    img_path = "base"
     # check wells score
     if st.session_state["total_score_pe"] < 2:
     # if low
-        img_path += "låg/låg"
+        img_path = "låg/låg"
         # check if PERC has been broken
         if calc_score(dct_perc, name_perc) > 0:
             img_path += "_broken"
