@@ -10,10 +10,6 @@ f.hide_hamburger()
 f.hide_padding_top()
 f.hide_img_fullscreen()
 f.reduce_padding()
-############################ Flow Illustration  ###############################
-with st.sidebar:
-    f.display_flow_v2()
-    #f.display_flow("flow_wells")
 ########################### Initialize Variables ##############################
 
 ############################# Local Variables #################################
@@ -82,3 +78,8 @@ with col1:
     f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
+
+
+############################ Flow Illustration  ###############################
+with st.sidebar:
+    f.display_flow_v2()
