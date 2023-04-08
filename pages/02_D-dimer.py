@@ -74,7 +74,7 @@ if 0.5 < st.session_state["Ddimer_result"] < 1.0:
         st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
-if "Ddimer_age" in st.session_state:
+if "Ddimer_age" in st.session_state and 0.5 < st.session_state["Ddimer_result"] < 1.0:
     if st.session_state["Ddimer_result"] > st.session_state["beslutsgräns"]:
         st.session_state["Ddimer_status"] = "positive"
         st.error(f"Positivt D-dimer test. Det går ej att utesluta lungemboli. Fortsätt utredning med DTLA.")
