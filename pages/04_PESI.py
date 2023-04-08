@@ -16,7 +16,7 @@ f.control_tooltip()
 f.col_control_rem()
 
 ########################### Initialize Variables ##############################
-st.session_state["D-dimer_påbörjad"] = True
+st.session_state["pesi_påbörjad"] = True
 
 dct_pesi = {
 	"Manligt kön":30,
