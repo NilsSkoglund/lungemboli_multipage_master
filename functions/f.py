@@ -168,6 +168,7 @@ def display_flow_v2():
                 if x == True:
                     if i == 0:
                         img_path = "hög/hög_ingen"
+                        break
                     elif i == 1:
                         img_path = "hög/hög_perifer"
                     elif i == 2:
