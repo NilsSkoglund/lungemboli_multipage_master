@@ -16,6 +16,9 @@ f.control_tooltip()
 f.col_control_rem()
 
 ############################ Flow Illustration  ###############################
+if "most_severe_dtla_img" not in st.session_state:
+    st.session_state["most_severe_dtla_img"] = "ingen"
+
 if "dtla_1" in st.session_state:
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
@@ -30,10 +33,6 @@ if "dtla_1" in st.session_state:
                 st.session_state["most_severe_dtla_img"] = "lobär"
             elif i == 5:
                 st.session_state["most_severe_dtla_img"] = "sadel"
-else:
-    st.session_state["most_severe_dtla_img"] = "ingen"
-
-
 
 if "total_score_pe" not in st.session_state:
     st.session_state["total_score_pe"] = 0
