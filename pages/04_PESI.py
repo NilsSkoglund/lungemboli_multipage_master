@@ -21,17 +21,17 @@ if "dtla_1" in st.session_state:
         x = st.session_state[f"dtla_{i}"]
         if x == True:
             if i == 1:
-                st.session_state["most_severe_dtla"] = "perifer lungemboli"
+                st.session_state["most_severe_dtla_img"] = "perifer"
             elif i == 2:
-                st.session_state["most_severe_dtla"] = "lungemobli på subsegmentell nivå"
+                st.session_state["most_severe_dtla_img"] = "subsegmentell"
             elif i == 3:
-                st.session_state["most_severe_dtla"] = "lungemboli på segmentell nivå"
+                st.session_state["most_severe_dtla_img"] = "segmentell"
             elif i == 4:
-                st.session_state["most_severe_dtla"] = "lungemobli på lobär nivå"
+                st.session_state["most_severe_dtla_img"] = "lobär"
             elif i == 5:
-                st.session_state["most_severe_dtla"] = "sadelemboli"
+                st.session_state["most_severe_dtla_img"] = "sadel"
 else:
-    st.session_state["most_severe_dtla"] = "ingen lungemboli"
+    st.session_state["most_severe_dtla_img"] = "ingen"
 
 
 
@@ -39,8 +39,7 @@ if "total_score_pe" not in st.session_state:
     st.session_state["total_score_pe"] = 0
 with st.sidebar:
     if st.session_state["total_score_pe"] < 2:
-        if 
-        img = "flow_låg_perc_ddimer_röntgen"
+        img = f"flow_låg_pesi_{st.session_state['most_severe_dtla_img']}"
     elif 2 <= st.session_state["total_score_pe"] < 6.5 :
         img = "flow_måttlig_ddimer_röntgen"
     else:
