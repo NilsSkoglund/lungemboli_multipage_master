@@ -180,18 +180,19 @@ def display_flow_v2():
                         img_path = "hög/hög_lobär"
                     elif i == 5:
                         img_path = "hög/hög_sadel"
-            if "pesi_score" in st.session_state:
-                pesi_score = st.session_state["pesi_score"]
-                if pesi_score < 66: 
-                    img_path += "_1"
-                elif pesi_score < 86:
-                    img_path += "_2"
-                elif pesi_score < 106:
-                    img_path += "_3"
-                elif pesi_score < 126:
-                    img_path += "_4"
-                elif pesi_score > 125:
-                    img_path += "_5"
+            if st.session_state["verifierad_lungemboli"] == True:
+                if "pesi_score" in st.session_state:
+                    pesi_score = st.session_state["pesi_score"]
+                    if pesi_score < 66: 
+                        img_path += "_1"
+                    elif pesi_score < 86:
+                        img_path += "_2"
+                    elif pesi_score < 106:
+                        img_path += "_3"
+                    elif pesi_score < 126:
+                        img_path += "_4"
+                    elif pesi_score > 125:
+                        img_path += "_5"
 
 
     image = Image.open(f"img/flow/{img_path}.png")
