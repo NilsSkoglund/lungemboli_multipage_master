@@ -142,6 +142,8 @@ def display_flow_v2():
         if calc_score(dct_perc, name_perc) > 0:
             img_path = "låg/låg_broken"
         # check d-dimer status
+        if "D-dimer_påbörjad" in st.session_state:
+            img_path = "låg/låg_broken_påbörjad"
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "låg/låg_broken_positive"
         # check röntgen
