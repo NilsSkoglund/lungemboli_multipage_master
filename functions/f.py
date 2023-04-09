@@ -144,16 +144,17 @@ def display_flow_v2():
             # check d-dimer status
             if "D-dimer_påbörjad" in st.session_state:
                 img_path = "låg/låg_broken_påbörjad"
-            if st.session_state["Ddimer_status"] == "positive":
-                img_path = "låg/låg_broken_positive"
-            if st.session_state["Ddimer_status"] == "negative":
-                img_path = "låg/låg_broken_negative"
-            # check röntgen
-            if "dtla_0" in st.session_state:
-                if st.session_state["dtla_0"] == True:
-                    img_path = "låg/låg_broken_positive_ingen"
-            if st.session_state["verifierad_lungemboli"] == True:
-                img_path = "låg/låg_broken_positive_verified"
+                if st.session_state["Ddimer_status"] == "negative":
+                    img_path = "låg/låg_broken_negative"
+                if st.session_state["Ddimer_status"] == "positive":
+                    img_path = "låg/låg_broken_positive"
+                # check röntgen
+                    if "dtla_0" in st.session_state:
+                        if st.session_state["dtla_0"] == True:
+                            img_path = "låg/låg_broken_positive_ingen"
+                    if st.session_state["verifierad_lungemboli"] == True:
+                        img_path = "låg/låg_broken_positive_verified"
+                        # check pesi
 
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
