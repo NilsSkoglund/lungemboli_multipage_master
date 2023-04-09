@@ -86,3 +86,7 @@ f.lungemboli_display_txt(st.session_state["total_score_pe"])
 ############################ Flow Illustration  ###############################
 with st.sidebar:
     f.display_flow_v2()
+    st.write('''**Bekräftad lungemboli:**
+             - Sadelemboli
+             - PESI Riskgrupp 3
+             ''')
