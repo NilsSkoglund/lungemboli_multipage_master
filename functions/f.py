@@ -137,7 +137,8 @@ def display_flow_v2():
     # check wells score
     if st.session_state["total_score_pe"] < 2 and "wells_påbörjad" in st.session_state:
     # if low
-        img_path = "låg/låg"
+        # img_path = "låg/låg"
+        img_path = "låg_alt"
         # check if PERC has been broken
         if calc_score(dct_perc, name_perc) > 0:
             img_path = "låg/låg_broken"
@@ -195,11 +196,11 @@ def display_flow_v2():
                         img_path += "_5"
 
     image = Image.open(f"img/flow/{img_path}.png")
-    width=300
-    height=400
-    resized_image = image.resize((width, height))
+    # width=300
+    # height=400
+    # resized_image = image.resize((width, height))
     
-    return st.image(resized_image)
+    return st.image(image)
 
     # elif måttlig
         # check d-dimer
