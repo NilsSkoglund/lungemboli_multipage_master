@@ -121,11 +121,6 @@ if "dtla_1" in st.session_state:
             elif i == 5:
                 st.session_state["most_severe_dtla"] = "sadelemboli"
 
-if "pesi_score" not in st.session_state:
-    st.session_state["pesi_score"] = 70
-
-st.write("Pesi score:", st.session_state["pesi_score"])
-
 def expand_recommendation(lower_limit, upper_limit):
     return lower_limit < st.session_state["pesi_score"] < upper_limit
 
