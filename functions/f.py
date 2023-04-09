@@ -137,8 +137,8 @@ def display_flow_v2():
     # check wells score
     if st.session_state["total_score_pe"] < 2 and "wells_påbörjad" in st.session_state:
     # if low
-        #img_path = "låg/låg"
-        img_path = "låg_alt"
+        img_path = "låg/låg"
+        #img_path = "låg_alt"
         # check if PERC has been broken
         if calc_score(dct_perc, name_perc) > 0:
             img_path = "låg/låg_broken"
@@ -150,6 +150,11 @@ def display_flow_v2():
             if st.session_state["Ddimer_status"] == "negative":
                 img_path = "låg/låg_broken_negative"
             # check röntgen
+            if "verifierad_lungemboli" in st.session_state:
+                if st.session_state["verifierad_lungemboli"] == False:
+                    img_path = "låg/låg_broken_positive_ingen"
+                elif st.session_state["verifierad_lungemboli"] == True:
+                    img_path = "låg/låg_broken_positive_verified"
 
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
