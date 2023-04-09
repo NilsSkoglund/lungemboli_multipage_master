@@ -146,6 +146,8 @@ def display_flow_v2():
             img_path = "låg/låg_broken_påbörjad"
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "låg/låg_broken_positive"
+        if st.session_state["Ddimer_status"] == "negative":
+            img_path = "låg/låg_broken_negative"
         # check röntgen
 
     elif 2 < st.session_state["total_score_pe"] < 6.5:
