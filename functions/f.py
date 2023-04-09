@@ -195,11 +195,9 @@ def display_flow_v2():
                         img_path += "_5"
 
     image = Image.open(f"img/flow/{img_path}.png")
-    original_width, original_height = image.size
-    new_width = int(original_width * 50 / 100)
-    new_height = int(original_height * 50 / 100)
-
-    resized_image = image.resize((new_width, new_height))
+    width=200
+    height=300
+    resized_image = image.resize((width, height))
     
     return st.image(resized_image)
 
