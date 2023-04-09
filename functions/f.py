@@ -141,14 +141,14 @@ def display_flow_v2():
         # check if PERC has been broken
         if calc_score(dct_perc, name_perc) > 0:
             img_path = "låg/låg_broken"
-        # check d-dimer status
-        if "D-dimer_påbörjad" in st.session_state:
-            img_path = "låg/låg_broken_påbörjad"
-        if st.session_state["Ddimer_status"] == "positive":
-            img_path = "låg/låg_broken_positive"
-        if st.session_state["Ddimer_status"] == "negative":
-            img_path = "låg/låg_broken_negative"
-        # check röntgen
+            # check d-dimer status
+            if "D-dimer_påbörjad" in st.session_state:
+                img_path = "låg/låg_broken_påbörjad"
+            if st.session_state["Ddimer_status"] == "positive":
+                img_path = "låg/låg_broken_positive"
+            if st.session_state["Ddimer_status"] == "negative":
+                img_path = "låg/låg_broken_negative"
+            # check röntgen
 
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
