@@ -135,7 +135,7 @@ def display_flow_v2():
     
     img_path = "base"
     # check wells score
-    if st.session_state["total_score_pe"] < 2:
+    if st.session_state["total_score_pe"] < 2 and "wells_påbörjad" in st.session_state:
     # if low
         img_path = "låg/låg"
         # check if PERC has been broken

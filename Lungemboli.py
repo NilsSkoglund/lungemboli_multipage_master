@@ -3,6 +3,9 @@ from functions import f
 
 st.session_state.update(st.session_state)
 
+if "wells_påbörjad" not in st.session_state:
+    st.session_state["wells_påbörjad"] = True
+
 f.button_style()
 f.hide_anchor_link()
 f.hide_footer()
