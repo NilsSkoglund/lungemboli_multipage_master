@@ -177,12 +177,12 @@ def display_flow_v2():
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "måttlig/måttlig_positive"
             st.write("hej1")
-            if "dtla_0" in st.session_state:
-                if st.session_state["dtla_0"] == True:
-                    img_path = "måttlig/måttlig_positive_ingen"
-            if st.session_state["verifierad_lungemboli"] == True:
-                st.write("hej2")
-                img_path = "måttlig/måttlig_positive_verified"
+        if "dtla_0" in st.session_state:
+            if st.session_state["dtla_0"] == True:
+                img_path = "måttlig/måttlig_positive_ingen"
+        if st.session_state["verifierad_lungemboli"] == True:
+            st.write("hej2")
+            img_path = "måttlig/måttlig_positive_verified"
         
             
     elif st.session_state["total_score_pe"] > 6:
