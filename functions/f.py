@@ -168,7 +168,7 @@ def display_flow_v2():
                             elif pesi_score > 125:
                                 img_path += "_5"
 
-    elif 2 < st.session_state["total_score_pe"] < 6.5:
+    elif 2 <= st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
         if "D-dimer_påbörjad" in st.session_state:
             img_path = "måttlig/måttlig_påbörjad"
@@ -176,10 +176,12 @@ def display_flow_v2():
             img_path = "måttlig/måttlig_negative"
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "måttlig/måttlig_positive"
+            st.write("hej1")
             if "dtla_0" in st.session_state:
                 if st.session_state["dtla_0"] == True:
                     img_path = "måttlig/måttlig_positive_ingen"
             if st.session_state["verifierad_lungemboli"] == True:
+                st.write("hej2")
                 img_path = "måttlig/måttlig_positive_verified"
         
             
