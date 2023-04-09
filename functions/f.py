@@ -181,6 +181,18 @@ def display_flow_v2():
                     img_path = "måttlig/måttlig_positive_ingen"
             if st.session_state["verifierad_lungemboli"] == True:
                 img_path = "måttlig/måttlig_positive_verified"
+                if "pesi_score" in st.session_state:
+                    pesi_score = st.session_state["pesi_score"]
+                    if pesi_score < 66: 
+                        img_path += "_1"
+                    elif pesi_score < 86:
+                        img_path += "_2"
+                    elif pesi_score < 106:
+                        img_path += "_3"
+                    elif pesi_score < 126:
+                        img_path += "_4"
+                    elif pesi_score > 125:
+                        img_path += "_5"
         
             
     elif st.session_state["total_score_pe"] > 6:
