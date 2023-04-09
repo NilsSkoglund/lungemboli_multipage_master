@@ -153,7 +153,7 @@ def display_flow_v2():
     elif 2 < st.session_state["total_score_pe"] < 6.5:
         img_path = "måttlig/måttlig"
         if "D-dimer_påbörjad" in st.session_state:
-            img_path = "måttlig/måttlig_unknown"
+            img_path = "måttlig/måttlig_påbörjad"
         if st.session_state["Ddimer_status"] == "positive":
             img_path = "måttlig/måttlig_positive"
         elif st.session_state["Ddimer_status"] == "negative":
