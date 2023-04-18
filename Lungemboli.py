@@ -11,15 +11,17 @@ with st.sidebar:
              , horizontal=True)
     if "lang" in st.session_state:
         st.write(st.session_state["lang"])
+
+    if st.session_state["lang"] == "Svenska":
+        xray = "Röntgen"
+    else:
+        xray = "X-ray"
+
+    st.write(xray)
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
 
-if st.session_state["lang"] == "Svenska":
-    xray = "Röntgen"
-if st.session_state["lang"] == "English":
-    xray = "X-ray"
 
-st.write(xray)
 show_pages(
     [
         Page("Lungemboli.py", "Wells'"),
