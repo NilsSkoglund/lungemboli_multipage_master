@@ -9,17 +9,39 @@ if st.session_state["lang"] == "Svenska":
     vård1 = "Vårdnivå 1:"
     vård1_options = ["Hem", "Inläggning"]
     vård2 = "Vårdnivå 2:"
+    vård2_options = ["Avdelning", "MIMA", "IVA"]
     tel = "Telemetri:"
+    tel_options = ["Ja", "Nej"]
     news = "News:"
     behandling = "Behandling:"
+
+    eko = "Hjärteko"
+    vc = "Vårdcentral"
+    koag = "Koag. mottagn."
+
+    subh_vård = "Vård"
+    subh_remiss = "Remiss"
+
+    header = "Guide efter PESI"
+
 else:
     hide_pages(["Röntgen"])
     vård1 = "Care level 1:"
     vård1_options = ["Home", "Admission"]
+    vård2_options = ["Ward", "MIMA", "ICU"]
     vård2 = "Care level 2:"
     tel = "Telemetry:"
+    tel_options = ["Yes", "No"]
     news = "News:"
     behandling = "Treatment:"
+
+    eko = "Echocardiogram"
+    vc = "Primary care center"
+    koag = "Coag. clinic"
+
+    subh_vård = "Care"
+    subh_remiss = "Referral"
+    header = "Guide after PESI"
 
 def display_recommendations(x):
     custom_css = """
@@ -41,7 +63,7 @@ def display_recommendations(x):
     # Add custom CSS to the application
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    st.subheader("Vård")
+    st.subheader(subh_vård)
 
     col1, col2 = st.columns([1,3])
 
@@ -104,19 +126,19 @@ def display_recommendations(x):
             is_hem = True
         else:
             is_hem = False
-        st.radio("Vårdnivå 2:", options=["Avd.", "MIMA", "IVA"], index=vårdnivå2_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
-        st.radio("Telemetri:", options=["Ja", "Nej"], index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
+        st.radio("Vårdnivå 2:", options=vård2_options, index=vårdnivå2_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio2_{x}")
+        st.radio("Telemetri:", options=tel_options, index=telemetri_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio3_{x}")
         st.radio("News:", options=["x4", "x6", "x8"], index=news_index, horizontal=True, label_visibility="collapsed", disabled=is_hem, key=f"radio4_{x}")
         st.radio("Behandling:", options=["Fragmin", "Eliquis"], index=behandling_index, horizontal=True, label_visibility="collapsed", key=f"radio5_{x}")
     
-    st.subheader("Remiss")
+    st.subheader(subh_remiss)
 
     col11, col22 = st.columns([1,3])
 
     with col11:
-        st.write("Hjärteko")
-        st.write("Vårdcentral")
-        st.write("Koag. mottagn.")
+        st.write(eko)
+        st.write(vc)
+        st.write(koag)
 
     with col22:
         st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
@@ -124,7 +146,7 @@ def display_recommendations(x):
         st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
 
 
-st.header("Rekommendation efter PESI")
+st.header(header)
 
 st.session_state["most_severe_dtla"] = "lungemboli"
 if "dtla_1" in st.session_state:
