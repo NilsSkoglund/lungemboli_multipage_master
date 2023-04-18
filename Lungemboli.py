@@ -1,6 +1,7 @@
 import streamlit as st
 from functions import f
 from st_pages import Page, show_pages, add_page_title
+st.session_state.update(st.session_state)
 
 with st.sidebar:
     st.radio(label="Language"
@@ -24,7 +25,7 @@ show_pages(
     ]
 )
 
-st.session_state.update(st.session_state)
+
 
 if "wells_påbörjad" not in st.session_state:
     st.session_state["wells_påbörjad"] = True
