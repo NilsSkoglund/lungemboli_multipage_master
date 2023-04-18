@@ -3,14 +3,12 @@ from functions import f
 from st_pages import Page, show_pages, add_page_title
 st.session_state.update(st.session_state)
 
-st.radio(label="Language"
+with st.sidebar:
+    st.radio(label="Language"
              , options=["Svenska", "English"]
              , key="lang"
              , label_visibility="collapsed"
              , horizontal=True)
-
-with st.sidebar:
-    
     if "lang" in st.session_state:
         st.write(st.session_state["lang"])
 
