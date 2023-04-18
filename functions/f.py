@@ -324,6 +324,22 @@ def lungemboli_display_txt(total_score):
              omgående startas på antikoagulantia-behandling och göra en akut\
                  DTLA. D-dimer är ej tillförlitligt för att utesluta lungemboli.")
 
+def lungemboli_display_txt_eng(total_score):
+    if total_score < 2:
+        st.success("The patient has a low risk for pulmonary embolism. To rule out \
+            pulmonary embolism, it is recommended to review the PERC \
+            (Pulmonary Embolism Rule-out Criteria).")
+    elif total_score < 6.5:
+        st.warning("The patient has a moderate risk for pulmonary embolism. To \
+            avoid unnecessary radiation, it is recommended to perform a D-dimer test \
+            to determine if pulmonary embolism can be dismissed without further \
+            imaging examination.")
+    else:
+        st.error("The patient has a high risk for pulmonary embolism. The patient should \
+            immediately be started on anticoagulant therapy and undergo an urgent \
+            CTPA. D-dimer is not reliable for ruling out pulmonary embolism.")
+
+
 def lungemboli_display_button(total_score, eng):
     if total_score < 2:
         if eng:
