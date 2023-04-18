@@ -18,7 +18,7 @@ f.col_control_rem()
 
 ############################# language choice #################################
 if "lang" not in st.session_state:
-    st.session_state["lang"] == "Svenska"
+    st.session_state["lang"] = "Svenska"
 
 if st.session_state["lang"] == "Svenska":
     hide_pages(["X-ray"])
