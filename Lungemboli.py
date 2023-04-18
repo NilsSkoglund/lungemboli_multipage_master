@@ -43,16 +43,26 @@ if "wells_påbörjad" not in st.session_state:
     st.session_state["wells_påbörjad"] = True
 
 ############################# Local Variables #################################
-
-dct_lungemboli = {
-    "Kliniska tecken på DVT": 3,
-    "Tidigare LE/DVT diagnos": 1.5,
-    "Hjärtfrekvens >100/min": 1.5,
-    "Hemoptys": 1,
-    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
-    "LE mer sannolik än annan diagnos": 3,
-    "Malignitet behandlad inom 6 mån alt. palliation": 1
-    }
+if st.session_state["lang"] == "Svenska":
+    dct_lungemboli = {
+        "Kliniska tecken på DVT": 3,
+        "Tidigare LE/DVT diagnos": 1.5,
+        "Hjärtfrekvens >100/min": 1.5,
+        "Hemoptys": 1,
+        "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
+        "LE mer sannolik än annan diagnos": 3,
+        "Malignitet behandlad inom 6 mån alt. palliation": 1
+        }
+else:
+    dct_lungemboli = {
+        "aasdgag": 3,
+        "asfasfasf": 1.5,
+        "Hjärtfrekvens >100/min": 1.5,
+        "Hemoptys": 1,
+        "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
+        "LE mer sannolik än annan diagnos": 3,
+        "Malignitet behandlad inom 6 mån alt. palliation": 1
+        }
 name_lungemboli = "lungemboli"
 
 ######################### Session State Variables #############################
