@@ -2,3 +2,4 @@ streamlit
 streamlit-extras
 streamlit-lottie
 requests
+st-pages
