@@ -69,8 +69,11 @@ if "total_score_pe" not in st.session_state:
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
-
-st.header("Formulär: Wells' Lungemboli")
+if st.session_state["lang"] == "Svenska":
+    wells_header = "Formulär: Wells' Lungemboli"
+else:
+    wells_header = "Questionnaire: Wells' PE"
+st.header(wells_header)
 for i, j in enumerate(dct_lungemboli.items()):
     if i < 5:
         st.checkbox(
