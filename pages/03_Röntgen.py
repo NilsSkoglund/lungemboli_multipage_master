@@ -13,6 +13,13 @@ f.hide_hamburger()
 f.hide_padding_top()
 
 ############################# language choice #################################
+with st.sidebar:
+    st.radio(label="Language"
+             , options=["Svenska", "English"]
+             , key="lang"
+             , label_visibility="collapsed"
+             , horizontal=True)
+    
 if "lang" not in st.session_state:
     st.session_state["lang"] = "Svenska"
 
