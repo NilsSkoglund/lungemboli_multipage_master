@@ -12,20 +12,12 @@ f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
 ############################# language choice #################################
+if "lang" not in st.session_state:
+    st.session_state["lang"] == "Svenska"
 
 if st.session_state["lang"] == "Svenska":
     hide_pages(["X-ray"])
-
-else:
-    hide_pages(["Röntgen"])
-
-########################### Initialize Variables ##############################
-
-st.session_state["perc_påbörjad"] = True
-
-############################# Local Variables #################################
-
-dct_perc = {
+    dct_perc = {
     "Kliniska tecken på DVT": 1,
     "Tidigare LE/DVT diagnos": 1,
     "Hjärtfrekvens >100/min": 1,
@@ -35,15 +27,49 @@ dct_perc = {
     "Saturation >94% utan syrgas": 1,
     "Östrogenbehandling": 1
     }
+    info_header = "Klicka för info"
+    info_txt = "5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
+    När dessa frågor besvaras i formuläret för Wells' kriterier\
+    ges de samma svar i PERC-formuläret nedan"
+    perc_pos = "PERC-positiv. Lungemboli kan ej uteslutas.\
+          Ta D-dimer för fortsatt utredning."
+    perc_neg = "PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos."
+
+else:
+    hide_pages(["Röntgen"])
+    dct_perc = {
+    "Clinical signs of DVT": 1,
+    "Previous PE/DVT diagnosis": 1,
+    "Heart rate >100/min": 1,
+    "Hemoptysis": 1,
+    "Immobility for >3 days / Surgery in last 4 weeks": 1,
+    "Age ≥50": 1,
+    "Saturation >94% without oxygen": 1,
+    "Estrogen therapy": 1
+    }
+    info_header = "Show more info"
+    info_txt = "5 out of 8 questions in PERC are included\
+    in Wells' criteria for Pulmonary Embolism.\
+    When these questions are answered in the Wells' criteria form,\
+    they receive the same response in the PERC form below."
+    perc_pos = "PERC-positive. Pulmonary embolism cannot be ruled out.\
+          Perform a D-dimer test for further investigation."
+    perc_neg = "PERC-negative. Pulmonary embolism can be ruled out.\
+          Consider an alternative diagnosis."
+
+
+########################### Initialize Variables ##############################
+
+st.session_state["perc_påbörjad"] = True
+
+############################# Local Variables #################################
 name_perc = "perc"
 
 ############################## Program and UI #################################
 
-st.header("Formulär: PERC")
-with st.expander("Klicka för info"):
-    st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för Lungemboli.\
-    När dessa frågor besvaras i formuläret för Wells' kriterier\
-    ges de samma svar i PERC-formuläret nedan")
+st.header("PERC")
+with st.expander(info_header):
+    st.info(info_txt)
 
 for i, j in enumerate(dct_perc.items()):
     if i < 5:
@@ -56,7 +82,7 @@ for i, j in enumerate(dct_perc.items()):
             key=f"{name_perc}_{i}")
 
 if f.calc_score(dct_perc, name_perc) > 0:
-    st.error("PERC-positiv. Lungemboli kan ej uteslutas. Ta D-dimer för fortsatt utredning.")
+    st.error(perc_pos)
 
     st.markdown("""
     <style>
@@ -74,7 +100,7 @@ if f.calc_score(dct_perc, name_perc) > 0:
         if knapp_perc_bruten:
             switch_page("D-dimer")
 else:
-    st.success("PERC-negativ. Lungemboli kan uteslutas. Överväg annan diagnos.")
+    st.success(perc_neg)
     f.klar()
     # KLAR knapp
 
