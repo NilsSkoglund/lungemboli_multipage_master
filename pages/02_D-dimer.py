@@ -22,6 +22,8 @@ if st.session_state["lang"] == "Svenska":
          Överväg annan diagnos."
     pos_txt = f"Positivt D-dimer test. Det går ej att utesluta lungemboli.\
           Fortsätt utredning med DTLA."
+    age_input = "Ange ålder"
+    cutoff_txt = "Åldersbaserad beslutsgräns"
 else:
     hide_pages(["Röntgen"])
     result_header = "Enter D-dimer result"
@@ -29,7 +31,8 @@ else:
          Consider an alternative diagnosis."
     pos_txt = f"Positive D-dimer test. Pulmonary embolism cannot be ruled out.\
           Continue the investigation with CTPA."
-
+    age_input = "Enter age"
+    cutoff_txt = "Age-based decision threshold"
 
 
 ########################### Initialize Variables ##############################
@@ -86,7 +89,7 @@ if 0.5 < st.session_state["Ddimer_result"] < 1.0:
     def update_pesi_from_ddimer():
         st.session_state["pesi_age"] = st.session_state["Ddimer_age"]
         
-    st.number_input("Ange ålder"
+    st.number_input(age_input
         , step=1
         , key="Ddimer_age"
         , on_change=update_pesi_from_ddimer
@@ -98,7 +101,7 @@ if 0.5 < st.session_state["Ddimer_result"] < 1.0:
             max([0.50, st.session_state["Ddimer_age"]*0.01])
         st.session_state["beslutsgräns"] =\
             round(st.session_state["beslutsgräns"],2)
-        st.write(f"Åldersbaserad beslutsgräns: {st.session_state['beslutsgräns']}")
+        st.write(f"{cutoff_txt}: {st.session_state['beslutsgräns']}")
 
 # om man har fyllt i både ålder och resulat --> presentera slutsats
 if "Ddimer_age" in st.session_state and 0.5 < st.session_state["Ddimer_result"] < 1.0:
