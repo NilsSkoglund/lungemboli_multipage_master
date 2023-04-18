@@ -1,6 +1,8 @@
 import streamlit as st
 from functions import f
 from streamlit_extras.switch_page_button import switch_page
+from st_pages import Page, show_pages, hide_pages
+
 
 st.session_state.update(st.session_state)
 
@@ -9,6 +11,13 @@ f.hide_anchor_link()
 f.hide_footer()
 f.hide_hamburger()
 f.hide_padding_top()
+############################# language choice #################################
+
+if st.session_state["lang"] == "Svenska":
+    hide_pages(["X-ray"])
+
+else:
+    hide_pages(["Röntgen"])
 
 ########################### Initialize Variables ##############################
 
