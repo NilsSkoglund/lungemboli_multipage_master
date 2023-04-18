@@ -18,6 +18,8 @@ if st.session_state["lang"] == "Svenska":
     xray = "Röntgen"
 if st.session_state["lang"] == "English":
     xray = "X-ray"
+
+st.write(xray)
 show_pages(
     [
         Page("Lungemboli.py", "Wells'"),
