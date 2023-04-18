@@ -57,7 +57,10 @@ st.number_input(result_header
 if 0 < st.session_state["Ddimer_result"] <= 0.5:
     st.session_state["Ddimer_status"] = "negative"
     st.success(neg_txt)
-    f.klar()
+    if st.session_state["lang"] == "English":
+        f.klar_eng()
+    else:
+        f.klar()
 
 elif st.session_state["Ddimer_result"] >= 1.0:
     st.session_state["Ddimer_status"] = "positive"
