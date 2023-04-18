@@ -102,15 +102,22 @@ if "Ddimer_age" in st.session_state and 0.5 < st.session_state["Ddimer_result"] 
         col1, col2 = st.columns([1, 1])
         f.col_control_rem()
         with col1:
-            knapp_positiv_ddimer = st.button("Fyll i röntgensvar")
-            f.ddimer_display_lottie()
+            if st.session_state["lang"] == "English":
+                knapp_positiv_ddimer = st.button("Fill in the X-ray result")
+                f.ddimer_display_lottie_eng()
+            else:
+                knapp_positiv_ddimer = st.button("Fyll i röntgensvar")
+                f.ddimer_display_lottie()
             if knapp_positiv_ddimer:
                 switch_page("Röntgen")
     else:
         st.session_state["Ddimer_status"] = "negative"
         st.success(neg_txt)
-        f.klar()
-
+        # KLAR knapp
+        if st.session_state["lang"] == "English":
+            f.klar_eng()
+        else:
+            f.klar()
 ############################ Flow Illustration  ###############################
 with st.sidebar:
     f.display_flow_v2()

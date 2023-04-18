@@ -449,7 +449,12 @@ def ddimer_display_lottie():
         st_lottie(lottie_json, height=20, width=140)
     except:
         pass
-    else:
+def ddimer_display_lottie_eng():
+    try:
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=165.22)
+    except:
         pass
 
 def dtla_display_lottie():

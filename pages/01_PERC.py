@@ -105,11 +105,11 @@ if f.calc_score(dct_perc, name_perc) > 0:
             switch_page("D-dimer")
 else:
     st.success(perc_neg)
+    # KLAR knapp
     if st.session_state["lang"] == "English":
         f.klar_eng()
     else:
         f.klar()
-    # KLAR knapp
 
 
 ############################ Flow Illustration  ###############################
