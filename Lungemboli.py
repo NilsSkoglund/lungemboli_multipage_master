@@ -22,7 +22,7 @@ show_pages(
     Page("pages/03_Röntgen.py", "Röntgen"),
     Page("pages/03_xray.py", "X-ray"),
     Page("pages/04_PESI.py", "PESI"),
-    Page("pages/05_Rekommendation efter PESI", "Guide"),
+    Page("pages/05_Rekommendation efter PESI.py", "Guide"),
 
 ]
 )
