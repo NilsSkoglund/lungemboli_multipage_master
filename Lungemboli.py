@@ -119,6 +119,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
     if st.session_state["lang"] == "English":
         f.lungemboli_display_button(st.session_state["total_score_pe"], True)
+        f.lungemboli_display_lottie_eng(st.session_state["total_score_pe"])
     else:
         f.lungemboli_display_button(st.session_state["total_score_pe"], False)
         f.lungemboli_display_lottie(st.session_state["total_score_pe"])

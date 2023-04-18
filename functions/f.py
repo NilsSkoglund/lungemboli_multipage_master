@@ -395,6 +395,30 @@ def lungemboli_display_lottie(total_score):
         except:
             pass
 
+def lungemboli_display_lottie_eng(total_score):
+    if total_score < 2:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=100.5)
+        except:
+            pass
+
+    elif total_score < 6.5:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=160.88)
+        except:
+            pass
+    else:
+        try:
+            lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+            lottie_json = load_lottieurl(lottie_url)
+            st_lottie(lottie_json, height=20, width=165.22)
+        except:
+            pass
+
 def perc_display_lottie():
     try:
         lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
