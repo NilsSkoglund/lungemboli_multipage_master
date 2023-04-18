@@ -1,6 +1,6 @@
 import streamlit as st
 from functions import f
-from st_pages import Page, show_pages, add_page_title
+from st_pages import Page, show_pages, hide_pages
 st.session_state.update(st.session_state)
 
 with st.sidebar:
@@ -40,6 +40,8 @@ elif st.session_state["lang"] == "English":
 
     ]
 )
+
+hide_pages(["PERC"])
 
 
 
