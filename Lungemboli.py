@@ -20,17 +20,27 @@ with st.sidebar:
     st.write(xray)
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
-
-
-show_pages(
+if st.session_state["lang"] == "Svenska":
+    show_pages(
     [
         Page("Lungemboli.py", "Wells'"),
         Page("pages/01_PERC.py", "PERC"),
         Page("pages/02_D-dimer.py", "D-dimer"),
-        Page("pages/03_Röntgen.py", xray),
+        Page("pages/03_Röntgen.py", "Röntgen"),
 
     ]
 )
+elif st.session_state["lang"] == "English":
+    show_pages(
+    [
+        Page("Lungemboli.py", "Wells'"),
+        Page("pages/01_PERC.py", "PERC"),
+        Page("pages/02_D-dimer.py", "D-dimer"),
+        Page("pages/03_Röntgen.py", "X-ray"),
+
+    ]
+)
+
 
 
 
