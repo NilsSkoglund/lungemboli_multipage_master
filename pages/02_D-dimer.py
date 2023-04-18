@@ -69,8 +69,12 @@ elif st.session_state["Ddimer_result"] >= 1.0:
     col1, col2 = st.columns([1, 1])
     f.col_control_rem()
     with col1:
-        knapp_positiv_ddimer = st.button("Fyll i röntgensvar")
-        f.ddimer_display_lottie()
+        if st.session_state["lang"] == "English":
+            knapp_positiv_ddimer = st.button("Fill in the X-ray result")
+            f.ddimer_display_lottie_eng()
+        else:
+            knapp_positiv_ddimer = st.button("Fyll i röntgensvar")
+            f.ddimer_display_lottie()
         if knapp_positiv_ddimer:
             switch_page("Röntgen")
 
