@@ -13,7 +13,7 @@ with st.sidebar:
 # should be
 if st.session_state["lang"] == "Svenska":
     xray = "Röntgen"
-else:
+if st.session_state["lang"] == "English":
     xray = "X-ray"
 show_pages(
     [
