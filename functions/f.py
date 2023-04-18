@@ -324,9 +324,13 @@ def lungemboli_display_txt(total_score):
              omgående startas på antikoagulantia-behandling och göra en akut\
                  DTLA. D-dimer är ej tillförlitligt för att utesluta lungemboli.")
 
-def lungemboli_display_button(total_score):
+def lungemboli_display_button(total_score, eng):
     if total_score < 2:
-        knapp_låg = st.button("Gå vidare till PERC")
+        if eng:
+            knapp_låg = st.button("Go to PERC")
+        else:
+            knapp_låg = st.button("Gå vidare till PERC")
+
         if knapp_låg:
             switch_page("PERC")
 

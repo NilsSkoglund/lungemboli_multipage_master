@@ -32,7 +32,8 @@ if st.session_state["lang"] == "Svenska":
         "LE mer sannolik än annan diagnos": 3,
         "Malignitet behandlad inom 6 mån alt. palliation": 1
         }
-    wells_header = "Formulär: Wells' Lungemboli"
+    wells_header = "Wells' Lungemboli"
+    viz_header = "Riskvisualisering"
 else:
     hide_pages(["Röntgen"])
     dct_lungemboli = {
@@ -45,7 +46,8 @@ else:
         "Malignancy treated within 6 months or palliation": 1
         }
 
-    wells_header = "Questionnaire: Wells' PE"
+    wells_header = "Wells' PE"
+    viz_header = "Visualization of Risk"
 
 
 #################################### css  #####################################
@@ -100,7 +102,7 @@ for i, j in enumerate(dct_lungemboli.items()):
 # calculate score and display vizualization, text & "change-page-button"
 st.session_state["total_score_pe"] = f.calc_score(dct_lungemboli, name_lungemboli)
 
-with st.expander("Riskvisualisering", expanded=True):
+with st.expander(viz_header, expanded=True):
     f.lungemboli_display_viz_v1(st.session_state["total_score_pe"])
 
 
@@ -115,7 +117,10 @@ st.markdown("""
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    f.lungemboli_display_button(st.session_state["total_score_pe"])
+    if st.session_state["lang"] == "English":
+        f.lungemboli_display_button(st.session_state["total_score_pe"], True)
+    else:
+        f.lungemboli_display_button(st.session_state["total_score_pe"], False)
     f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
