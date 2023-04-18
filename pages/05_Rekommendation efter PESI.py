@@ -35,8 +35,8 @@ else:
     news = "News:"
     behandling = "Treatment:"
 
-    eko = "Echocardiogram"
-    vc = "Primary care center"
+    eko = "ECG"
+    vc = "Care center"
     koag = "Coag. clinic"
 
     subh_vård = "Care"
@@ -153,28 +153,55 @@ if "dtla_1" in st.session_state:
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
         if x == True:
-            if i == 1:
-                st.session_state["most_severe_dtla"] = "perifer lungemboli"
-            elif i == 2:
-                st.session_state["most_severe_dtla"] = "lungemobli på subsegmentell nivå"
-            elif i == 3:
-                st.session_state["most_severe_dtla"] = "lungemboli på segmentell nivå"
-            elif i == 4:
-                st.session_state["most_severe_dtla"] = "lungemobli på lobär nivå"
-            elif i == 5:
-                st.session_state["most_severe_dtla"] = "sadelemboli"
+            if st.session_state["lang"] == "Svenska":
+                if i == 1:
+                    st.session_state["most_severe_dtla"] = "perifer lungemboli"
+                elif i == 2:
+                    st.session_state["most_severe_dtla"] =\
+                          "lungemobli på subsegmentell nivå"
+                elif i == 3:
+                    st.session_state["most_severe_dtla"] =\
+                          "lungemboli på segmentell nivå"
+                elif i == 4:
+                    st.session_state["most_severe_dtla"] =\
+                          "lungemobli på lobär nivå"
+                elif i == 5:
+                    st.session_state["most_severe_dtla"] = "sadelemboli"
+            else:
+                if i == 1:
+                    st.session_state["most_severe_dtla"] =\
+                         "Peripheral pulmonary embolism"
+                elif i == 2:
+                    st.session_state["most_severe_dtla"] =\
+                          "Subsegmental pulmonary embolism"
+                elif i == 3:
+                    st.session_state["most_severe_dtla"] =\
+                          "Segmental pulmonary embolism"
+                elif i == 4:
+                    st.session_state["most_severe_dtla"] =\
+                          "Lobar pulmonary embolism"
+                elif i == 5:
+                    st.session_state["most_severe_dtla"] = "Saddle embolism"
 
 def expand_recommendation(lower_limit, upper_limit):
     return lower_limit < st.session_state["pesi_score"] < upper_limit
 
-with st.expander("Riskgrupp 1", expanded=expand_recommendation(0, 66)):
-    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-    Riskstratifieras enligt PESI i riskgrupp 1 där den genomsnittliga 30\
-    dagars mortaliteten är mellan 0.0-1.6%"
+with st.expander("PESI Risk 1", expanded=expand_recommendation(0, 66)):
+    if st.session_state["lang"] == "Svenska":
+        info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+        Riskstratifieras enligt PESI i riskgrupp 1 där den genomsnittliga 30\
+        dagars mortaliteten är mellan 0.0-1.6%"
+    else:
+        info_msg = f"Patient with confirmed\
+        {st.session_state['most_severe_dtla']} \
+        Risk stratified according to PESI in risk group 1\
+        , where the average 30-day mortality rate is between 0.0-1.6%"
+
+        
     st.info(info_msg)
     display_recommendations(1)
 
-with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
+with st.expander("PESI Risk 2", expanded=expand_recommendation(65, 86)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 2 där den genomsnittliga 30\
         dagars mortaliteten är mellan 1.7-3.5%"
@@ -182,7 +209,7 @@ with st.expander("Riskgrupp 2", expanded=expand_recommendation(65, 86)):
     display_recommendations(2)
     
 
-with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
+with st.expander("PESI Risk 3", expanded=expand_recommendation(85, 106)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
         dagars mortaliteten är mellan 3.2-7.1%"
@@ -203,14 +230,14 @@ with st.expander("Riskgrupp 3", expanded=expand_recommendation(85, 106)):
 
 
 
-with st.expander("Riskgrupp 4", expanded=expand_recommendation(105, 126)):
+with st.expander("PESI Risk 4", expanded=expand_recommendation(105, 126)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 4 där den genomsnittliga 30\
         dagars mortaliteten är mellan 4.0-11.4%"
     st.info(info_msg)
     display_recommendations(4)
 
-with st.expander("Riskgrupp 5", expanded=expand_recommendation(125, 300)):
+with st.expander("PESI Risk 5", expanded=expand_recommendation(125, 300)):
     info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 5 där den genomsnittliga 30\
         dagars mortaliteten är mellan 10.0-25.5%"
