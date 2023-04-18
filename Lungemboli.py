@@ -121,7 +121,7 @@ with col1:
         f.lungemboli_display_button(st.session_state["total_score_pe"], True)
     else:
         f.lungemboli_display_button(st.session_state["total_score_pe"], False)
-    f.lungemboli_display_lottie(st.session_state["total_score_pe"])
+        f.lungemboli_display_lottie(st.session_state["total_score_pe"])
 
 f.lungemboli_display_txt(st.session_state["total_score_pe"])
 
