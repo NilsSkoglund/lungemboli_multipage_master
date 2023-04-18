@@ -3,7 +3,7 @@ from functions import f
 from st_pages import Page, show_pages, add_page_title
 
 with st.sidebar:
-    st.write("hej")
+    st.radio(["Svenska", "English"])
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
 show_pages(
