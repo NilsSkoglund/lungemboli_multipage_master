@@ -148,7 +148,11 @@ def display_recommendations(x):
 
 st.header(header)
 
-st.session_state["most_severe_dtla"] = "lungemboli"
+if st.session_state["lang"] == "Svenska":
+    st.session_state["most_severe_dtla"] = "lungemboli"
+else:
+    st.session_state["most_severe_dtla"] = "Pulmonary Embolism"
+
 if "dtla_1" in st.session_state:
     for i in range(1,6):
         x = st.session_state[f"dtla_{i}"]
@@ -196,23 +200,31 @@ with st.expander("PESI Risk 1", expanded=expand_recommendation(0, 66)):
         {st.session_state['most_severe_dtla']} \
         Risk stratified according to PESI in risk group 1\
         , where the average 30-day mortality rate is between 0.0-1.6%"
-
-        
     st.info(info_msg)
     display_recommendations(1)
 
 with st.expander("PESI Risk 2", expanded=expand_recommendation(65, 86)):
-    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+    if st.session_state["lang"] == "Svenska":
+        info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 2 där den genomsnittliga 30\
         dagars mortaliteten är mellan 1.7-3.5%"
+    else:
+        info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
+        Risk stratified according to PESI in risk group 2, where the average 30-day\
+        mortality rate is between 1.7-3.5%"
     st.info(info_msg)
     display_recommendations(2)
     
 
 with st.expander("PESI Risk 3", expanded=expand_recommendation(85, 106)):
-    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+    if st.session_state["lang"] == "Svenska":
+        info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
         dagars mortaliteten är mellan 3.2-7.1%"
+    else:
+        info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
+        Risk stratified according to PESI in risk group 3, where the average 30-day\
+        mortality rate is between 3.2-7.1%"
     st.info(info_msg)
     display_recommendations(3)
     
@@ -231,15 +243,25 @@ with st.expander("PESI Risk 3", expanded=expand_recommendation(85, 106)):
 
 
 with st.expander("PESI Risk 4", expanded=expand_recommendation(105, 126)):
-    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+    if st.session_state["lang"] == "Svenska":
+        info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 4 där den genomsnittliga 30\
         dagars mortaliteten är mellan 4.0-11.4%"
+    else:
+        info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
+        Risk stratified according to PESI in risk group 4, where the average 30-day\
+        mortality rate is between 4.0-11.4%"
     st.info(info_msg)
     display_recommendations(4)
 
 with st.expander("PESI Risk 5", expanded=expand_recommendation(125, 300)):
-    info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
+    if st.session_state["lang"] == "Svenska":
+        info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 5 där den genomsnittliga 30\
         dagars mortaliteten är mellan 10.0-25.5%"
+    else:
+        info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
+        Risk stratified according to PESI in risk group 5, where the average 30-day\
+        mortality rate is between 10.0-25.5%"
     st.info(info_msg)
     display_recommendations(5)
