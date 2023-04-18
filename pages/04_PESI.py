@@ -120,7 +120,7 @@ if st.session_state["lang"] == "English":
 else:
     f.pesi_display_lottie(89)
 if knapp_behandling:
-    switch_page("Rekommendation efter PESI")
+    switch_page("guide")
 
 ############################ Flow Illustration  ###############################
 with st.sidebar:
