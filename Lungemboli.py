@@ -23,8 +23,29 @@ show_pages(
 )
 if st.session_state["lang"] == "Svenska":
     hide_pages(["X-ray"])
+    dct_lungemboli = {
+        "Kliniska tecken på DVT": 3,
+        "Tidigare LE/DVT diagnos": 1.5,
+        "Hjärtfrekvens >100/min": 1.5,
+        "Hemoptys": 1,
+        "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
+        "LE mer sannolik än annan diagnos": 3,
+        "Malignitet behandlad inom 6 mån alt. palliation": 1
+        }
+    wells_header = "Formulär: Wells' Lungemboli"
 else:
     hide_pages(["Röntgen"])
+    dct_lungemboli = {
+        "Clinical signs of DVT": 3,
+        "Previous PE/DVT diagnosis": 1.5,
+        "Heart rate >100/min": 1.5,
+        "Hemoptysis": 1,
+        "Immobility for >3 days / Surgery in last 4 weeks": 1.5,
+        "PE more likely than alternative diagnosis": 3,
+        "Malignancy treated within 6 months or palliation": 1
+        }
+
+    wells_header = "Questionnaire: Wells' PE"
 
 
 #################################### css  #####################################
@@ -43,26 +64,7 @@ if "wells_påbörjad" not in st.session_state:
     st.session_state["wells_påbörjad"] = True
 
 ############################# Local Variables #################################
-if st.session_state["lang"] == "Svenska":
-    dct_lungemboli = {
-        "Kliniska tecken på DVT": 3,
-        "Tidigare LE/DVT diagnos": 1.5,
-        "Hjärtfrekvens >100/min": 1.5,
-        "Hemoptys": 1,
-        "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
-        "LE mer sannolik än annan diagnos": 3,
-        "Malignitet behandlad inom 6 mån alt. palliation": 1
-        }
-else:
-    dct_lungemboli = {
-        "aasdgag": 3,
-        "asfasfasf": 1.5,
-        "Hjärtfrekvens >100/min": 1.5,
-        "Hemoptys": 1,
-        "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
-        "LE mer sannolik än annan diagnos": 3,
-        "Malignitet behandlad inom 6 mån alt. palliation": 1
-        }
+
 name_lungemboli = "lungemboli"
 
 ######################### Session State Variables #############################
@@ -79,10 +81,6 @@ if "total_score_pe" not in st.session_state:
 
 # generate checkboxes
 # first five are synced with PERC questionnaire
-if st.session_state["lang"] == "Svenska":
-    wells_header = "Formulär: Wells' Lungemboli"
-else:
-    wells_header = "Questionnaire: Wells' PE"
 st.header(wells_header)
 for i, j in enumerate(dct_lungemboli.items()):
     if i < 5:
