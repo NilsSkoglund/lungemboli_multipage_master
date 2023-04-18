@@ -2,6 +2,7 @@ import streamlit as st
 from functions import f
 from PIL import Image
 from streamlit_extras.switch_page_button import switch_page
+from st_pages import hide_pages
 
 st.session_state.update(st.session_state)
 
@@ -15,10 +16,13 @@ f.hide_img_fullscreen()
 f.control_tooltip()
 f.col_control_rem()
 
-########################### Initialize Variables ##############################
-st.session_state["pesi_påbörjad"] = True
+############################# language choice #################################
+if "lang" not in st.session_state:
+    st.session_state["lang"] == "Svenska"
 
-dct_pesi = {
+if st.session_state["lang"] == "Svenska":
+    hide_pages(["X-ray"])
+    dct_pesi = {
 	"Manligt kön":30,
 	"Malignitet":30,
 	"Hjärtsvikt":10,
@@ -30,6 +34,29 @@ dct_pesi = {
 	"Mental påverkan":60,
 	"Syrgassaturation <90%":20
 }
+    age_input = "Ange ålder"
+    risk_viz = "Riskvisualisering"
+    nästa = "Gå vidare"
+else:
+    hide_pages(["Röntgen"])
+    dct_pesi = {
+    "Male gender": 30,
+    "Malignancy": 30,
+    "Heart failure": 10,
+    "Chronic lung disease": 10,
+    "Pulse ≥110/min": 20,
+    "Systolic BP <100 mmHg": 30,
+    "Respiratory rate ≥30/min": 20,
+    "Body temperature <36ºC": 20,
+    "Mental impairment": 60,
+    "Oxygen saturation <90%": 20
+}
+    age_input = "Enter age"
+    risk_viz = "Risk visualization"
+    nästa = "Proceed"
+
+########################### Initialize Variables ##############################
+st.session_state["pesi_påbörjad"] = True
 
 name_pesi = "pesi"
 
@@ -40,7 +67,7 @@ st.header("PESI")
 if "Ddimer_age" not in st.session_state:
     st.session_state["Ddimer_age"] = 50
 
-st.number_input("Ange ålder"
+st.number_input(age_input
     , step=1
     , key="Ddimer_age"
     )
@@ -58,7 +85,7 @@ pesi_score += st.session_state["Ddimer_age"]
 
 #st.metric("Totalpoäng PESI", value=pesi_score)
 
-with st.expander("Riskvisualisering", expanded=True):
+with st.expander(risk_viz, expanded=True):
     pesi_score = min(180, pesi_score)
     img_string = str(pesi_score)
     image = Image.open(f"pages/img_pesi/pesi_{img_string}.png")
@@ -68,20 +95,23 @@ container = st.container()
 
 col1, col2 = st.columns([1, 1])
 
-if pesi_score < 66: 
-    container.warning("Riskgrupp 1.")
-elif pesi_score < 86:
-    container.warning("Riskgrupp 2.")
-elif pesi_score < 106:
-    container.warning("Riskgrupp 3.")
-elif pesi_score < 126:
-    container.warning("Riskgrupp 4.")
-elif pesi_score > 125:
-    container.warning("Riskgrupp 5.")
+# if pesi_score < 66: 
+#     container.warning("Riskgrupp 1.")
+# elif pesi_score < 86:
+#     container.warning("Riskgrupp 2.")
+# elif pesi_score < 106:
+#     container.warning("Riskgrupp 3.")
+# elif pesi_score < 126:
+#     container.warning("Riskgrupp 4.")
+# elif pesi_score > 125:
+#     container.warning("Riskgrupp 5.")
 
 st.session_state["pesi_score"] = pesi_score
-knapp_behandling = st.button("Gå vidare")
-f.pesi_display_lottie(89)
+knapp_behandling = st.button(nästa)
+if st.session_state["lang"] == "English":
+    f.pesi_display_lottie(80)
+else:
+    f.pesi_display_lottie(89)
 if knapp_behandling:
     switch_page("Rekommendation efter PESI")
 

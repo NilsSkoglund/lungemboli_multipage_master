@@ -6,7 +6,7 @@ st.session_state.update(st.session_state)
 ############################# language choice #################################
 if "lang" not in st.session_state:
     st.session_state["lang"] == "Svenska"
-    
+
 with st.sidebar:
     st.radio(label="Language"
              , options=["Svenska", "English"]
@@ -21,6 +21,8 @@ show_pages(
     Page("pages/02_D-dimer.py", "D-dimer"),
     Page("pages/03_Röntgen.py", "Röntgen"),
     Page("pages/03_xray.py", "X-ray"),
+    Page("pages/04_PESI.py", "PESI"),
+
 
 ]
 )
