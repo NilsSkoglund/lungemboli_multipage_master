@@ -47,7 +47,7 @@ else:
         }
 
     wells_header = "Wells' PE"
-    viz_header = "Visualization of Risk"
+    viz_header = "Risk visualization"
 
 
 #################################### css  #####################################
