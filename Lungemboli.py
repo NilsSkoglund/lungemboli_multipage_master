@@ -5,14 +5,22 @@ from st_pages import Page, show_pages, add_page_title
 with st.sidebar:
     st.radio(label="Language"
              , options=["Svenska", "English"]
+             , key="lang"
              , label_visibility="collapsed"
              , horizontal=True)
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
+if st.session_state["lang"] == "Svenska":
+    xray = "Röntgen"
+else:
+    xray = "X-ray"
 show_pages(
     [
-        Page("Lungemboli.py", "Home"),
-        Page("pages/01_PERC.py", "Page 2"),
+        Page("Lungemboli.py", "Wells'"),
+        Page("pages/01_PERC.py", "PERC"),
+        Page("pages/02_D-dimer.py", "D-dimer"),
+        Page("pages/03_Röntgen.py", xray),
+
     ]
 )
 
