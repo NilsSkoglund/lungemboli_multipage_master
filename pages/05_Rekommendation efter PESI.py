@@ -1,4 +1,25 @@
 import streamlit as st
+from st_pages import hide_pages
+
+if "lang" not in st.session_state:
+    st.session_state["lang"] = "Svenska"
+
+if st.session_state["lang"] == "Svenska":
+    hide_pages(["X-ray"])
+    vård1 = "Vårdnivå 1:"
+    vård1_options = ["Hem", "Inläggning"]
+    vård2 = "Vårdnivå 2:"
+    tel = "Telemetri:"
+    news = "News:"
+    behandling = "Behandling:"
+else:
+    hide_pages(["Röntgen"])
+    vård1 = "Care level 1:"
+    vård1_options = ["Home", "Admission"]
+    vård2 = "Care level 2:"
+    tel = "Telemetry:"
+    news = "News:"
+    behandling = "Treatment:"
 
 def display_recommendations(x):
     custom_css = """
@@ -71,14 +92,14 @@ def display_recommendations(x):
         koag_index = 0
         vårdcentral_index = 1
     with col1:
-        st.write("Vårdnivå 1:")
-        st.write("Vårdnivå 2:")
-        st.write("Telemetri:")
-        st.write("News:")
-        st.write("Behandling:")
+        st.write(vård1)
+        st.write(vård2)
+        st.write(tel)
+        st.write(news)
+        st.write(behandling)
 
     with col2:
-        st.radio("Vårdnivå 1:", options=["Hem", "Inläggning"], index=vårdnivå1_index, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
+        st.radio("Vårdnivå 1:", options=vård1_options, index=vårdnivå1_index, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
         if st.session_state[f"radio1_{x}"] == "Hem":
             is_hem = True
         else:

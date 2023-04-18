@@ -109,7 +109,7 @@ col1, col2 = st.columns([1, 1])
 st.session_state["pesi_score"] = pesi_score
 knapp_behandling = st.button(nästa)
 if st.session_state["lang"] == "English":
-    f.pesi_display_lottie(80)
+    f.pesi_display_lottie(81)
 else:
     f.pesi_display_lottie(89)
 if knapp_behandling:
