@@ -1,6 +1,9 @@
 import streamlit as st
 from st_pages import hide_pages
 
+if "pesi_score" not in st.session_state:
+    st.session_state["pesi_score"] = 0
+
 with st.sidebar:
     st.radio(label="Language"
              , options=["Svenska", "English"]
@@ -136,7 +139,7 @@ def display_recommendations(x):
 
     with col2:
         st.radio("Vårdnivå 1:", options=vård1_options, index=vårdnivå1_index, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
-        if st.session_state[f"radio1_{x}"] == "Hem":
+        if st.session_state[f"radio1_{x}"] in ["Hem", "Home"]:
             is_hem = True
         else:
             is_hem = False
