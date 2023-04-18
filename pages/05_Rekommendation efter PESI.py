@@ -23,8 +23,12 @@ if st.session_state["lang"] == "Svenska":
     behandling = "Behandling:"
 
     eko = "Hjärteko"
+    eko_options = ["Ja", "Nej"]
     vc = "Vårdcentral"
+    vc_options = ["Ja", "Nej"]
     koag = "Koag. mottagn."
+    koag_options = ["Ja", "Nej"]
+
 
     subh_vård = "Vård"
     subh_remiss = "Remiss"
@@ -43,8 +47,11 @@ else:
     behandling = "Treatment:"
 
     eko = "ECG"
+    eko_options = ["Yes", "No"]
     vc = "Care center"
+    vc_options = ["Yes", "No"]
     koag = "Coag. clinic"
+    koag_options = ["Yes", "No"]
 
     subh_vård = "Care"
     subh_remiss = "Referral"
@@ -148,9 +155,9 @@ def display_recommendations(x):
         st.write(koag)
 
     with col22:
-        st.radio("Hjärteko:", options=["Ja", "Nej"], index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
-        st.radio("Vårdcentral:", options=["Ja", "Nej"], index=vårdcentral_index, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
-        st.radio("Koagulationsmottagning:", options=["Ja", "Nej"], index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
+        st.radio("Hjärteko:", options=eko_options, index=1, horizontal=True, label_visibility="collapsed", key=f"radio6_{x}")
+        st.radio("Vårdcentral:", options=vc_options, index=vårdcentral_index, horizontal=True, label_visibility="collapsed", key=f"radio8_{x}")
+        st.radio("Koagulationsmottagning:", options=koag_options, index=koag_index, horizontal=True, label_visibility="collapsed", key=f"radio7_{x}")
 
 
 st.header(header)
