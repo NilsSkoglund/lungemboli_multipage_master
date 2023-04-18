@@ -237,6 +237,10 @@ def klar():
     return st.markdown('<a href="/Lungemboli" style="display: block;\
     text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\
     target="_self">Avsluta</a>', unsafe_allow_html=True)
+def klar_eng():
+    return st.markdown('<a href="/Lungemboli" style="display: block;\
+    text-align: center; color: #FF4B4B; font-family: serif; font-size: 20px;"\
+    target="_self">End session</a>', unsafe_allow_html=True)
 
 def calc_score(dct, name):
     '''
@@ -424,6 +428,15 @@ def perc_display_lottie():
         lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
         lottie_json = load_lottieurl(lottie_url)
         st_lottie(lottie_json, height=20, width=147.5)
+    except:
+        pass
+    else:
+        pass
+def perc_display_lottie_eng():
+    try:
+        lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+        lottie_json = load_lottieurl(lottie_url)
+        st_lottie(lottie_json, height=20, width=160.88)
     except:
         pass
     else:

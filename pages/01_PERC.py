@@ -95,13 +95,20 @@ if f.calc_score(dct_perc, name_perc) > 0:
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        knapp_perc_bruten = st.button("Ange D-dimer svar")
-        f.perc_display_lottie()
+        if st.session_state["lang"] == "English":
+            knapp_perc_bruten = st.button("Enter D-dimer result")
+            f.perc_display_lottie_eng()
+        else:
+            knapp_perc_bruten = st.button("Ange D-dimer svar")
+            f.perc_display_lottie()
         if knapp_perc_bruten:
             switch_page("D-dimer")
 else:
     st.success(perc_neg)
-    f.klar()
+    if st.session_state["lang"] == "English":
+        f.klar_eng()
+    else:
+        f.klar()
     # KLAR knapp
 
 
