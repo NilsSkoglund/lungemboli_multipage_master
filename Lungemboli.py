@@ -9,8 +9,11 @@ with st.sidebar:
              , key="lang"
              , label_visibility="collapsed"
              , horizontal=True)
+    if "lang" in st.session_state:
+        st.write(st.session_state["lang"])
 # Specify what pages should be shown in the sidebar, and what their titles and icons
 # should be
+
 if st.session_state["lang"] == "Svenska":
     xray = "Röntgen"
 if st.session_state["lang"] == "English":
