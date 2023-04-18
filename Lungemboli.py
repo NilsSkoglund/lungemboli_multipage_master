@@ -3,23 +3,14 @@ from functions import f
 from st_pages import Page, show_pages, hide_pages
 st.session_state.update(st.session_state)
 
+############################# language choice #################################
 with st.sidebar:
     st.radio(label="Language"
              , options=["Svenska", "English"]
              , key="lang"
              , label_visibility="collapsed"
              , horizontal=True)
-    if "lang" in st.session_state:
-        st.write(st.session_state["lang"])
 
-    if st.session_state["lang"] == "Svenska":
-        xray = "Röntgen"
-    else:
-        xray = "X-ray"
-
-    st.write(xray)
-# Specify what pages should be shown in the sidebar, and what their titles and icons
-# should be
 show_pages(
 [
     Page("Lungemboli.py", "Wells'"),
@@ -36,10 +27,7 @@ else:
     hide_pages(["Röntgen"])
 
 
-
-
-if "wells_påbörjad" not in st.session_state:
-    st.session_state["wells_påbörjad"] = True
+#################################### css  #####################################
 
 f.button_style()
 f.hide_anchor_link()
@@ -48,7 +36,11 @@ f.hide_hamburger()
 f.hide_padding_top()
 f.hide_img_fullscreen()
 f.reduce_padding()
+
+
 ########################### Initialize Variables ##############################
+if "wells_påbörjad" not in st.session_state:
+    st.session_state["wells_påbörjad"] = True
 
 ############################# Local Variables #################################
 
