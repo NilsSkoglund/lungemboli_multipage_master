@@ -207,7 +207,7 @@ if "dtla_1" in st.session_state:
 def expand_recommendation(lower_limit, upper_limit):
     return lower_limit < st.session_state["pesi_score"] < upper_limit
 
-with st.expander("PESI Risk 1", expanded=expand_recommendation(0, 66)):
+with st.expander("PESI Risk I", expanded=expand_recommendation(0, 66)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 1 där den genomsnittliga 30\
@@ -220,7 +220,7 @@ with st.expander("PESI Risk 1", expanded=expand_recommendation(0, 66)):
     st.info(info_msg)
     display_recommendations(1)
 
-with st.expander("PESI Risk 2", expanded=expand_recommendation(65, 86)):
+with st.expander("PESI Risk II", expanded=expand_recommendation(65, 86)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 2 där den genomsnittliga 30\
@@ -233,7 +233,7 @@ with st.expander("PESI Risk 2", expanded=expand_recommendation(65, 86)):
     display_recommendations(2)
     
 
-with st.expander("PESI Risk 3", expanded=expand_recommendation(85, 106)):
+with st.expander("PESI Risk III", expanded=expand_recommendation(85, 106)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
@@ -259,7 +259,7 @@ with st.expander("PESI Risk 3", expanded=expand_recommendation(85, 106)):
 
 
 
-with st.expander("PESI Risk 4", expanded=expand_recommendation(105, 126)):
+with st.expander("PESI Risk IV", expanded=expand_recommendation(105, 126)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 4 där den genomsnittliga 30\
@@ -271,7 +271,7 @@ with st.expander("PESI Risk 4", expanded=expand_recommendation(105, 126)):
     st.info(info_msg)
     display_recommendations(4)
 
-with st.expander("PESI Risk 5", expanded=expand_recommendation(125, 300)):
+with st.expander("PESI Risk V", expanded=expand_recommendation(125, 300)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
         Riskstratifieras enligt PESI i riskgrupp 5 där den genomsnittliga 30\
