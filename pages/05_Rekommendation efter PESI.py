@@ -210,12 +210,12 @@ def expand_recommendation(lower_limit, upper_limit):
 with st.expander("PESI Risk I", expanded=expand_recommendation(0, 66)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 1 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp I där den genomsnittliga 30\
         dagars mortaliteten är mellan 0.0-1.6%"
     else:
         info_msg = f"Patient with confirmed\
         {st.session_state['most_severe_dtla']} \
-        Risk stratified according to PESI in risk group 1\
+        Risk stratified according to PESI in risk group I\
         , where the average 30-day mortality rate is between 0.0-1.6%"
     st.info(info_msg)
     display_recommendations(1)
@@ -223,11 +223,11 @@ with st.expander("PESI Risk I", expanded=expand_recommendation(0, 66)):
 with st.expander("PESI Risk II", expanded=expand_recommendation(65, 86)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 2 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp II där den genomsnittliga 30\
         dagars mortaliteten är mellan 1.7-3.5%"
     else:
         info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
-        Risk stratified according to PESI in risk group 2, where the average 30-day\
+        Risk stratified according to PESI in risk group II, where the average 30-day\
         mortality rate is between 1.7-3.5%"
     st.info(info_msg)
     display_recommendations(2)
@@ -236,11 +236,11 @@ with st.expander("PESI Risk II", expanded=expand_recommendation(65, 86)):
 with st.expander("PESI Risk III", expanded=expand_recommendation(85, 106)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 3 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp III där den genomsnittliga 30\
         dagars mortaliteten är mellan 3.2-7.1%"
     else:
         info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
-        Risk stratified according to PESI in risk group 3, where the average 30-day\
+        Risk stratified according to PESI in risk group III, where the average 30-day\
         mortality rate is between 3.2-7.1%"
     st.info(info_msg)
     display_recommendations(3)
@@ -262,11 +262,11 @@ with st.expander("PESI Risk III", expanded=expand_recommendation(85, 106)):
 with st.expander("PESI Risk IV", expanded=expand_recommendation(105, 126)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 4 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp IV där den genomsnittliga 30\
         dagars mortaliteten är mellan 4.0-11.4%"
     else:
         info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
-        Risk stratified according to PESI in risk group 4, where the average 30-day\
+        Risk stratified according to PESI in risk group IV, where the average 30-day\
         mortality rate is between 4.0-11.4%"
     st.info(info_msg)
     display_recommendations(4)
@@ -274,11 +274,11 @@ with st.expander("PESI Risk IV", expanded=expand_recommendation(105, 126)):
 with st.expander("PESI Risk V", expanded=expand_recommendation(125, 300)):
     if st.session_state["lang"] == "Svenska":
         info_msg = f"Patient med bekräftad {st.session_state['most_severe_dtla']}.\
-        Riskstratifieras enligt PESI i riskgrupp 5 där den genomsnittliga 30\
+        Riskstratifieras enligt PESI i riskgrupp V där den genomsnittliga 30\
         dagars mortaliteten är mellan 10.0-25.5%"
     else:
         info_msg = f"Patient with confirmed {st.session_state['most_severe_dtla']}.\
-        Risk stratified according to PESI in risk group 5, where the average 30-day\
+        Risk stratified according to PESI in risk group V, where the average 30-day\
         mortality rate is between 10.0-25.5%"
     st.info(info_msg)
     display_recommendations(5)
