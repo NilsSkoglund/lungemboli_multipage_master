@@ -139,7 +139,7 @@ def display_recommendations(x):
 
     with col2:
         st.radio("Vårdnivå 1:", options=vård1_options, index=vårdnivå1_index, horizontal=True, label_visibility="collapsed", key=f"radio1_{x}")
-        if st.session_state[f"radio1_{x}"] in ["Hem", "Home"]:
+        if st.session_state[f"radio1_{x}"] == "Hem" or st.session_state[f"radio1_{x}"] == "Home":
             is_hem = True
         else:
             is_hem = False
