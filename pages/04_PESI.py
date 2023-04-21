@@ -115,7 +115,7 @@ col1, col2 = st.columns([1, 1])
 
 st.markdown("""
     <style>
-    .css-ocqkz7 [data-testid=stVerticalBlock]{
+    [data-testid=stVerticalBlock]{
         gap: 0.1rem;
     }
     </style>
