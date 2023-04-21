@@ -113,21 +113,21 @@ col1, col2 = st.columns([1, 1])
 # elif pesi_score > 125:
 #     container.warning("Riskgrupp 5.")
 
-st.markdown("""
-    <style>
-    .css-1n76uvr.e1tzin5v0 [data-testid=stVerticalBlock]{
-        gap: 0.1rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
+
 st.session_state["pesi_score"] = pesi_score
-knapp_behandling = st.button(nästa)
-if st.session_state["lang"] == "English":
-    f.pesi_display_lottie(81)
-else:
-    f.pesi_display_lottie(89)
-if knapp_behandling:
-    switch_page("guide")
+
+col1, col2 = st.columns([1, 1])
+f.col_control_rem()
+with col1:
+
+    knapp_behandling = st.button(nästa)
+    if st.session_state["lang"] == "English":
+        f.pesi_display_lottie(81)
+    else:
+        f.pesi_display_lottie(89)
+    if knapp_behandling:
+        switch_page("guide")
 
 ############################ Flow Illustration  ###############################
 with st.sidebar:
