@@ -113,6 +113,13 @@ col1, col2 = st.columns([1, 1])
 # elif pesi_score > 125:
 #     container.warning("Riskgrupp 5.")
 
+st.markdown("""
+    <style>
+    .css-ocqkz7 [data-testid=stVerticalBlock]{
+        gap: 0.1rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 st.session_state["pesi_score"] = pesi_score
 knapp_behandling = st.button(nästa)
 if st.session_state["lang"] == "English":
