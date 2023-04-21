@@ -113,6 +113,116 @@ def control_tooltip():
         # klar
         # calc_score
         # intialize_widget_keys
+def display_flow_v2_eng():
+    dct_perc = {
+    "Kliniska tecken på DVT": 1,
+    "Tidigare LE/DVT diagnos": 1,
+    "Hjärtfrekvens >100/min": 1,
+    "Hemoptys": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1,
+    "Ålder ≥50": 1,
+    "Saturation >94% utan syrgas": 1,
+    "Östrogenbehandling": 1
+    }
+    name_perc = "perc"
+
+    if "total_score_pe" not in st.session_state:
+        st.session_state["total_score_pe"] = 0
+    if "Ddimer_status" not in st.session_state:
+        st.session_state["Ddimer_status"] = "unknown"
+    if "verifierad_lungemboli" not in st.session_state:
+        st.session_state["verifierad_lungemboli"] = False
+    
+    img_path = "eng/base"
+    # check wells score
+    if st.session_state["total_score_pe"] < 2 and "wells_påbörjad" in st.session_state:
+    # if low
+        img_path = "låg/eng/låg"
+        # check if PERC has been broken
+        if calc_score(dct_perc, name_perc) > 0:
+            img_path = "låg/eng/låg_broken"
+            # check d-dimer status
+            if "D-dimer_påbörjad" in st.session_state:
+                img_path = "låg/eng/låg_broken_påbörjad"
+                if st.session_state["Ddimer_status"] == "negative":
+                    img_path = "låg/eng/låg_broken_negative"
+                if st.session_state["Ddimer_status"] == "positive":
+                    img_path = "låg/eng/låg_broken_positive"
+                # check röntgen
+                    if "dtla_0" in st.session_state:
+                        if st.session_state["dtla_0"] == True:
+                            img_path = "låg/eng/låg_broken_positive_ingen"
+                    if st.session_state["verifierad_lungemboli"] == True:
+                        img_path = "låg/eng/låg_broken_positive_verified"
+                        # check pesi
+                        if "pesi_score" in st.session_state:
+                            pesi_score = st.session_state["pesi_score"]
+                            if pesi_score < 66: 
+                                img_path += "_1"
+                            elif pesi_score < 86:
+                                img_path += "_2"
+                            elif pesi_score < 106:
+                                img_path += "_3"
+                            elif pesi_score < 126:
+                                img_path += "_4"
+                            elif pesi_score > 125:
+                                img_path += "_5"
+
+    elif 2 <= st.session_state["total_score_pe"] < 6.5:
+        img_path = "måttlig/eng/måttlig"
+        if "D-dimer_påbörjad" in st.session_state:
+            img_path = "måttlig/eng/måttlig_påbörjad"
+        if st.session_state["Ddimer_status"] == "negative":
+            img_path = "måttlig/eng/måttlig_negative"
+        if st.session_state["Ddimer_status"] == "positive":
+            img_path = "måttlig/eng/måttlig_positive"
+            if "dtla_0" in st.session_state:
+                if st.session_state["dtla_0"] == True:
+                    img_path = "måttlig/eng/måttlig_positive_ingen"
+            if st.session_state["verifierad_lungemboli"] == True:
+                img_path = "måttlig/eng/måttlig_positive_verified"
+                if "pesi_score" in st.session_state:
+                    pesi_score = st.session_state["pesi_score"]
+                    if pesi_score < 66: 
+                        img_path += "_1"
+                    elif pesi_score < 86:
+                        img_path += "_2"
+                    elif pesi_score < 106:
+                        img_path += "_3"
+                    elif pesi_score < 126:
+                        img_path += "_4"
+                    elif pesi_score > 125:
+                        img_path += "_5"
+        
+            
+    elif st.session_state["total_score_pe"] > 6:
+        img_path = "hög/eng/hög"
+        #if st.session_state["verifierad_lungemboli"] == True:
+        if "dtla_0" in st.session_state:
+            if st.session_state["dtla_0"] == True:
+                    img_path = "hög/eng/hög_ingen"
+            if st.session_state["verifierad_lungemboli"] == True:
+                img_path = "hög/eng/hög_verified"
+                if "pesi_score" in st.session_state:
+                    pesi_score = st.session_state["pesi_score"]
+                    if pesi_score < 66: 
+                        img_path += "_1"
+                    elif pesi_score < 86:
+                        img_path += "_2"
+                    elif pesi_score < 106:
+                        img_path += "_3"
+                    elif pesi_score < 126:
+                        img_path += "_4"
+                    elif pesi_score > 125:
+                        img_path += "_5"
+
+    image = Image.open(f"img/flow/{img_path}.png")
+    # width=300
+    # height=400
+    # resized_image = image.resize((width, height))
+    
+    return st.image(image)
+
 def display_flow_v2():
     dct_perc = {
     "Kliniska tecken på DVT": 1,
