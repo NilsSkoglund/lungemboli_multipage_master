@@ -121,4 +121,7 @@ else:
 
 ############################ Flow Illustration  ###############################
 with st.sidebar:
-    f.display_flow_v2()
+    if st.session_state["lang"] == "English":
+        f.display_flow_v2_eng()
+    else:
+        f.display_flow_v2()

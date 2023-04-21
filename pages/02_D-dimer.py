@@ -135,6 +135,10 @@ if "Ddimer_age" in st.session_state and 0.5 < st.session_state["Ddimer_result"] 
             f.klar_eng()
         else:
             f.klar()
+
 ############################ Flow Illustration  ###############################
 with st.sidebar:
-    f.display_flow_v2()
+    if st.session_state["lang"] == "English":
+        f.display_flow_v2_eng()
+    else:
+        f.display_flow_v2()
