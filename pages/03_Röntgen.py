@@ -101,7 +101,11 @@ elif st.session_state["verifierad_lungemboli"]:
     f.col_control_rem()
     with col1:
         knapp_pesi = st.button(pesi_txt)
-        f.dtla_display_lottie()
+        if st.session_state["lang"] == "English":
+            f.dtla_display_lottie_eng()
+        else:
+            f.dtla_display_lottie()
+        
         if knapp_pesi:
             switch_page("PESI")
 
