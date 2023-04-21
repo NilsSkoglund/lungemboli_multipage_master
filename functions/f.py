@@ -133,7 +133,7 @@ def display_flow_v2_eng():
     if "verifierad_lungemboli" not in st.session_state:
         st.session_state["verifierad_lungemboli"] = False
     
-    img_path = "eng/base"
+    img_path = "base_eng"
     # check wells score
     if st.session_state["total_score_pe"] < 2 and "wells_påbörjad" in st.session_state:
     # if low
